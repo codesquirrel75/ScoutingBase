@@ -1,4 +1,4 @@
-package com.example.vande.scouting2019.Settings;
+package com.example.ncgears.scouting.data;
 
 public class Settings {
 
