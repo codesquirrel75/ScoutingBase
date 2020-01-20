@@ -1051,7 +1051,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
 
                 teleopDataStringList.add(ScouterInitialsActivity.getInitials());
 
-                String message = auton + "," + FormatStringUtils.addDelimiter(teleopDataStringList, ",") + "\n";
+                String message = auton + "," + FormatStringUtils.addDelimiter(teleopDataStringList, "|") + "\n";
 
                 try {
                     FileOutputStream fileOutputStream = new FileOutputStream(file, true);

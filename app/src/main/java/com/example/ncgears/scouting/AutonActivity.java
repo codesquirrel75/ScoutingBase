@@ -234,7 +234,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
 //      autonDataStringList.add(playStyle.getSelectedItem().toString());
 
         final Intent intent = new Intent(this, TeleopActivity.class);
-        intent.putExtra(AUTON_STRING_EXTRA, FormatStringUtils.addDelimiter(autonDataStringList, ","));
+        intent.putExtra(AUTON_STRING_EXTRA, FormatStringUtils.addDelimiter(autonDataStringList, "|"));
         intent.putExtra(MATCH_STRING_EXTRA, getTextInputLayoutString(matchNumberInputLayout));
         intent.putExtra(TEAMNUMBER_STRING_EXTRA, TeamNumberInputLayout.getSelectedItem().toString());
 

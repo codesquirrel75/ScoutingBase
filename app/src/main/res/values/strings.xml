@@ -5,10 +5,9 @@
     <string name="sendData">Send Data</string>
     <string name="submitInitials">Submit</string>
 
-    <string name="mainAuthor">Ken and Nate are the best! Revised 4/20/19</string>
+    <string name="mainAuthor">Authors Ken and Kenny</string>
 
-
-    <!-- Send Data Strings-->
+    <string name="revisionDate">Revised 1/7/20</string>
 
     <string name="concatenateMatch">Concatenate Match</string>
     <string name="concatenatePit">Concatenate Pit</string>
@@ -158,12 +157,12 @@
     <string name="nextButton">Move To Teleop</string>
     <string name="scouterInitials">Scouter Initials</string>
 
-    <string name="rating_0">0</string>
-    <string name="rating_1">1</string>
 
-    <string name="rating_2">2</string>
 
     <!-- Rating Scale -->
+    <string name="rating_0">0</string>
+    <string name="rating_1">1</string>
+    <string name="rating_2">2</string>
     <string name="rating_3">3</string>
     <string name="rating_4">4</string>
     <string name="rating_5">5</string>
@@ -190,10 +189,11 @@
     <string name="pitHatch">Hatch panel</string>
     <string name="pitCargo">Cargo</string>
     <string name="pitNothing">Nothing</string>
-    <string name="pitfirst15">What does your robot do in the first 15 seconds?</string>
-    <string name="pit15auton">Autonomous</string>
-    <string name="pit15manual">Manual drive with camera</string>
-    <string name="pit15nothing">Nothing</string>
+    <string name="pitPowerPortShotQ">Where in the power port does your robot shoot during Auto?</string>
+    <string name="pitPowerPortNa">NA</string>
+    <string name="pitPowerPortShotInner">Inner Port</string>
+    <string name="pitPowerPortShotOuter">Outer Port</string>
+    <string name="pitPowerPortShotBottom">Bottom Port</string>
     <string name="pitHatchPanels">Where does your robot place hatch panels?</string>
     <string name="pitCargoShip">Cargo Ship</string>
     <string name="pitRocketBottom">Rocket-Bottom</string>
@@ -207,7 +207,7 @@
     <string name="pitPreMatchHatch">Hatch Panel</string>
     <string name="pitPreMatchNothing">Nothing</string>
     <string name="pitOtherLabel">Other</string>
-    <string name="defenseInPerimeter">Is your robot able to  retract all components within its perimeter in order to play defense?</string>
+    <string name="powerCellPreLoad">How many power cells do you preload your robot with for Auto?</string>
     <string name="defenseInPerimeterYes">Yes</string>
     <string name="defenseInPerimeterNo">No</string>
     <string name="cycleSuperFast">Under 5 seconds</string>
@@ -263,6 +263,7 @@
     <string name="editTeams">Import TEAMS</string>
 
 
+
     <string-array name="startingLocation">
         <item>Choice 1</item>
         <item>Choice 2</item>
@@ -288,17 +289,18 @@
     </string-array>
 
     <string-array name="programmingLanguages">
-        <item>LabView</item>
         <item>C++</item>
         <item>Java</item>
+        <item>LabView</item>
         <item>Python</item>
         <item>Other</item>
     </string-array>
     <string-array name="driveTrain">
-        <item>Tank</item>
+        <item>Arcade</item>
         <item>Mechanum</item>
         <item>Swerve</item>
-        <item>Arcade</item>
+        <item>Tank</item>
+        <item>West Coast</item>
         <item>Other</item>
     </string-array>
     <string-array name="habPlatform">

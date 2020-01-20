@@ -32,6 +32,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -83,23 +84,25 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
     @BindView(R.id.pit_other_input)
     public EditText pitOtherInputLayout;
 
-    @BindView(R.id.pit_defense_in_perimeter)
-    public RadioGroup pitDefenseInPerimeter;
-
-    public String pit15String = "";
+    @BindView(R.id.pit_power_cell_preload)
+    public RadioGroup pitPowerCellPreload;
 
     @BindView(R.id.pit_endgame)
     public Spinner pitEndgame;
 
-    @BindView(R.id.pit_15_auton)
-    public CheckBox pit15Auton;
+    @BindView(R.id.powerPortShotInner)
+    public CheckBox powerPortInner;
 
-    @BindView(R.id.pit_15_manual)
-    public CheckBox pit15Manual;
+    @BindView(R.id.powerPortShotOuter)
+    public CheckBox powerPortOuter;
 
-    @BindView(R.id.pit_15_nothing)
-    public CheckBox pit15Nothing;
+    @BindView(R.id.powerPortShotBottom)
+    public CheckBox powerPortShotBottom;
 
+    @BindView(R.id.powerPortShotNa)
+    public CheckBox powerPortShotNa;
+
+    public String powerPortShotString = "";
 
 
     @BindView(R.id.scouterInitials_input)
@@ -114,6 +117,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
 
     public  ArrayList<String> team_numbers = new ArrayList<>();
     private ArrayList<CharSequence> pitDataStringList;
+
 
 
 
@@ -188,6 +192,8 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         endgamespinner.setAdapter(endgameadapter);
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -208,66 +214,79 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         }
     }
 
-
-    public void setString(View view){
-        Boolean checked = ((CheckBox)view).isChecked();
+    public void setPowerPortShotString(View view) {
+        Boolean checked = ((CheckBox) view).isChecked();
         String s1;
 
-        switch (view.getId()){
-            case R.id.pit_15_auton:
-                s1 = " Autonomous |";
-                if(checked){
-                    if(pit15String.isEmpty()) {
-                        pit15String = s1;
-                    }else{
-                        pit15String = pit15String + s1;
-                    }
-                }else{
-                    if(pit15String.contains(s1)){
-                        int start = pit15String.indexOf(s1);
-                        pit15String = pit15String.substring(0,start) + pit15String.substring(start + s1.length());
-                    }
-                }
-                break;
+        switch (view.getId()) {
 
-            case R.id.pit_15_manual:
-                s1 = "Manual |";
-                if(checked){
-                    if(pit15String.isEmpty()) {
-                        pit15String = s1;
-                    }else{
-                        pit15String = pit15String + s1;
+            case R.id.powerPortShotInner:
+                s1 = powerPortInner.getText().toString() + " ,";
+                if (checked) {
+                    if (powerPortShotString.isEmpty()) {
+                        powerPortShotString = s1;
+                    } else {
+                        powerPortShotString = powerPortShotString + s1;
                     }
-
-                }else{
-                    if(pit15String.contains(s1)){
-                        int start = pit15String.indexOf(s1);
-                        pit15String = pit15String.substring(0,start) + pit15String.substring(start + s1.length());
+                } else {
+                    if (powerPortShotString.contains(s1)) {
+                        int start = powerPortShotString.indexOf(s1);
+                        powerPortShotString = powerPortShotString.substring(0, start) + powerPortShotString.substring(start + s1.length());
                     }
                 }
                 break;
 
-            case R.id.pit_15_nothing:
-                s1 = "Nothing |";
-                if(checked){
-                    if(pit15String.isEmpty()) {
-                        pit15String = s1;
-                    }else{
-                        pit15String = pit15String + s1;
+            case R.id.powerPortShotOuter:
+                s1 = powerPortOuter.getText().toString() + " ,";
+                if (checked) {
+                    if (powerPortShotString.isEmpty()) {
+                        powerPortShotString = s1;
+                    } else {
+                        powerPortShotString = powerPortShotString + s1;
                     }
-                }else{
-                    if(pit15String.contains(s1)){
-                        int start = pit15String.indexOf(s1);
-                        pit15String = pit15String.substring(0,start) + pit15String.substring(start + s1.length());
+                } else {
+                    if (powerPortShotString.contains(s1)) {
+                        int start = powerPortShotString.indexOf(s1);
+                        powerPortShotString = powerPortShotString.substring(0, start) + powerPortShotString.substring(start + s1.length());
                     }
                 }
                 break;
 
+            case R.id.powerPortShotBottom:
+                s1 = powerPortShotBottom.getText().toString() + " ,";
+                if (checked) {
+                    if (powerPortShotString.isEmpty()) {
+                        powerPortShotString = s1;
+                    } else {
+                        powerPortShotString = powerPortShotString + s1;
+                    }
+                } else {
+                    if (powerPortShotString.contains(s1)) {
+                        int start = powerPortShotString.indexOf(s1);
+                        powerPortShotString = powerPortShotString.substring(0, start) + powerPortShotString.substring(start + s1.length());
+                    }
+                }
+                break;
 
-
+            case R.id.powerPortShotNa:
+                s1 = powerPortShotNa.getText().toString() + " ,";
+                if (checked) {
+                    if (powerPortShotString.isEmpty()) {
+                        powerPortShotString = s1;
+                    } else {
+                        powerPortShotString = powerPortShotString + s1;
+                    }
+                } else {
+                    if (powerPortShotString.contains(s1)) {
+                        int start = powerPortShotString.indexOf(s1);
+                        powerPortShotString = powerPortShotString.substring(0, start) + powerPortShotString.substring(start + s1.length());
+                    }
+                }
+                break;
         }
-
     }
+
+
 
     @Override
     protected void onResume() {
@@ -278,7 +297,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitOtherInputLayout.setOnKeyListener(this);
         pitRobotWeight.setOnKeyListener(this);
         pitProgrammingLanguages.setOnKeyListener(this);
-        pitDefenseInPerimeter.setOnKeyListener(this);
+        pitPowerCellPreload.setOnKeyListener(this);
         pitEndgame.setOnKeyListener(this);
     }
 
@@ -292,7 +311,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitOtherInputLayout.setOnKeyListener(null);
         pitRobotWeight.setOnKeyListener(null);
         pitProgrammingLanguages.setOnKeyListener(null);
-        pitDefenseInPerimeter.setOnKeyListener(null);
+        pitPowerCellPreload.setOnKeyListener(null);
         pitEndgame.setOnKeyListener(null);
     }
 
@@ -333,7 +352,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         }
 
 
-      final RadioButton pitDefenseInPerimeterbtn = findViewById(pitDefenseInPerimeter.getCheckedRadioButtonId());
+      final RadioButton pitPowerCellPreloadbtn = findViewById(pitPowerCellPreload.getCheckedRadioButtonId());
 
         if(PermissionUtils.getPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
             if (Environment.MEDIA_MOUNTED.equals(state)) {
@@ -345,15 +364,15 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
                 pitDataStringList.add(pitRobotWeight.getText().toString());
                 pitDataStringList.add(pitDriveTrainInputLayout.getSelectedItem().toString());
                 pitDataStringList.add(pitProgrammingLanguages.getSelectedItem().toString());
-                pitDataStringList.add(pitDefenseInPerimeterbtn.getText().toString());
-                pitDataStringList.add(pit15String);
+                pitDataStringList.add(pitPowerCellPreloadbtn.getText().toString());
+                pitDataStringList.add(powerPortShotString);
                 pitDataStringList.add(pitEndgame.getSelectedItem().toString());
                 pitDataStringList.add(pitOtherInputLayout.getText().toString());
                 pitDataStringList.add(scouterInitialsInput.getText().toString());
 
 
 
-                String message = FormatStringUtils.addDelimiter(pitDataStringList, ",") + "\n";
+                String message = FormatStringUtils.addDelimiter(pitDataStringList, "|") + "\n";
 
 
                 //Output data to file
@@ -466,13 +485,13 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitRobotWeight.setText(null);
         pitDriveTrainInputLayout.setSelection(0);
         pitProgrammingLanguages.setSelection(0);
-        pitDefenseInPerimeter.check(R.id.defense_in_perimeter_no);
         pitOtherInputLayout.setText(null);
         pitEndgame.setSelection(0);
         scouterInitialsInput.setText(null);
-        pit15Auton.setChecked(false);
-        pit15Manual.setChecked(false);
-        pit15Nothing.setChecked(false);
+        powerPortOuter.setChecked(false);
+        powerPortInner.setChecked(false);
+        powerPortShotBottom.setChecked(false);
+        powerPortShotNa.setChecked(false);
     }
 
     private void checkForPermissions() {

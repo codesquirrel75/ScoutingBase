@@ -85,68 +85,91 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:textSize="10pt"
-                android:text="@string/defenseInPerimeter"/>
+                android:text="@string/powerCellPreLoad"/>
 
             <RadioGroup
-                android:id="@+id/pit_defense_in_perimeter"
+                android:id="@+id/pit_power_cell_preload"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:checkedButton="@id/defense_in_perimeter_no">
+                android:checkedButton="@id/power_cell_preload_0">
                 <RadioButton
-                    android:id="@+id/defense_in_perimeter_yes"
+                    android:id="@+id/power_cell_preload_0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/defenseInPerimeterYes" />
+                    android:text="@string/rating_0" />
                 <RadioButton
-                    android:id="@+id/defense_in_perimeter_no"
+                    android:id="@+id/power_cell_preload_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/defenseInPerimeterNo"/>
+                    android:text="@string/rating_1"/>
+                <RadioButton
+                    android:id="@+id/power_cell_preload_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rating_2" />
+                <RadioButton
+                    android:id="@+id/power_cell_preload_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rating_3"/>
+                <RadioButton
+                    android:id="@+id/power_cell_preload_na"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rating_na" />
 
             </RadioGroup>
-
-
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:textSize="10pt"
-                android:text="@string/pitfirst15"/>
+                android:text="@string/pitPowerPortShotQ"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+            <CheckBox
+                android:id="@+id/powerPortShotBottom"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:onClick="setPowerPortShotString"
+                android:text="@string/pitPowerPortShotBottom"/>
 
-                <CheckBox
-                    android:id="@+id/pit_15_auton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/pit15auton"
-                    android:onClick="setString"/>
+            <CheckBox
+                android:id="@+id/powerPortShotOuter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setPowerPortShotString"
+                android:text="@string/pitPowerPortShotOuter"/>
 
-                <CheckBox
-                    android:id="@+id/pit_15_manual"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/pit15manual"
-                    android:onClick="setString"/>
-
-                <CheckBox
-                    android:id="@+id/pit_15_nothing"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/pit15nothing"
-                    android:onClick="setString"/>
-
+            <CheckBox
+                android:id="@+id/powerPortShotInner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setPowerPortShotString"
+                android:text="@string/pitPowerPortShotInner"/>
 
             </LinearLayout>
 
-
-
+            <CheckBox
+                android:id="@+id/powerPortShotNa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setPowerPortShotString"
+                android:text="@string/pitPowerPortNa"/>
 
 
 
