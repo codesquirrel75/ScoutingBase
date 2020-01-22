@@ -206,7 +206,7 @@
     <string name="pitPreMatchCargo">Cargo</string>
     <string name="pitPreMatchHatch">Hatch Panel</string>
     <string name="pitPreMatchNothing">Nothing</string>
-    <string name="pitOtherLabel">Other</string>
+    <string name="pitOtherLabel">Basic plan</string>
     <string name="powerCellPreLoad">How many power cells do you preload your robot with for Auto?</string>
     <string name="defenseInPerimeterYes">Yes</string>
     <string name="defenseInPerimeterNo">No</string>
@@ -261,7 +261,21 @@
     <!--  Teleop Error Strings -->
     <string name="cargo_pickup_both">Both</string>
     <string name="editTeams">Import TEAMS</string>
-
+    <string name="pitInitLineAuton">Does your robot move from the Alliance initiation line during auton</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="pitDriveThroughTrench">Can your robot drive through the trench?</string>
+    <string name="pitEndgameHang">Does your robot hang at end game?</string>
+    <string name="pitShotLocation">During teleop, where does your robot shoot power cells?</string>
+    <string name="pitShotLocationNa">NA</string>
+    <string name="pitShotLocationInner">Inner Port</string>
+    <string name="pitShotLocationOuter">Outer Port</string>
+    <string name="pitShotLocationBottom">Bottom Port</string>
+    <string name="pitControlPanel">What does your robot do with the control panel?</string>
+    <string name="pitControlPanelRotate3to5">Rotate between 3-5 times</string>
+    <string name="pitControlPanelPosition">Position the correct color</string>
+    <string name="pitControlPanelNothing">Nothing</string>
+    <string name="pitGamePlan">What is your basic game plan during teleop?</string>
 
 
     <string-array name="startingLocation">

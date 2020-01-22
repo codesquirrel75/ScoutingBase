@@ -171,31 +171,200 @@
                 android:onClick="setPowerPortShotString"
                 android:text="@string/pitPowerPortNa"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="10pt"
+                android:text="@string/pitInitLineAuton"/>
 
+            <RadioGroup
+                android:id="@+id/pit_init_line_auton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@id/pit_init_line_auton_no">
+
+                <RadioButton
+                    android:id="@+id/pit_init_line_auton_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/yes" />
+
+                <RadioButton
+                    android:id="@+id/pit_init_line_auton_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/no" />
+
+            </RadioGroup>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:textSize="10pt"
-                android:text="@string/pitEndgame"/>
+                android:text="@string/pitDriveThroughTrench"/>
 
+            <RadioGroup
+                android:id="@+id/pit_drive_thru_trench"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@id/pit_init_line_auton_no">
 
-            <Spinner
-                android:id="@+id/pit_endgame"
-                android:layout_width="match_parent"
-                android:layout_height="30pt">
+                <RadioButton
+                    android:id="@+id/pit_drive_thru_trench_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/yes" />
 
-            </Spinner>
+                <RadioButton
+                    android:id="@+id/pit_drive_thru_trench_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/no" />
 
-
+            </RadioGroup>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:textSize="10pt"
-                android:text="@string/pitOtherLabel"/>
+                android:text="@string/pitShotLocation"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/pit_shot_location_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:onClick="setPowerPortShotString"
+                    android:text="@string/pitShotLocationBottom"/>
+
+                <CheckBox
+                    android:id="@+id/pit_shot_location_outer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setPowerPortShotString"
+                    android:text="@string/pitShotLocationOuter"/>
+
+                <CheckBox
+                    android:id="@+id/pit_shot_location_inner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setPowerPortShotString"
+                    android:text="@string/pitShotLocationInner"/>
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/pit_shot_location_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setPowerPortShotString"
+                android:text="@string/pitShotLocationNa"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="10pt"
+                android:text="@string/pitControlPanel"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/pit_control_panel_rotate_3to5"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:onClick="setControlPanelString"
+                    android:text="@string/pitControlPanelRotate3to5"/>
+
+                <CheckBox
+                    android:id="@+id/pit_control_panel_position"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setControlPanelString"
+                    android:text="@string/pitControlPanelPosition"/>
+
+                <CheckBox
+                    android:id="@+id/pit_control_panel_nothing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setControlPanelString"
+                    android:text="@string/pitControlPanelNothing"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="10pt"
+                android:text="@string/pitEndgameHang"/>
+
+            <RadioGroup
+                android:id="@+id/pit_endgame_hang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@id/pit_endgame_hang_no">
+
+                <RadioButton
+                    android:id="@+id/pit_endgame_hang_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/yes" />
+
+                <RadioButton
+                    android:id="@+id/pit_endgame_hang_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/no" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="10pt"
+                android:text="@string/pitGamePlan"/>
             <EditText
-                android:id="@+id/pit_other_input"
+                android:id="@+id/pit_basic_plan"
                 android:autofillHints="Other"
                 android:hint="@string/pitOtherLabel"
                 android:inputType="text"

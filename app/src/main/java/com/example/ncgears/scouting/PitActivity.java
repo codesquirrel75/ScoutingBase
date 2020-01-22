@@ -81,14 +81,11 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
     @BindView(R.id.pit_programming_language_spinner)
     public Spinner pitProgrammingLanguages;
 
-    @BindView(R.id.pit_other_input)
-    public EditText pitOtherInputLayout;
-
     @BindView(R.id.pit_power_cell_preload)
     public RadioGroup pitPowerCellPreload;
 
-    @BindView(R.id.pit_endgame)
-    public Spinner pitEndgame;
+    @BindView(R.id.pit_basic_plan)
+    public EditText pitBasicPlan;
 
     @BindView(R.id.powerPortShotInner)
     public CheckBox powerPortInner;
@@ -104,6 +101,40 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
 
     public String powerPortShotString = "";
 
+    @BindView(R.id.pit_shot_location_inner)
+    public CheckBox pitShotLocationInner;
+
+    @BindView(R.id.pit_shot_location_outer)
+    public CheckBox pitShotLocationOuter;
+
+    @BindView(R.id.pit_shot_location_bottom)
+    public CheckBox pitShotLocationBottom;
+
+    @BindView(R.id.pit_shot_location_na)
+    public CheckBox pitShotLocationNa;
+
+    public String pitShotLocationString = "";
+
+    @BindView(R.id.pit_init_line_auton)
+    public RadioGroup pitInitLineAuton;
+
+    @BindView(R.id.pit_control_panel_rotate_3to5)
+    public CheckBox pitControlPanelRotate3to5;
+
+    @BindView(R.id.pit_control_panel_position)
+    public CheckBox pitControlPanelPosition;
+
+    @BindView(R.id.pit_control_panel_nothing)
+    public CheckBox pitControlPanelNothing;
+
+    public String ControlPanelString = "";
+
+
+    @BindView(R.id.pit_drive_thru_trench)
+    public RadioGroup pitDriveThruTrench;
+
+    @BindView(R.id.pit_endgame_hang)
+    public RadioGroup pitEndgameHang;
 
     @BindView(R.id.scouterInitials_input)
     public EditText scouterInitialsInput;
@@ -143,7 +174,6 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         checkForPermissions();
 
 
-
         //  --- Drive Train spinner ---
 
         Spinner drivetrainspinner = (Spinner) findViewById(R.id.pit_drive_train_spinner);
@@ -178,21 +208,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         languageadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         languagespinner.setAdapter(languageadapter);
-
-
-
-        //  ---  EndGame spinner  ---
-
-        Spinner endgamespinner = (Spinner) findViewById(R.id.pit_endgame);
-// Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> endgameadapter = ArrayAdapter.createFromResource(this, R.array.endgame_location, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
-        endgameadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
-        endgamespinner.setAdapter(endgameadapter);
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -286,19 +302,148 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         }
     }
 
+    public void setPitShotLocationString(View view) {
+        Boolean checked = ((CheckBox) view).isChecked();
+        String s1;
+
+        switch (view.getId()) {
+
+            case R.id.pit_shot_location_inner:
+                s1 = pitShotLocationInner.getText().toString() + " ,";
+                if (checked) {
+                    if (pitShotLocationString.isEmpty()) {
+                        pitShotLocationString = s1;
+                    } else {
+                        pitShotLocationString = pitShotLocationString + s1;
+                    }
+                } else {
+                    if (pitShotLocationString.contains(s1)) {
+                        int start = pitShotLocationString.indexOf(s1);
+                        pitShotLocationString = pitShotLocationString.substring(0, start) + pitShotLocationString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_shot_location_outer:
+                s1 = pitShotLocationOuter.getText().toString() + " ,";
+                if (checked) {
+                    if (pitShotLocationString.isEmpty()) {
+                        pitShotLocationString = s1;
+                    } else {
+                        pitShotLocationString = pitShotLocationString + s1;
+                    }
+                } else {
+                    if (pitShotLocationString.contains(s1)) {
+                        int start = pitShotLocationString.indexOf(s1);
+                        pitShotLocationString = pitShotLocationString.substring(0, start) + pitShotLocationString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_shot_location_bottom:
+                s1 = pitShotLocationBottom.getText().toString() + " ,";
+                if (checked) {
+                    if (pitShotLocationString.isEmpty()) {
+                        pitShotLocationString = s1;
+                    } else {
+                        pitShotLocationString = pitShotLocationString + s1;
+                    }
+                } else {
+                    if (pitShotLocationString.contains(s1)) {
+                        int start = pitShotLocationString.indexOf(s1);
+                        pitShotLocationString = pitShotLocationString.substring(0, start) + pitShotLocationString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_shot_location_na:
+                s1 = pitShotLocationNa.getText().toString() + " ,";
+                if (checked) {
+                    if (pitShotLocationString.isEmpty()) {
+                        pitShotLocationString = s1;
+                    } else {
+                        pitShotLocationString = pitShotLocationString + s1;
+                    }
+                } else {
+                    if (pitShotLocationString.contains(s1)) {
+                        int start = pitShotLocationString.indexOf(s1);
+                        pitShotLocationString = pitShotLocationString.substring(0, start) + pitShotLocationString.substring(start + s1.length());
+                    }
+                }
+                break;
+        }
+    }
+
+    public void setControlPanelString(View view) {
+        Boolean checked = ((CheckBox) view).isChecked();
+        String s1;
+
+        switch (view.getId()) {
+
+            case R.id.pit_control_panel_rotate_3to5:
+                s1 = pitControlPanelRotate3to5.getText().toString() + " ,";
+                if (checked) {
+                    if (ControlPanelString.isEmpty()) {
+                        ControlPanelString = s1;
+                    } else {
+                        ControlPanelString = ControlPanelString + s1;
+                    }
+                } else {
+                    if (ControlPanelString.contains(s1)) {
+                        int start = ControlPanelString.indexOf(s1);
+                        ControlPanelString = ControlPanelString.substring(0, start) + ControlPanelString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_control_panel_position:
+                s1 = pitControlPanelPosition.getText().toString() + " ,";
+                if (checked) {
+                    if (ControlPanelString.isEmpty()) {
+                        ControlPanelString = s1;
+                    } else {
+                        ControlPanelString = ControlPanelString + s1;
+                    }
+                } else {
+                    if (ControlPanelString.contains(s1)) {
+                        int start = ControlPanelString.indexOf(s1);
+                        ControlPanelString = ControlPanelString.substring(0, start) + ControlPanelString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_control_panel_nothing:
+                s1 = pitControlPanelNothing.getText().toString() + " ,";
+                if (checked) {
+                    if (ControlPanelString.isEmpty()) {
+                        ControlPanelString = s1;
+                    } else {
+                        ControlPanelString = ControlPanelString + s1;
+                    }
+                } else {
+                    if (ControlPanelString.contains(s1)) {
+                        int start = ControlPanelString.indexOf(s1);
+                        ControlPanelString = ControlPanelString.substring(0, start) + ControlPanelString.substring(start + s1.length());
+                    }
+                }
+                break;
+        }
+    }
 
 
-    @Override
+            @Override
     protected void onResume() {
         super.onResume();
 
         pitTeamNumberInputLayout.setOnKeyListener(this);
         pitDriveTrainInputLayout.setOnKeyListener(this);
-        pitOtherInputLayout.setOnKeyListener(this);
         pitRobotWeight.setOnKeyListener(this);
         pitProgrammingLanguages.setOnKeyListener(this);
         pitPowerCellPreload.setOnKeyListener(this);
-        pitEndgame.setOnKeyListener(this);
+        pitInitLineAuton.setOnKeyListener(this);
+        pitDriveThruTrench.setOnKeyListener(this);
+        pitEndgameHang.setOnKeyListener(this);
+        pitBasicPlan.setOnKeyListener(this);
     }
 
 
@@ -308,11 +453,13 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
 
         pitTeamNumberInputLayout.setOnKeyListener(null);
         pitDriveTrainInputLayout.setOnKeyListener(null);
-        pitOtherInputLayout.setOnKeyListener(null);
         pitRobotWeight.setOnKeyListener(null);
         pitProgrammingLanguages.setOnKeyListener(null);
         pitPowerCellPreload.setOnKeyListener(null);
-        pitEndgame.setOnKeyListener(null);
+        pitInitLineAuton.setOnKeyListener(null);
+        pitDriveThruTrench.setOnKeyListener(null);
+        pitEndgameHang.setOnKeyListener(null);
+        pitBasicPlan.setOnKeyListener(null);
     }
 
     @Override
@@ -353,6 +500,9 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
 
 
       final RadioButton pitPowerCellPreloadbtn = findViewById(pitPowerCellPreload.getCheckedRadioButtonId());
+      final RadioButton pitInitLineAutonbtn = findViewById(pitInitLineAuton.getCheckedRadioButtonId());
+      final RadioButton pitDriveThruTrenchbtn = findViewById(pitDriveThruTrench.getCheckedRadioButtonId());
+      final RadioButton pitEndgameHangbtn = findViewById(pitEndgameHang.getCheckedRadioButtonId());
 
         if(PermissionUtils.getPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
             if (Environment.MEDIA_MOUNTED.equals(state)) {
@@ -366,8 +516,12 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
                 pitDataStringList.add(pitProgrammingLanguages.getSelectedItem().toString());
                 pitDataStringList.add(pitPowerCellPreloadbtn.getText().toString());
                 pitDataStringList.add(powerPortShotString);
-                pitDataStringList.add(pitEndgame.getSelectedItem().toString());
-                pitDataStringList.add(pitOtherInputLayout.getText().toString());
+                pitDataStringList.add(pitInitLineAutonbtn.getText().toString());
+                pitDataStringList.add(pitDriveThruTrenchbtn.getText().toString());
+                pitDataStringList.add(pitShotLocationString);
+                pitDataStringList.add(ControlPanelString);
+                pitDataStringList.add(pitEndgameHangbtn.getText().toString());
+                pitDataStringList.add(pitBasicPlan.getText().toString());
                 pitDataStringList.add(scouterInitialsInput.getText().toString());
 
 
@@ -485,13 +639,15 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitRobotWeight.setText(null);
         pitDriveTrainInputLayout.setSelection(0);
         pitProgrammingLanguages.setSelection(0);
-        pitOtherInputLayout.setText(null);
-        pitEndgame.setSelection(0);
         scouterInitialsInput.setText(null);
         powerPortOuter.setChecked(false);
         powerPortInner.setChecked(false);
         powerPortShotBottom.setChecked(false);
         powerPortShotNa.setChecked(false);
+        pitShotLocationOuter.setChecked(false);
+        pitShotLocationInner.setChecked(false);
+        pitShotLocationBottom.setChecked(false);
+        pitShotLocationNa.setChecked(false);
     }
 
     private void checkForPermissions() {
