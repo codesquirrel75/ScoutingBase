@@ -27,7 +27,7 @@
 
     <string name="teamNumberHeading">Team Number</string>
     <string name="matchNumberHeading">Match Number</string>
-    <string name="startingLocationHeading">Starting Location</string>
+    <string name="startingLocationHeading">Starting Location (relative to the Power Port)</string>
     <string name="movedOffHab">Moved off Hab?</string>
     <string name="movedOffHabNo">No</string>
     <string name="movedOffHabYes">Yes</string>
@@ -276,11 +276,20 @@
     <string name="pitControlPanelPosition">Position the correct color</string>
     <string name="pitControlPanelNothing">Nothing</string>
     <string name="pitGamePlan">What is your basic game plan during teleop?</string>
+    <string name="HighAttemptHint">Attempt</string>
+    <string name="AutoPowerPortCounterHeading">Attempts                                                                       Made</string>
+    <string name="AutoHighAttemptHeading">Attempts</string>
+    <string name="AutoHighMadeHeading">Made</string>
+    <string name="AutoHighHeading">High Power Port</string>
+    <string name="AutoLowHeading">Low Power Port</string>
+    <string name="AutoMoveOffInitiationLineQuestion">Did the robot move off the Initiation Line?</string>
 
 
     <string-array name="startingLocation">
-        <item>Choice 1</item>
-        <item>Choice 2</item>
+        <item> </item>
+        <item>In Front</item>
+        <item>Closer to Home Trench</item>
+        <item>Farther From Home Trench</item>
 
     </string-array>
     <string-array name="playStyle">

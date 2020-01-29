@@ -56,6 +56,12 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     @BindView(R.id.team_number_spinner)
     public Spinner TeamNumberInputLayout;
 
+    @BindView(R.id.auto_high_input_layout)
+    public TextInputLayout AutoHighInputLayout;
+
+    @BindView(R.id.auto_high_attempt_input)
+    public TextInputEditText AutoHighAttemptInput;
+
     @BindView(R.id.matchNumber_input_layout)
     public TextInputLayout matchNumberInputLayout;
 
@@ -65,18 +71,13 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     @BindView(R.id.starting_location)
     public Spinner startingLocation;
 
-
     @BindView(R.id.next_button)
     public Button nextButton;
 
-    int CargoShipHatchPanel = 0;
-    int CargoShipCargo = 0;
-    int HatchPanelTop = 0;
-    int HatchPanelMiddle = 0;
-    int HatchPanelBottom =0;
-    int Cargotop = 0;
-    int CargoMiddle = 0;
-    int CargoBottom = 0;
+    int HighAttempt = 0;
+    int HighMade = 0;
+    int LowAttempt = 0;
+    int LowMade = 0;
 
     public ArrayList<String> team_numbers = new ArrayList<>();
     private ArrayList<CharSequence> autonDataStringList;
@@ -101,7 +102,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
 
         checkForPermissions();
 
-
+        displayAutoHighAttemptInput(HighAttempt);
 
         //  --- Team Numbers spinner ---
 
@@ -155,7 +156,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
 
     /*This method will launch the correct activity
      *based on the menu option user presses
-      */
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -171,11 +172,8 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     }
 
 
-
-
-
     /*This method will look at all of the text/number input fields and set error
-    *for validation of data entry
+     *for validation of data entry
      */
     @Override
     public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -198,14 +196,14 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
 
 
     /*This method takes place when the Show teleop button is pressed
-    *This will first check if the text fields are empty and highlight
-    * The area not completed as well as put that text input as the focus
-    * to the user in the app. If everything passes by being filled in,
-    * The value of the radio buttons will be obtained.
-    * Then all of the values of this activity are added to the autonDataStringList
-    * delimited by a comma. This method will then launch the teleop activity while sending
-    * over our list of data. A request on result is requested so we can clear this aplication
-    * after the teleop activity closes
+     *This will first check if the text fields are empty and highlight
+     * The area not completed as well as put that text input as the focus
+     * to the user in the app. If everything passes by being filled in,
+     * The value of the radio buttons will be obtained.
+     * Then all of the values of this activity are added to the autonDataStringList
+     * delimited by a comma. This method will then launch the teleop activity while sending
+     * over our list of data. A request on result is requested so we can clear this aplication
+     * after the teleop activity closes
      */
     public void onShowTeleop(View view) {
         boolean allInputsPassed = false;
@@ -213,7 +211,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         if (TeamNumberInputLayout.getSelectedItem().toString().equals("Select Team Number")) {
             setSpinnerError(TeamNumberInputLayout, "Select a Team Number.");
             ViewUtils.requestFocus(TeamNumberInputLayout, this);
-        } else if (StringUtils.isEmptyOrNull(getTextInputLayoutString(matchNumberInputLayout)) || Integer.valueOf(getTextInputLayoutString(matchNumberInputLayout)) == 0 || Integer.valueOf(getTextInputLayoutString(matchNumberInputLayout)) >=150) {
+        } else if (StringUtils.isEmptyOrNull(getTextInputLayoutString(matchNumberInputLayout)) || Integer.valueOf(getTextInputLayoutString(matchNumberInputLayout)) == 0 || Integer.valueOf(getTextInputLayoutString(matchNumberInputLayout)) >= 150) {
             matchNumberInput.setText("");
             matchNumberInputLayout.setError(getText(R.string.matchNumberError));
             ViewUtils.requestFocus(matchNumberInputLayout, this);
@@ -264,7 +262,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     }
 
     /*This method will clear all of the text entry fields as well
-    * as reset the checkboxes and reset the radio buttons to their default*/
+     * as reset the checkboxes and reset the radio buttons to their default*/
     public void clearData() {
         TeamNumberInputLayout.setSelection(0);
         matchNumberInput.setText("");
@@ -274,10 +272,9 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     }
 
 
-
-    private void setSpinnerError(Spinner spinner, String error){
+    private void setSpinnerError(Spinner spinner, String error) {
         View selectedView = spinner.getSelectedView();
-        if (selectedView instanceof TextView){
+        if (selectedView instanceof TextView) {
             spinner.requestFocus();
             TextView selectedTextView = (TextView) selectedView;
             selectedTextView.setError("error");
@@ -302,4 +299,23 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         }
     }
 
+    public void decreaseAutoHighAttemptInput(View view) {
+        if (HighAttempt != 0) {
+            HighAttempt = HighAttempt - 1;
+            displayAutoHighAttemptInput(HighAttempt);
+        }
+    }
+
+    public void increaseAutoHightAttemptInput(View view) {
+        if (HighAttempt <= 100) {
+            HighAttempt = HighAttempt + 1;
+            displayAutoHighAttemptInput(HighAttempt);
+        }
+
+    }
+
+    private void displayAutoHighAttemptInput(int number) {
+
+        AutoHighAttemptInput.setText("" + number);
+    }
 }
