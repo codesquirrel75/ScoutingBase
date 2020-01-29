@@ -51,8 +51,8 @@
     <!--Auton Error Strings-->
 
     <string name="startingLocationError">Enter starting location</string>
-    <string name="cargoShipTitle">Cargo Ship</string>
-    <string name="rocketShipTitle">Rocket Ship</string>
+    <string name="highPortTitle">High Port</string>
+    <string name="lowPortTitle">Low Port</string>
 
     <!--Teleop Strings-->
 
@@ -276,6 +276,10 @@
     <string name="pitControlPanelPosition">Position the correct color</string>
     <string name="pitControlPanelNothing">Nothing</string>
     <string name="pitGamePlan">What is your basic game plan during teleop?</string>
+    <string name="attemptLabel">Attempted</string>
+    <string name="madeLabel">Made</string>
+    <string name="highAttemptInput">High Attempt</string>
+    <string name="highMadeHint">High Made</string>
 
 
     <string-array name="startingLocation">
