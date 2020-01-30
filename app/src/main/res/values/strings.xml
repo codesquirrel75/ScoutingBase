@@ -27,7 +27,7 @@
 
     <string name="teamNumberHeading">Team Number</string>
     <string name="matchNumberHeading">Match Number</string>
-    <string name="startingLocationHeading">Starting Location</string>
+    <string name="startingLocationHeading">Starting Location (relative to the Power Port)</string>
     <string name="movedOffHab">Moved off Hab?</string>
     <string name="movedOffHabNo">No</string>
     <string name="movedOffHabYes">Yes</string>
@@ -51,8 +51,8 @@
     <!--Auton Error Strings-->
 
     <string name="startingLocationError">Enter starting location</string>
-    <string name="highPortTitle">High Port</string>
-    <string name="lowPortTitle">Low Port</string>
+    <string name="cargoShipTitle">Cargo Ship</string>
+    <string name="rocketShipTitle">Rocket Ship</string>
 
     <!--Teleop Strings-->
 
@@ -276,24 +276,20 @@
     <string name="pitControlPanelPosition">Position the correct color</string>
     <string name="pitControlPanelNothing">Nothing</string>
     <string name="pitGamePlan">What is your basic game plan during teleop?</string>
-    <string name="attemptLabel">Attempted</string>
-    <string name="madeLabel">Made</string>
-    <string name="highAttemptInput">High Attempt</string>
-    <string name="highMadeHint">High Made</string>
-    <string name="observ_power_cell_pickup">Had hard time picking up power cells</string>
-    <string name="controlPanelIssue">Had a hard time with the control panel</string>
-    <string name="hungUpPowerCell">Got hung up on a power cell</string>
-    <string name="hungUpfloor">Got hung up on the floor</string>
-    <string name="fellGenSwitch">Fell off the generator switch</string>
-    <string name="defense_rating">If the robot Played defense rate level of defense</string>
-    <string name="over_all_effectiveness_rating">Rate the overall effectiveness of the robot during the match.</string>
-    <string name="power_cell_placement_rating">Rate the overall power cell placement.</string>
-    <string name="control_panel_rating">How good was the team with the control panel?</string>
+    <string name="HighAttemptHint">Attempt</string>
+    <string name="AutoPowerPortCounterHeading">Attempts                                                                       Made</string>
+    <string name="AutoHighAttemptHeading">Attempts</string>
+    <string name="AutoHighMadeHeading">Made</string>
+    <string name="AutoHighHeading">High Power Port</string>
+    <string name="AutoLowHeading">Low Power Port</string>
+    <string name="AutoMoveOffInitiationLineQuestion">Did the robot move off the Initiation Line?</string>
 
 
     <string-array name="startingLocation">
-        <item>Choice 1</item>
-        <item>Choice 2</item>
+        <item> </item>
+        <item>In Front</item>
+        <item>Closer to Home Trench</item>
+        <item>Farther From Home Trench</item>
 
     </string-array>
     <string-array name="playStyle">
@@ -342,10 +338,14 @@
     </string-array>
     <string-array name="endgame_location">
         <item> </item>
-        <item>Hanging</item>
-        <item>Hanging balanced</item>
-        <item>Hanging while carrying another robot</item>
-        <item>Parked in the center</item>
+        <item>Lowest deck</item>
+        <item>Middle deck</item>
+        <item>Highest deck</item>
+        <item>Highest deck: carrying 1 robot</item>
+        <item>Highest deck: carrying 2 robots</item>
+        <item>Highest deck: carried by partner</item>
+        <item>Middle deck: carrying 1 robot</item>
+        <item>Middle deck: carried by partner</item>
         <item>Still on field</item>
     </string-array>
     <string-array name="cycle_time_spinner">
