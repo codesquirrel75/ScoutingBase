@@ -80,17 +80,17 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     @BindView(R.id.teleop_low_made_input)
     public TextInputEditText teleopLowMadeInput;
 
-    @BindView(R.id.hatch_panel_pickup)
-    public RadioGroup HatchPanelPickup;
+    @BindView(R.id.defense_rating_radio_group)
+    public RadioGroup defenseRatingRadioGroup;
 
-    @BindView(R.id.cargo_pickup)
-    public RadioGroup CargoPickup;
+    @BindView(R.id.power_cell_placement_rating_radio_group)
+    public RadioGroup powerCellPlacementRatingRadioGroup;
 
-    @BindView(R.id.defended_radio_group)
-    public RadioGroup defendedRadioGroup;
+    @BindView(R.id.over_all_effectiveness_rating_radio_group)
+    public RadioGroup OverAllEffectivenessRatingRadioGroup;
 
-    @BindView(R.id.defense_effectiveness)
-    public RadioGroup defenseEffectiveness;
+    @BindView(R.id.control_panel_rating_radio_group)
+    public RadioGroup controlPanelRadingRadioGroup;
 
     @BindView(R.id.counter_defense_effectiveness)
     public RadioGroup counterDefenseEffectiveness;
@@ -110,14 +110,11 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     @BindView(R.id.overall_effectiveness_radio_group)
     public RadioGroup overallEffectivenessRadioGoup;
 
-    @BindView(R.id.overall_hatch_cargo_placement_radio_group)
-    public RadioGroup overallPlacementRadioGoup;
-
     @BindView(R.id.trained_drive_team_radio_group)
     public RadioGroup trainedDriveTeamRadioGoup;
 
-    @BindView(R.id.observ_cargo_pickup)
-    public CheckBox observCargoPickup;
+    @BindView(R.id.observe_Power_Cell_Pickup)
+    public CheckBox observPowerCellPickup;
 
     @BindView(R.id.observ_died_back)
     public CheckBox observDiedBack;
@@ -137,8 +134,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     @BindView(R.id.observ_fell_over)
     public CheckBox observFellOver;
 
-    @BindView(R.id.observ_hatch_pickup)
-    public CheckBox observHatchPickup;
+    @BindView(R.id.control_panel_issues)
+    public CheckBox observPanelIssues;
 
     @BindView(R.id.observ_jerky)
     public CheckBox observJerky;
@@ -164,17 +161,14 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     @BindView(R.id.observ_average_speed)
     public CheckBox observAverageSpeed;
 
-    @BindView(R.id.observ_dropped_hatches)
-    public CheckBox observDroppedHatches;
+    @BindView(R.id.observ_hung_up_power_cell)
+    public CheckBox observHungUpPowerCell;
 
-    @BindView(R.id.observ_dropped_cargo)
-    public CheckBox observDroppedCargo;
+    @BindView(R.id.observ_fell_off_switch)
+    public CheckBox observFellOffSwitch;
 
-    @BindView(R.id.observ_hard_time_hatches)
-    public CheckBox observHardTimeHatches;
-
-    @BindView(R.id.observ_hard_time_cargo)
-    public  CheckBox observHardTimeCargo;
+    @BindView(R.id.observ_hung_up)
+    public  CheckBox observHungUp;
 
     @BindView(R.id.type_of_bot_spinner)
     public Spinner typeOfBotSpinner;
@@ -192,7 +186,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
 
     int teleopHighAttempt = 0;
     int teleopHighMade = 0;
-    int teleopHatchPanelTop = 0;
+    int teleopLowAttempt = 0;
     int teleopHatchPanelMiddle = 0;
     int teleopHatchPanelBottom =0;
     int teleopLowMade = 0;
@@ -230,9 +224,9 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopDataStringList = new ArrayList<>();
 
         displayHighAttemptInput(teleopHighAttempt);
-        displayTeleopCargoShipCargoInput(teleopHighMade);
-        displayTeleopHatchPanelTopInput(teleopHatchPanelTop);
-        displayTeleopCargoTopInput(teleopLowMade);
+        displayHighMade(teleopHighMade);
+        displayLowAttemptInput(teleopLowAttempt);
+        displayLowMadeInput(teleopLowMade);
 
 
         //  --- End Game Location spinner ---
@@ -283,17 +277,15 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopHighMadeInput.setOnKeyListener(this);
         teleopLowAttemptInput.setOnKeyListener(this);
         teleopLowMadeInput.setOnKeyListener(this);
-        defendedRadioGroup.setOnKeyListener(this);
-        defenseEffectiveness.setOnKeyListener(this);
+        OverAllEffectivenessRatingRadioGroup.setOnKeyListener(this);
+        controlPanelRadingRadioGroup.setOnKeyListener(this);
         counterDefenseEffectiveness.setOnKeyListener(this);
         endGameLocationSpinner.setOnKeyListener(this);
         climbTimeRadioGroup.setOnKeyListener(this);
-  //      cycleTimeSpinner.setOnKeyListener(this);
         cycleTimeRadioGroup.setOnKeyListener(this);
         overallEffectivenessRadioGoup.setOnKeyListener(this);
-        HatchPanelPickup.setOnKeyListener(this);
-        CargoPickup.setOnKeyListener(this);
-        overallPlacementRadioGoup.setOnKeyListener(this);
+        defenseRatingRadioGroup.setOnKeyListener(this);
+        powerCellPlacementRatingRadioGroup.setOnKeyListener(this);
         trainedDriveTeamRadioGoup.setOnKeyListener(this);
         observsmooth.setOnKeyListener(this);
         observSlowedByRobot.setOnKeyListener(this);
@@ -302,19 +294,18 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observPenalties.setOnKeyListener(this);
         observNotMuch.setOnKeyListener(this);
         observJerky.setOnKeyListener(this);
-        observHatchPickup.setOnKeyListener(this);
+        observPanelIssues.setOnKeyListener(this);
         observFellOver.setOnKeyListener(this);
         observFellApart.setOnKeyListener(this);
         observFast.setOnKeyListener(this);
         observDns.setOnKeyListener(this);
         observDiedMid.setOnKeyListener(this);
         observDiedBack.setOnKeyListener(this);
-        observCargoPickup.setOnKeyListener(this);
+        observPowerCellPickup.setOnKeyListener(this);
         observAverageSpeed.setOnKeyListener(this);
-        observDroppedHatches.setOnKeyListener(this);
-        observDroppedCargo.setOnKeyListener(this);
-        observHardTimeHatches.setOnKeyListener(this);
-        observHardTimeCargo.setOnKeyListener(this);
+        observHungUpPowerCell.setOnKeyListener(this);
+        observFellOffSwitch.setOnKeyListener(this);
+        observHungUp.setOnKeyListener(this);
         typeOfBotSpinner.setOnKeyListener(this);
         summaryInput.setOnKeyListener(this);
         issuesInput.setOnKeyListener(this);
@@ -330,17 +321,15 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopHighMadeInput.setOnKeyListener(null);
         teleopLowAttemptInput.setOnKeyListener(null);
         teleopLowMadeInput.setOnKeyListener(null);
-        defendedRadioGroup.setOnKeyListener(null);
-        defenseEffectiveness.setOnKeyListener(null);
+        OverAllEffectivenessRatingRadioGroup.setOnKeyListener(null);
+        controlPanelRadingRadioGroup.setOnKeyListener(null);
         counterDefenseEffectiveness.setOnKeyListener(null);
         endGameLocationSpinner.setOnKeyListener(null);
         climbTimeRadioGroup.setOnKeyListener(null);
-    //    cycleTimeSpinner.setOnKeyListener(null);
         cycleTimeRadioGroup.setOnKeyListener(null);
         overallEffectivenessRadioGoup.setOnKeyListener(null);
-        HatchPanelPickup.setOnKeyListener(null);
-        CargoPickup.setOnKeyListener(null);
-        overallPlacementRadioGoup.setOnKeyListener(null);
+        defenseRatingRadioGroup.setOnKeyListener(null);
+        powerCellPlacementRatingRadioGroup.setOnKeyListener(null);
         trainedDriveTeamRadioGoup.setOnKeyListener(null);
         observsmooth.setOnKeyListener(null);
         observSlowedByRobot.setOnKeyListener(null);
@@ -349,19 +338,18 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observPenalties.setOnKeyListener(null);
         observNotMuch.setOnKeyListener(null);
         observJerky.setOnKeyListener(null);
-        observHatchPickup.setOnKeyListener(null);
+        observPanelIssues.setOnKeyListener(null);
         observFellOver.setOnKeyListener(null);
         observFellApart.setOnKeyListener(null);
         observFast.setOnKeyListener(null);
         observDns.setOnKeyListener(null);
         observDiedMid.setOnKeyListener(null);
         observDiedBack.setOnKeyListener(null);
-        observCargoPickup.setOnKeyListener(null);
+        observPowerCellPickup.setOnKeyListener(null);
         observAverageSpeed.setOnKeyListener(null);
-        observDroppedHatches.setOnKeyListener(null);
-        observDroppedCargo.setOnKeyListener(null);
-        observHardTimeHatches.setOnKeyListener(null);
-        observHardTimeCargo.setOnKeyListener(null);
+        observHungUpPowerCell.setOnKeyListener(null);
+        observFellOffSwitch.setOnKeyListener(null);
+        observHungUp.setOnKeyListener(null);
         typeOfBotSpinner.setOnKeyListener(null);
         summaryInput.setOnKeyListener(null);
         issuesInput.setOnKeyListener(null);
@@ -429,38 +417,38 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     public void decreaseHighMadeInput(View view) {
         if (teleopHighMade != 0) {
             teleopHighMade = teleopHighMade - 1;
-            displayTeleopCargoShipCargoInput(teleopHighMade);
+            displayHighMade(teleopHighMade);
         }
     }
 
     public void increaseHighMadeInput(View view) {
         if (teleopHighMade <= 7) {
             teleopHighMade = teleopHighMade + 1;
-            displayTeleopCargoShipCargoInput(teleopHighMade);
+            displayHighMade(teleopHighMade);
         }
     }
 
-    private void displayTeleopCargoShipCargoInput(int number) {
+    private void displayHighMade(int number) {
         teleopHighMadeInput.setText("" + number);
     }
 
     //Teleop Rocket Ship Hatch Panels
 
     public void decreaseLowAttempt(View view) {
-        if (teleopHatchPanelTop != 0) {
-            teleopHatchPanelTop = teleopHatchPanelTop - 1;
-            displayTeleopHatchPanelTopInput(teleopHatchPanelTop);
+        if (teleopLowAttempt != 0) {
+            teleopLowAttempt = teleopLowAttempt - 1;
+            displayLowAttemptInput(teleopLowAttempt);
         }
     }
 
     public void increaseLowAttempt(View view) {
-        if (teleopHatchPanelTop <= 3) {
-            teleopHatchPanelTop = teleopHatchPanelTop + 1;
-            displayTeleopHatchPanelTopInput(teleopHatchPanelTop);
+        if (teleopLowAttempt <= 3) {
+            teleopLowAttempt = teleopLowAttempt + 1;
+            displayLowAttemptInput(teleopLowAttempt);
         }
     }
 
-    private void displayTeleopHatchPanelTopInput(int number) {
+    private void displayLowAttemptInput(int number) {
         teleopLowAttemptInput.setText("" + number);
     }
 
@@ -470,18 +458,18 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     public void decreaseLowMadeInput(View view) {
         if (teleopLowMade != 0) {
             teleopLowMade = teleopLowMade - 1;
-            displayTeleopCargoTopInput(teleopLowMade);
+            displayLowMadeInput(teleopLowMade);
         }
     }
 
     public void increaseLowMadeInput(View view) {
         if (teleopLowMade <= 3) {
             teleopLowMade = teleopLowMade + 1;
-            displayTeleopCargoTopInput(teleopLowMade);
+            displayLowMadeInput(teleopLowMade);
         }
     }
 
-    private void displayTeleopCargoTopInput(int number) {
+    private void displayLowMadeInput(int number) {
         teleopLowMadeInput.setText("" + number);
     }
 
@@ -493,8 +481,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         String s1;
 
         switch (view.getId()) {
-            case R.id.observ_cargo_pickup:
-                s1 = observCargoPickup.getText().toString() + " |";
+            case R.id.observe_Power_Cell_Pickup:
+                s1 = observPowerCellPickup.getText().toString() + " |";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -598,8 +586,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                     }
                 }
                 break;
-            case R.id.observ_hatch_pickup:
-                s1 = observHatchPickup.getText().toString() + " |";
+            case R.id.control_panel_issues:
+                s1 = observPanelIssues.getText().toString() + " |";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -733,8 +721,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                     }
                 }
                 break;
-            case R.id.observ_dropped_hatches:
-                s1 = observDroppedHatches.getText().toString() + " |";
+            case R.id.observ_hung_up_power_cell:
+                s1 = observHungUpPowerCell.getText().toString() + " |";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -748,8 +736,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                     }
                 }
                 break;
-            case R.id.observ_dropped_cargo:
-                s1 = observDroppedCargo.getText().toString() + " |";
+            case R.id.observ_fell_off_switch:
+                s1 = observFellOffSwitch.getText().toString() + " |";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -763,23 +751,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                     }
                 }
                 break;
-            case R.id.observ_hard_time_hatches:
-                s1 = observHardTimeHatches.getText().toString() + " |";
-                if (checked) {
-                    if (observations.isEmpty()) {
-                        observations = s1;
-                    } else {
-                        observations = observations + s1;
-                    }
-                } else {
-                    if (observations.contains(s1)) {
-                        int start = observations.indexOf(s1);
-                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
-                    }
-                }
-                break;
-            case R.id.observ_hard_time_cargo:
-                s1 = observHardTimeCargo.getText().toString() + " |";
+            case R.id.observ_hung_up:
+                s1 = observHungUp.getText().toString() + " |";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -869,16 +842,15 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
             return;
         }
 
-        final RadioButton defenseEffectivenessRadiobtn = findViewById(defenseEffectiveness.getCheckedRadioButtonId());
+        final RadioButton controlPanelRadingRadioBtn = findViewById(controlPanelRadingRadioGroup.getCheckedRadioButtonId());
         final RadioButton counterDefenseEffectivenessRadiobtn = findViewById(counterDefenseEffectiveness.getCheckedRadioButtonId());
         final RadioButton overallEffectivenessRadiobtn = findViewById(overallEffectivenessRadioGoup.getCheckedRadioButtonId());
-        final RadioButton overallPlacementRadiobtn = findViewById(overallPlacementRadioGoup.getCheckedRadioButtonId());
         final RadioButton trainedDriveTeamRadiobtn = findViewById(trainedDriveTeamRadioGoup.getCheckedRadioButtonId());
-        final RadioButton HatchPanelPickupRadiobtn = findViewById(HatchPanelPickup.getCheckedRadioButtonId());
-        final RadioButton CargoPickupRadiobtn = findViewById(CargoPickup.getCheckedRadioButtonId());
+        final RadioButton defenseRatingRadioBtn = findViewById(defenseRatingRadioGroup.getCheckedRadioButtonId());
+        final RadioButton powerCellPlacementRatingRadioBtn = findViewById(powerCellPlacementRatingRadioGroup.getCheckedRadioButtonId());
         final RadioButton climbTimeRadiobtn = findViewById(climbTimeRadioGroup.getCheckedRadioButtonId());
         final RadioButton cycleTimeRadiobtn = findViewById(cycleTimeRadioGroup.getCheckedRadioButtonId());
-        final RadioButton defendedRadiobtn = findViewById(defendedRadioGroup.getCheckedRadioButtonId());
+        final RadioButton OverAllEffectivenessRatingRadioBtn = findViewById(OverAllEffectivenessRatingRadioGroup.getCheckedRadioButtonId());
 
 
         if(PermissionUtils.getPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
@@ -892,17 +864,16 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 teleopDataStringList.add(getTextInputLayoutString(teleopHighMadeInputLayout));
                 teleopDataStringList.add(getTextInputLayoutString(teleopLowAttemptInputLayout));
                 teleopDataStringList.add(getTextInputLayoutString(teleopLowMadeInputLayout));
-                teleopDataStringList.add(HatchPanelPickupRadiobtn.getText().toString());
-                teleopDataStringList.add(CargoPickupRadiobtn.getText().toString());
-                teleopDataStringList.add(defendedRadiobtn.getText().toString());
-                teleopDataStringList.add(defenseEffectivenessRadiobtn.getText().toString());
+                teleopDataStringList.add(defenseRatingRadioBtn.getText().toString());
+                teleopDataStringList.add(powerCellPlacementRatingRadioBtn.getText().toString());
+                teleopDataStringList.add(OverAllEffectivenessRatingRadioBtn.getText().toString());
+                teleopDataStringList.add(controlPanelRadingRadioBtn.getText().toString());
                 teleopDataStringList.add(counterDefenseEffectivenessRadiobtn.getText().toString());
                 teleopDataStringList.add(endGameLocationSpinner.getSelectedItem().toString());
                 teleopDataStringList.add(climbTimeRadiobtn.getText().toString());
                // teleopDataStringList.add(cycleTimeSpinner.getSelectedItem().toString());
                 teleopDataStringList.add(cycleTimeRadiobtn.getText().toString());
                 teleopDataStringList.add(overallEffectivenessRadiobtn.getText().toString());
-                teleopDataStringList.add(overallPlacementRadiobtn.getText().toString());
                 teleopDataStringList.add(trainedDriveTeamRadiobtn.getText().toString());
                 teleopDataStringList.add(observations);
                 teleopDataStringList.add(typeOfBotSpinner.getSelectedItem().toString());
@@ -947,19 +918,18 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     public void clearData(View view) {
         teleopHighAttemptsInput.setText("" + teleopHighAttempt);
         teleopHighMadeInput.setText("" + teleopHighMade);
-        teleopLowAttemptInput.setText("" + teleopHatchPanelTop);
+        teleopLowAttemptInput.setText("" + teleopLowAttempt);
         teleopLowMadeInput.setText("" + teleopLowMade);
-        defendedRadioGroup.clearCheck();
-        defenseEffectiveness.clearCheck();
+        OverAllEffectivenessRatingRadioGroup.clearCheck();
+        controlPanelRadingRadioGroup.clearCheck();
         counterDefenseEffectiveness.clearCheck();
         endGameLocationSpinner.setSelection(0);
         climbTimeRadioGroup.clearCheck();
         //cycleTimeSpinner.setSelection(0);
         cycleTimeRadioGroup.clearCheck();
-        HatchPanelPickup.clearCheck();
-        CargoPickup.clearCheck();
+        defenseRatingRadioGroup.clearCheck();
+        powerCellPlacementRatingRadioGroup.clearCheck();
         overallEffectivenessRadioGoup.clearCheck();
-        overallPlacementRadioGoup.clearCheck();
         trainedDriveTeamRadioGoup.clearCheck();
         observsmooth.setChecked(false);
         observSlowedByRobot.setChecked(false);
@@ -968,19 +938,18 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observPenalties.setChecked(false);
         observNotMuch.setChecked(false);
         observJerky.setChecked(false);
-        observHatchPickup.setChecked(false);
+        observPanelIssues.setChecked(false);
         observFellOver.setChecked(false);
         observFellApart.setChecked(false);
         observFast.setChecked(false);
         observDns.setChecked(false);
         observDiedMid.setChecked(false);
         observDiedBack.setChecked(false);
-        observCargoPickup.setChecked(false);
+        observPowerCellPickup.setChecked(false);
         observAverageSpeed.setChecked(false);
-        observDroppedHatches.setChecked(false);
-        observDroppedCargo.setChecked(false);
-        observHardTimeHatches.setChecked(false);
-        observHardTimeCargo.setChecked(false);
+        observHungUpPowerCell.setChecked(false);
+        observFellOffSwitch.setChecked(false);
+        observHungUp.setChecked(false);
         typeOfBotSpinner.setSelection(0);
         summaryInput.setText(null);
         issuesInput.setText(null);

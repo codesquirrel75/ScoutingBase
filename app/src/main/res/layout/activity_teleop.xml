@@ -246,126 +246,53 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="10pt"
-            android:text="@string/hatch_pickup"/>
+            android:text="@string/defense_rating"/>
 
         <RadioGroup
-            android:id="@+id/hatch_panel_pickup"
+            android:id="@+id/defense_rating_radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:checkedButton="@id/hatch_panel_pickup_na">
+            android:checkedButton="@id/defense_rating_na">
 
             <RadioButton
-                android:id="@+id/hatch_panel_pickup_port"
+                android:id="@+id/defense_rating_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/hatch_panel_pickup_port"/>
+                android:text="@string/rating_1"/>
 
             <RadioButton
-                android:id="@+id/hatch_panel_pickup_floor"
+                android:id="@+id/defense_rating_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/hatch_panel_pickup_floor"/>
+                android:text="@string/rating_2"/>
 
             <RadioButton
-                android:id="@+id/hatch_panel_pickup_both"
+                android:id="@+id/defense_rating_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/hatch_panel_pickup_both"/>
-
+                android:text="@string/rating_3"/>
 
             <RadioButton
-                android:id="@+id/hatch_panel_pickup_na"
+                android:id="@+id/defense_rating_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/hatch_panel_pickup_na"/>
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="10pt"
-            android:text="@string/cargo_pickup"/>
-
-        <RadioGroup
-            android:id="@+id/cargo_pickup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:checkedButton="@id/cargo_pickup_na">
+                android:text="@string/rating_4"/>
 
             <RadioButton
-                android:id="@+id/cargo_pickup_port"
+                android:id="@+id/defense_rating_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/cargo_pickup_port"/>
-
-            <RadioButton
-                android:id="@+id/cargo_pickup_floor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/cargo_pickup_floor"/>
-
-            <RadioButton
-                android:id="@+id/cargo_pickup_both"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/cargo_pickup_both"/>
+                android:text="@string/rating_5"/>
 
 
             <RadioButton
-                android:id="@+id/cargo_pickup_na"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/cargo_pickup_na"/>
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="10pt"
-            android:text="@string/defendedQuestion"/>
-
-        <RadioGroup
-            android:id="@+id/defended_radio_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:checkedButton="@id/defended_na">
-
-            <RadioButton
-                android:id="@+id/defense_down"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/defense_shut_down"/>
-
-            <RadioButton
-                android:id="@+id/defense_slowed"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/defense_slow_down"/>
-
-            <RadioButton
-                android:id="@+id/defense_none"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/defense_not_effected"/>
-
-            <RadioButton
-                android:id="@+id/defended_na"
+                android:id="@+id/defense_rating_na"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -373,43 +300,169 @@
 
         </RadioGroup>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:text="@string/over_all_effectiveness_rating"/>
+
+        <RadioGroup
+            android:id="@+id/over_all_effectiveness_rating_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/over_all_effectiveness_rating_na">
+
+            <RadioButton
+                android:id="@+id/over_all_effectiveness_rating_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_1"/>
+
+            <RadioButton
+                android:id="@+id/over_all_effectiveness_rating_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_2"/>
+            <RadioButton
+                android:id="@+id/over_all_effectiveness_rating_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_3"/>
+
+            <RadioButton
+                android:id="@+id/over_all_effectiveness_rating_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_4"/>
+
+            <RadioButton
+                android:id="@+id/over_all_effectiveness_rating_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_5"/>
+
+            <RadioButton
+                android:id="@+id/over_all_effectiveness_rating_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_na"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/power_cell_placement_rating"
+            android:textSize="10pt" />
+
+        <RadioGroup
+            android:id="@+id/power_cell_placement_rating_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/power_cell_placement_rating_na">
+
+            <RadioButton
+                android:id="@+id/power_cell_placement_rating_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_1"/>
+
+            <RadioButton
+                android:id="@+id/power_cell_placement_rating_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_2"/>
+
+            <RadioButton
+                android:id="@+id/power_cell_placement_rating_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_3"/>
+
+            <RadioButton
+                android:id="@+id/power_cell_placement_rating_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_4"/>
+
+            <RadioButton
+                android:id="@+id/power_cell_placement_rating_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_5"/>
+
+            <RadioButton
+                android:id="@+id/power_cell_placement_rating_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_na"/>
+
+        </RadioGroup>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="10pt"
-            android:text="@string/defenseQuestion"/>
+            android:text="@string/control_panel_rating"/>
 
         <RadioGroup
-            android:id="@+id/defense_effectiveness"
+            android:id="@+id/control_panel_rating_radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:checkedButton="@id/defense_na">
+            android:checkedButton="@id/control_panel_rating_na">
 
             <RadioButton
-                android:id="@+id/defense_1"
+                android:id="@+id/control_panel_rating_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/defense_shut_down"/>
+                android:text="@string/rating_1"/>
 
             <RadioButton
-                android:id="@+id/defense_2"
+                android:id="@+id/control_panel_rating_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/defense_slow_down"/>
+                android:text="@string/rating_2"/>
 
             <RadioButton
-                android:id="@+id/defense_3"
+                android:id="@+id/control_panel_rating_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/defense_not_effective"/>
+                android:text="@string/rating_3"/>
 
             <RadioButton
-                android:id="@+id/defense_na"
+                android:id="@+id/control_panel_rating_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_4"/>
+
+            <RadioButton
+                android:id="@+id/control_panel_rating_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_5"/>
+
+            <RadioButton
+                android:id="@+id/control_panel_rating_na"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -540,7 +593,7 @@
         <RadioGroup
             android:id="@+id/cycle_time_radio_group"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:orientation="horizontal"
             android:checkedButton="@id/cycle_na">
 
@@ -636,63 +689,7 @@
 
         </RadioGroup>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/over_all_placement"
-            android:textSize="10pt"
-            android:layout_margin="10dp"/>
 
-        <RadioGroup
-            android:id="@+id/overall_hatch_cargo_placement_radio_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:checkedButton="@id/overall_placement_na">
-
-            <RadioButton
-                android:id="@+id/overall_placement_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_1"/>
-
-            <RadioButton
-                android:id="@+id/overall_placement_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_2"/>
-
-            <RadioButton
-                android:id="@+id/overall_placement_3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_3"/>
-
-            <RadioButton
-                android:id="@+id/overall_placement_4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_4"/>
-
-            <RadioButton
-                android:id="@+id/overall_placement_5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_5"/>
-
-            <RadioButton
-                android:id="@+id/overall_placement_na"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_na"/>
-
-        </RadioGroup>
 
         <TextView
             android:layout_width="match_parent"
@@ -804,12 +801,12 @@
                     android:text="@string/observ_slow"/>
 
                 <CheckBox
-                    android:id="@+id/observ_hatch_pickup"
+                    android:id="@+id/observe_Power_Cell_Pickup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="setString"
-                    android:text="@string/observ_hatch_pickup"/>
+                    android:text="@string/observ_power_cell_pickup"/>
 
                 <CheckBox
                     android:id="@+id/observ_died_back"
@@ -832,12 +829,12 @@
                     android:text="@string/observ_jerky"/>
 
                 <CheckBox
-                    android:id="@+id/observ_cargo_pickup"
+                    android:id="@+id/control_panel_issues"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="setString"
-                    android:text="@string/observ_cargo_pickup"/>
+                    android:text="@string/controlPanelIssue"/>
 
                 <CheckBox
                     android:id="@+id/observ_fell_apart"
@@ -917,41 +914,34 @@
                     android:text="@string/observ_average_speed"/>
 
                 <CheckBox
-                    android:id="@+id/observ_dropped_hatches"
+                    android:id="@+id/observ_hung_up_power_cell"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="setString"
-                    android:text="@string/observ_dropped_hatches"/>
-
-                <CheckBox
-                    android:id="@+id/observ_dropped_cargo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_dropped_cargo"/>
+                    android:text="@string/hungUpPowerCell"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <CheckBox
-                    android:id="@+id/observ_hard_time_hatches"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_hard_time_hatches"/>
 
                 <CheckBox
-                    android:id="@+id/observ_hard_time_cargo"
+                    android:id="@+id/observ_fell_off_switch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="setString"
-                    android:text="@string/observ_hard_time_cargo"/>
+                    android:text="@string/fellGenSwitch" />
+
+                <CheckBox
+                    android:id="@+id/observ_hung_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/hungUpfloor"/>
 
                <!-- <CheckBox
                     android:id="@+id/observ_dns"
@@ -1008,27 +998,6 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:textSize="16sp" />
-
-
- <!--       <EditText
-            android:autofillHints="Summary"
-            android:inputType="text"
-            android:id="@+id/summary_input"
-            android:hint="@string/summary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-
-
-        <EditText
-            android:autofillHints="Issues"
-            android:inputType="text"
-            android:id="@+id/issues_input"
-            android:hint="@string/issues"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
--->
 
         <Button
             android:id="@+id/save_btn"
