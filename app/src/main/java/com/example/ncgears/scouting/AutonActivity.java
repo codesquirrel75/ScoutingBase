@@ -56,11 +56,29 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     @BindView(R.id.team_number_spinner)
     public Spinner TeamNumberInputLayout;
 
-    @BindView(R.id.auto_high_input_layout)
-    public TextInputLayout AutoHighInputLayout;
+    @BindView(R.id.auto_high_attempt_input_layout)
+    public TextInputLayout AutoHighAttemptInputLayout;
 
     @BindView(R.id.auto_high_attempt_input)
     public TextInputEditText AutoHighAttemptInput;
+
+    @BindView(R.id.auto_high_made_layout)
+    public TextInputLayout AutoHighMadeLayout;
+
+    @BindView(R.id.auto_high_made_input)
+    public TextInputEditText AutoHighMadeInput;
+
+    @BindView(R.id.auto_low_attempt_input_layout)
+    public TextInputLayout AutoLowAttemptInputLayout;
+
+    @BindView(R.id.auto_low_attempt_input)
+    public TextInputEditText AutoLowAttemptInput;
+
+    @BindView(R.id.auto_low_made_layout)
+    public TextInputLayout AutoLowMadeLayout;
+
+    @BindView(R.id.auto_low_made_input)
+    public TextInputEditText AutoLowMadeInput;
 
     @BindView(R.id.matchNumber_input_layout)
     public TextInputLayout matchNumberInputLayout;
@@ -223,7 +241,10 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
             return;
         }
 
-
+        autonDataStringList.add(getTextInputLayoutString(AutoHighAttemptInputLayout));
+        autonDataStringList.add(getTextInputLayoutString(AutoHighMadeLayout));
+        autonDataStringList.add(getTextInputLayoutString(AutoLowAttemptInputLayout));
+        autonDataStringList.add(getTextInputLayoutString(AutoLowMadeLayout));
         autonDataStringList.add(TeamNumberInputLayout.getSelectedItem().toString());
         autonDataStringList.add(getTextInputLayoutString(matchNumberInputLayout));
         autonDataStringList.add(startingLocation.getSelectedItem().toString());
@@ -315,6 +336,66 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     }
 
     private void displayAutoHighAttemptInput(int number) {
+
+        AutoHighAttemptInput.setText("" + number);
+    }
+
+    public void decreaseAutoHighMadeInput(View view) {
+        if (HighAttempt != 0) {
+            HighAttempt = HighAttempt - 1;
+            displayAutoHighMadeInput(HighAttempt);
+        }
+    }
+
+    public void increaseAutoHightMadeInput(View view) {
+        if (HighAttempt <= 100) {
+            HighAttempt = HighAttempt + 1;
+            displayAutoHighMadeInput(HighAttempt);
+        }
+
+    }
+
+    private void displayAutoHighMadeInput(int number) {
+
+        AutoHighAttemptInput.setText("" + number);
+    }
+
+    public void decreaseAutoLowAttemptInput(View view) {
+        if (HighAttempt != 0) {
+            HighAttempt = HighAttempt - 1;
+            displayAutoLowAttemptInput(HighAttempt);
+        }
+    }
+
+    public void increaseAutoLowtAttemptInput(View view) {
+        if (HighAttempt <= 100) {
+            HighAttempt = HighAttempt + 1;
+            displayAutoLowAttemptInput(HighAttempt);
+        }
+
+    }
+
+    private void displayAutoLowAttemptInput(int number) {
+
+        AutoHighAttemptInput.setText("" + number);
+    }
+
+    public void decreaseAutoLowMadeInput(View view) {
+        if (HighAttempt != 0) {
+            HighAttempt = HighAttempt - 1;
+            displayAutoLowMadeInput(HighAttempt);
+        }
+    }
+
+    public void increaseAutoLowMadeInput(View view) {
+        if (HighAttempt <= 100) {
+            HighAttempt = HighAttempt + 1;
+            displayAutoLowMadeInput(HighAttempt);
+        }
+
+    }
+
+    private void displayAutoLowMadeInput(int number) {
 
         AutoHighAttemptInput.setText("" + number);
     }
