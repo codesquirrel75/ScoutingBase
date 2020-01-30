@@ -149,7 +149,7 @@
                     android:id="@+id/increase_AutoHighAttempt"
                     android:layout_width="30pt"
                     android:layout_height="30pt"
-                    android:onClick="increaseAutoHightAttemptInput"
+                    android:onClick="increaseAutoHighAttemptInput"
                     android:text="@string/plus" />
 
                 <android.support.design.widget.TextInputLayout
@@ -196,14 +196,14 @@
                     android:id="@+id/decrease_teleop_cargo_in_cargo_ship"
                     android:layout_width="30pt"
                     android:layout_height="30pt"
-                    android:onClick="decreaseCargoInCargoShipInput"
+                    android:onClick="decreaseAutoHighMadeInput"
                     android:text="@string/minus" />
 
                 <Button
                     android:id="@+id/increase_teleop_cargo_in_cargo_ship"
                     android:layout_width="30pt"
                     android:layout_height="30pt"
-                    android:onClick="increaseCargoInCargoShipInput"
+                    android:onClick="increaseAutoHightMadeInput"
                     android:text="@string/plus" />
 
 
@@ -320,14 +320,14 @@
                     android:id="@+id/decrease_AutoLowMade"
                     android:layout_width="30pt"
                     android:layout_height="30pt"
-                    android:onClick="decreaseAutoLowMade"
+                    android:onClick="decreaseAutoLowMadeInput"
                     android:text="@string/minus" />
 
                 <Button
                     android:id="@+id/increase_AutoLowMade"
                     android:layout_width="30pt"
                     android:layout_height="30pt"
-                    android:onClick="increaseAutoLowMade"
+                    android:onClick="increaseAutoLowMadeInput"
                     android:text="@string/plus" />
 
             </LinearLayout>

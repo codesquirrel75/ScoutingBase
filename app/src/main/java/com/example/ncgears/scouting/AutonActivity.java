@@ -146,6 +146,10 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         autonDataStringList.clear();
 
         TeamNumberInputLayout.setOnKeyListener(this);
+        AutoHighAttemptInputLayout.setOnKeyListener(this);
+        AutoHighMadeLayout.setOnKeyListener(this);
+        AutoLowAttemptInputLayout.setOnKeyListener(this);
+        AutoLowMadeLayout.setOnKeyListener(this);
         matchNumberInput.setOnKeyListener(this);
         startingLocation.setOnKeyListener(this);
 
@@ -158,6 +162,10 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         super.onPause();
 
         TeamNumberInputLayout.setOnKeyListener(null);
+        AutoHighAttemptInputLayout.setOnKeyListener(null);
+        AutoHighMadeLayout.setOnKeyListener(null);
+        AutoLowAttemptInputLayout.setOnKeyListener(null);
+        AutoLowMadeLayout.setOnKeyListener(null);
         matchNumberInput.setOnKeyListener(null);
         startingLocation.setOnKeyListener(null);
 
@@ -327,7 +335,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         }
     }
 
-    public void increaseAutoHightAttemptInput(View view) {
+    public void increaseAutoHighAttemptInput(View view) {
         if (HighAttempt <= 100) {
             HighAttempt = HighAttempt + 1;
             displayAutoHighAttemptInput(HighAttempt);
@@ -341,62 +349,62 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     }
 
     public void decreaseAutoHighMadeInput(View view) {
-        if (HighAttempt != 0) {
-            HighAttempt = HighAttempt - 1;
-            displayAutoHighMadeInput(HighAttempt);
+        if (HighMade != 0) {
+            HighMade = HighMade - 1;
+            displayAutoHighMadeInput(HighMade);
         }
     }
 
     public void increaseAutoHightMadeInput(View view) {
-        if (HighAttempt <= 100) {
-            HighAttempt = HighAttempt + 1;
-            displayAutoHighMadeInput(HighAttempt);
+        if (HighMade <= 100) {
+            HighMade = HighMade + 1;
+            displayAutoHighMadeInput(HighMade);
         }
 
     }
 
     private void displayAutoHighMadeInput(int number) {
 
-        AutoHighAttemptInput.setText("" + number);
+        AutoHighMadeInput.setText("" + number);
     }
 
     public void decreaseAutoLowAttemptInput(View view) {
-        if (HighAttempt != 0) {
-            HighAttempt = HighAttempt - 1;
-            displayAutoLowAttemptInput(HighAttempt);
+        if (LowAttempt != 0) {
+            LowAttempt = LowAttempt - 1;
+            displayAutoLowAttemptInput(LowAttempt);
         }
     }
 
-    public void increaseAutoLowtAttemptInput(View view) {
-        if (HighAttempt <= 100) {
-            HighAttempt = HighAttempt + 1;
-            displayAutoLowAttemptInput(HighAttempt);
+    public void increaseAutoLowAttemptInput(View view) {
+        if (LowAttempt <= 100) {
+            LowAttempt = LowAttempt + 1;
+            displayAutoLowAttemptInput(LowAttempt);
         }
 
     }
 
     private void displayAutoLowAttemptInput(int number) {
 
-        AutoHighAttemptInput.setText("" + number);
+        AutoLowAttemptInput.setText("" + number);
     }
 
     public void decreaseAutoLowMadeInput(View view) {
-        if (HighAttempt != 0) {
-            HighAttempt = HighAttempt - 1;
-            displayAutoLowMadeInput(HighAttempt);
+        if (LowMade != 0) {
+            LowMade = LowMade - 1;
+            displayAutoLowMadeInput(LowMade);
         }
     }
 
     public void increaseAutoLowMadeInput(View view) {
-        if (HighAttempt <= 100) {
-            HighAttempt = HighAttempt + 1;
-            displayAutoLowMadeInput(HighAttempt);
+        if (LowMade <= 100) {
+            LowMade = LowMade + 1;
+            displayAutoLowMadeInput(LowMade);
         }
 
     }
 
     private void displayAutoLowMadeInput(int number) {
 
-        AutoHighAttemptInput.setText("" + number);
+        AutoLowMadeInput.setText("" + number);
     }
 }
