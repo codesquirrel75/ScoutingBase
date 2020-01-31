@@ -235,9 +235,9 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
      * after the teleop activity closes
      */
     public void onShowTeleop(View view) {
-        boolean allInputsPassed = false;
+        boolean allInputsPassed = true;
 
-        if (TeamNumberInputLayout.getSelectedItem().toString().equals("Select Team Number")) {
+       /* if (TeamNumberInputLayout.getSelectedItem().toString().equals("Select Team Number")) {
             setSpinnerError(TeamNumberInputLayout, "Select a Team Number.");
             ViewUtils.requestFocus(TeamNumberInputLayout, this);
         } else if (StringUtils.isEmptyOrNull(getTextInputLayoutString(matchNumberInputLayout)) || Integer.valueOf(getTextInputLayoutString(matchNumberInputLayout)) == 0 || Integer.valueOf(getTextInputLayoutString(matchNumberInputLayout)) >= 150) {
@@ -250,13 +250,13 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
 
         if (!allInputsPassed) {
             return;
-        }
+        }*/
 
         autonDataStringList.add(getTextInputLayoutString(AutoHighAttemptInputLayout));
         autonDataStringList.add(getTextInputLayoutString(AutoHighMadeLayout));
         autonDataStringList.add(getTextInputLayoutString(AutoLowAttemptInputLayout));
         autonDataStringList.add(getTextInputLayoutString(AutoLowMadeLayout));
-        autonDataStringList.add(TeamNumberInputLayout.getSelectedItem().toString());
+      //  autonDataStringList.add(TeamNumberInputLayout.getSelectedItem().toString());
         autonDataStringList.add(getTextInputLayoutString(matchNumberInputLayout));
         autonDataStringList.add(startingLocation.getSelectedItem().toString());
 
@@ -266,7 +266,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         final Intent intent = new Intent(this, TeleopActivity.class);
         intent.putExtra(AUTON_STRING_EXTRA, FormatStringUtils.addDelimiter(autonDataStringList, "|"));
         intent.putExtra(MATCH_STRING_EXTRA, getTextInputLayoutString(matchNumberInputLayout));
-        intent.putExtra(TEAMNUMBER_STRING_EXTRA, TeamNumberInputLayout.getSelectedItem().toString());
+       // intent.putExtra(TEAMNUMBER_STRING_EXTRA, TeamNumberInputLayout.getSelectedItem().toString());
 
         startActivityForResult(intent, REQUEST_CODE);
 
@@ -296,7 +296,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     /*This method will clear all of the text entry fields as well
      * as reset the checkboxes and reset the radio buttons to their default*/
     public void clearData() {
-        TeamNumberInputLayout.setSelection(0);
+      //  TeamNumberInputLayout.setSelection(0);
         matchNumberInput.setText("");
         startingLocation.setSelection(0);
 
