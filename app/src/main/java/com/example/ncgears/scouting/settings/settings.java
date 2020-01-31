@@ -1,4 +1,4 @@
-package com.example.ncgears.scouting.data;
+package com.example.ncgears.scouting.settings;
 
 public class Settings {
 

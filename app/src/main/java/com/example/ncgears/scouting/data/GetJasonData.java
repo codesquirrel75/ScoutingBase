@@ -45,7 +45,7 @@ public class GetJasonData extends AsyncTask<Void, Void, Void>{
 
 
         try {
-            URL url = new URL(SettingsEntry.TEAMS_URL);
+            URL url = new URL(SettingsEntry.teamsUrl);
 
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
