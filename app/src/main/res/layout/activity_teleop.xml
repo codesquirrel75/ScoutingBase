@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20pt"
-            android:text="@string/highPortTitle"
+            android:text="@string/AutoHighHeading"
             android:gravity="center_horizontal"/>
 
         <LinearLayout
@@ -37,14 +37,14 @@
                     android:layout_weight="1"
                     android:textSize="14pt"
                     android:textAlignment="center"
-                    android:text="@string/attemptLabel"/>
+                    android:text="@string/HighAttemptHint"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="14pt"
                     android:textAlignment="center"
-                    android:text="@string/madeLabel"/>
+                    android:text="@string/AutoHighMadeHeading"/>
 
             </LinearLayout>
 
@@ -126,7 +126,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20pt"
-            android:text="@string/lowPortTitle"
+            android:text="@string/AutoLowHeading"
             android:gravity="center_horizontal"/>
 
         <LinearLayout
@@ -147,14 +147,14 @@
                     android:layout_weight="1"
                     android:textSize="14pt"
                     android:textAlignment="center"
-                    android:text="@string/attemptLabel"/>
+                    android:text="@string/AutoHighAttemptHeading"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="14pt"
                     android:textAlignment="center"
-                    android:text="@string/madeLabel"/>
+                    android:text="@string/AutoHighMadeHeading"/>
 
             </LinearLayout>
 
@@ -417,7 +417,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="10pt"
-            android:text="@string/control_panel_rating"/>
+            android:text="@string/controlPanelRating"/>
 
         <RadioGroup
             android:id="@+id/control_panel_rating_radio_group"

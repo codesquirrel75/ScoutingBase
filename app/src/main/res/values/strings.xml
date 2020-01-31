@@ -283,6 +283,15 @@
     <string name="AutoHighHeading">High Power Port</string>
     <string name="AutoLowHeading">Low Power Port</string>
     <string name="AutoMoveOffInitiationLineQuestion">Did the robot move off the Initiation Line?</string>
+    <string name="defense_rating">If the robot played defense rate the level of defense.</string>
+    <string name="over_all_effectiveness_rating">Rate the overall effectiveness of the robot during the match.</string>
+    <string name="power_cell_placement_rating">Rate the overall  power cell placemnet.</string>
+    <string name="controlPanelRating">How good was the team with the control panel?</string>
+    <string name="observ_power_cell_pickup">had a hard time picking up power cells</string>
+    <string name="controlPanelIssue">had a hard time with the control panel</string>
+    <string name="hungUpPowerCell">got hung up on a power cell</string>
+    <string name="fellGenSwitch">Fell off generator switch</string>
+    <string name="hungUpfloor">Got hung up on the floor</string>
 
 
     <string-array name="startingLocation">
