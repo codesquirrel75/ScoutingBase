@@ -121,6 +121,9 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         checkForPermissions();
 
         displayAutoHighAttemptInput(HighAttempt);
+        displayAutoHighMadeInput(HighMade);
+        displayAutoLowAttemptInput(LowAttempt);
+        displayAutoLowMadeInput(LowMade);
 
         //  --- Team Numbers spinner ---
 
