@@ -83,6 +83,15 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     @BindView(R.id.defense_rating_radio_group)
     public RadioGroup defenseRatingRadioGroup;
 
+    @BindView(R.id.power_cell_pickup_radio_group)
+    public RadioGroup powerCellPickupRadioGroup;
+
+    @BindView(R.id.low_port_dump_radio_group)
+    public RadioGroup lowPortDumpRadioGroup;
+
+    @BindView(R.id.under_trench_radio_group)
+    public RadioGroup underTrenchRadioGroup;
+
     @BindView(R.id.power_cell_placement_rating_radio_group)
     public RadioGroup powerCellPlacementRatingRadioGroup;
 
@@ -187,11 +196,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     int teleopHighAttempt = 0;
     int teleopHighMade = 0;
     int teleopLowAttempt = 0;
-    int teleopHatchPanelMiddle = 0;
-    int teleopHatchPanelBottom =0;
     int teleopLowMade = 0;
-    int teleopCargoMiddle = 0;
-    int teleopCargoBottom = 0;
 
 
 
@@ -287,6 +292,9 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         defenseRatingRadioGroup.setOnKeyListener(this);
         powerCellPlacementRatingRadioGroup.setOnKeyListener(this);
         trainedDriveTeamRadioGoup.setOnKeyListener(this);
+        powerCellPickupRadioGroup.setOnKeyListener(this);
+        lowPortDumpRadioGroup.setOnKeyListener(this);
+        underTrenchRadioGroup.setOnKeyListener(this);
         observsmooth.setOnKeyListener(this);
         observSlowedByRobot.setOnKeyListener(this);
         observSlow.setOnKeyListener(this);
@@ -331,6 +339,9 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         defenseRatingRadioGroup.setOnKeyListener(null);
         powerCellPlacementRatingRadioGroup.setOnKeyListener(null);
         trainedDriveTeamRadioGoup.setOnKeyListener(null);
+        powerCellPickupRadioGroup.setOnKeyListener(null);
+        lowPortDumpRadioGroup.setOnKeyListener(null);
+        underTrenchRadioGroup.setOnKeyListener(null);
         observsmooth.setOnKeyListener(null);
         observSlowedByRobot.setOnKeyListener(null);
         observSlow.setOnKeyListener(null);
@@ -398,12 +409,16 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     public void decreaseHighAttempts(View view) {
         if (teleopHighAttempt != 0) {
             teleopHighAttempt = teleopHighAttempt - 1;
+            if (teleopHighAttempt < teleopHighMade){
+                teleopHighMade -= 1;
+            }
             displayHighAttemptInput(teleopHighAttempt);
+            displayHighMade(teleopHighMade);
         }
     }
 
     public void increaseHighAttempts(View view) {
-        if (teleopHighAttempt <= 7) {
+        if (teleopHighAttempt <= 100) {
             teleopHighAttempt = teleopHighAttempt + 1;
             displayHighAttemptInput(teleopHighAttempt);
         }
@@ -422,9 +437,13 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     }
 
     public void increaseHighMadeInput(View view) {
-        if (teleopHighMade <= 7) {
+        if (teleopHighMade <= teleopHighAttempt) {
             teleopHighMade = teleopHighMade + 1;
+            if(teleopHighMade > teleopHighAttempt){
+                teleopHighAttempt += 1;
+            }
             displayHighMade(teleopHighMade);
+            displayHighAttemptInput(teleopHighAttempt);
         }
     }
 
@@ -437,12 +456,16 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     public void decreaseLowAttempt(View view) {
         if (teleopLowAttempt != 0) {
             teleopLowAttempt = teleopLowAttempt - 1;
+            if(teleopLowAttempt < teleopLowMade){
+                teleopLowMade -= 1;
+            }
             displayLowAttemptInput(teleopLowAttempt);
+            displayLowMadeInput(teleopLowMade);
         }
     }
 
     public void increaseLowAttempt(View view) {
-        if (teleopLowAttempt <= 3) {
+        if (teleopLowAttempt <= 100) {
             teleopLowAttempt = teleopLowAttempt + 1;
             displayLowAttemptInput(teleopLowAttempt);
         }
@@ -463,9 +486,13 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     }
 
     public void increaseLowMadeInput(View view) {
-        if (teleopLowMade <= 3) {
+        if (teleopLowMade <= teleopLowAttempt) {
             teleopLowMade = teleopLowMade + 1;
+            if(teleopLowMade > teleopLowAttempt){
+                teleopLowAttempt += 1;
+            }
             displayLowMadeInput(teleopLowMade);
+            displayLowAttemptInput(teleopLowAttempt);
         }
     }
 
@@ -846,6 +873,9 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         final RadioButton counterDefenseEffectivenessRadiobtn = findViewById(counterDefenseEffectiveness.getCheckedRadioButtonId());
         final RadioButton overallEffectivenessRadiobtn = findViewById(overallEffectivenessRadioGoup.getCheckedRadioButtonId());
         final RadioButton trainedDriveTeamRadiobtn = findViewById(trainedDriveTeamRadioGoup.getCheckedRadioButtonId());
+        final RadioButton powerCellPickUpRadioBtn = findViewById(powerCellPickupRadioGroup.getCheckedRadioButtonId());
+        final RadioButton lowPortDumpRadioBtn = findViewById(lowPortDumpRadioGroup.getCheckedRadioButtonId());
+        final RadioButton underTrenchRadioBtn = findViewById(underTrenchRadioGroup.getCheckedRadioButtonId());
         final RadioButton defenseRatingRadioBtn = findViewById(defenseRatingRadioGroup.getCheckedRadioButtonId());
         final RadioButton powerCellPlacementRatingRadioBtn = findViewById(powerCellPlacementRatingRadioGroup.getCheckedRadioButtonId());
         final RadioButton climbTimeRadiobtn = findViewById(climbTimeRadioGroup.getCheckedRadioButtonId());
@@ -875,6 +905,9 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 teleopDataStringList.add(cycleTimeRadiobtn.getText().toString());
                 teleopDataStringList.add(overallEffectivenessRadiobtn.getText().toString());
                 teleopDataStringList.add(trainedDriveTeamRadiobtn.getText().toString());
+                teleopDataStringList.add(powerCellPickUpRadioBtn.getText().toString());
+                teleopDataStringList.add(lowPortDumpRadioBtn.getText().toString());
+                teleopDataStringList.add(underTrenchRadioBtn.getText().toString());
                 teleopDataStringList.add(observations);
                 teleopDataStringList.add(typeOfBotSpinner.getSelectedItem().toString());
                 teleopDataStringList.add(summaryInput.getText().toString());
@@ -931,6 +964,9 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         powerCellPlacementRatingRadioGroup.clearCheck();
         overallEffectivenessRadioGoup.clearCheck();
         trainedDriveTeamRadioGoup.clearCheck();
+        powerCellPickupRadioGroup.clearCheck();
+        lowPortDumpRadioGroup.clearCheck();
+        underTrenchRadioGroup.clearCheck();
         observsmooth.setChecked(false);
         observSlowedByRobot.setChecked(false);
         observSlow.setChecked(false);

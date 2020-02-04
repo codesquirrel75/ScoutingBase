@@ -752,6 +752,117 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@string/power_cell_pickup"
+            android:textSize="10pt"
+            android:layout_margin="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/power_cell_pickup_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/power_cell_pickup_na">
+
+            <RadioButton
+                android:id="@+id/power_cell_pickup_floor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/power_cell_pickup_floor_string"/>
+
+            <RadioButton
+                android:id="@+id/power_cell_pickup_feed_station"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/power_cell_pickup_feed_station_text"/>
+
+            <RadioButton
+                android:id="@+id/power_cell_pickup_either"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/power_cell_pickup_either_text"/>
+
+            <RadioButton
+                android:id="@+id/power_cell_pickup_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_na"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/low_port_dump"
+            android:textSize="10pt"
+            android:layout_margin="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/low_port_dump_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/under_trench_no">
+
+            <RadioButton
+                android:id="@+id/low_port_dump_yes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:id="@+id/low_port_dump_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no"/>
+
+            <RadioButton
+                android:id="@+id/low_port_dump_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/na"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/under_trench"
+            android:textSize="10pt"
+            android:layout_margin="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/under_trench_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/under_trench_no">
+
+            <RadioButton
+                android:id="@+id/under_trench_yes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:id="@+id/under_trench_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/robotObservations"
             android:textSize="10pt"
             android:layout_margin="10dp"/>

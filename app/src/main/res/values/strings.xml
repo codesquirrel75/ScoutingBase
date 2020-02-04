@@ -176,6 +176,10 @@
     <string name="pitScouting">Pit</string>
     <string name="pitTeamNumberHeading">Team Number</string>
 
+    <!-- yes / no / na-->
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="na">NA</string>
 
     <!--Menu Strings-->
     <string name="pitRobotWeightHint">Robot Weight</string>
@@ -262,8 +266,6 @@
     <string name="cargo_pickup_both">Both</string>
     <string name="editTeams">Import TEAMS</string>
     <string name="pitInitLineAuton">Does your robot move from the Alliance initiation line during auton</string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
     <string name="pitDriveThroughTrench">Can your robot drive through the trench?</string>
     <string name="pitEndgameHang">Does your robot hang at end game?</string>
     <string name="pitShotLocation">During teleop, where does your robot shoot power cells?</string>
@@ -292,6 +294,12 @@
     <string name="hungUpPowerCell">got hung up on a power cell</string>
     <string name="fellGenSwitch">Fell off generator switch</string>
     <string name="hungUpfloor">Got hung up on the floor</string>
+    <string name="power_cell_pickup">where does the robot get power cells?</string>
+    <string name="power_cell_pickup_floor_string">Floor pickup</string>
+    <string name="power_cell_pickup_feed_station_text">Feed station</string>
+    <string name="power_cell_pickup_either_text">Either</string>
+    <string name="under_trench">Can the robot go under the trench?</string>
+    <string name="low_port_dump">Did the Robot dump 5 balls into the Low Power Port at once?</string>
 
 
     <string-array name="startingLocation">
@@ -347,15 +355,11 @@
     </string-array>
     <string-array name="endgame_location">
         <item> </item>
-        <item>Lowest deck</item>
-        <item>Middle deck</item>
-        <item>Highest deck</item>
-        <item>Highest deck: carrying 1 robot</item>
-        <item>Highest deck: carrying 2 robots</item>
-        <item>Highest deck: carried by partner</item>
-        <item>Middle deck: carrying 1 robot</item>
-        <item>Middle deck: carried by partner</item>
-        <item>Still on field</item>
+        <item>Hanging</item>
+        <item>Hanging balanced</item>
+        <item>Hanging while carring another robot</item>
+        <item>Parked in the center</item>
+        <item>Still on Field</item>
     </string-array>
     <string-array name="cycle_time_spinner">
 

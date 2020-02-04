@@ -237,7 +237,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     public void onShowTeleop(View view) {
         boolean allInputsPassed = true;
 
-       /* if (TeamNumberInputLayout.getSelectedItem().toString().equals("Select Team Number")) {
+        if (TeamNumberInputLayout.getSelectedItem().toString().equals("Select Team Number")) {
             setSpinnerError(TeamNumberInputLayout, "Select a Team Number.");
             ViewUtils.requestFocus(TeamNumberInputLayout, this);
         } else if (StringUtils.isEmptyOrNull(getTextInputLayoutString(matchNumberInputLayout)) || Integer.valueOf(getTextInputLayoutString(matchNumberInputLayout)) == 0 || Integer.valueOf(getTextInputLayoutString(matchNumberInputLayout)) >= 150) {
@@ -250,23 +250,23 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
 
         if (!allInputsPassed) {
             return;
-        }*/
+        }
 
         autonDataStringList.add(getTextInputLayoutString(AutoHighAttemptInputLayout));
         autonDataStringList.add(getTextInputLayoutString(AutoHighMadeLayout));
         autonDataStringList.add(getTextInputLayoutString(AutoLowAttemptInputLayout));
         autonDataStringList.add(getTextInputLayoutString(AutoLowMadeLayout));
-      //  autonDataStringList.add(TeamNumberInputLayout.getSelectedItem().toString());
+        autonDataStringList.add(TeamNumberInputLayout.getSelectedItem().toString());
         autonDataStringList.add(getTextInputLayoutString(matchNumberInputLayout));
         autonDataStringList.add(startingLocation.getSelectedItem().toString());
 
 
-//      autonDataStringList.add(playStyle.getSelectedItem().toString());
+        //autonDataStringList.add(playStyle.getSelectedItem().toString());
 
         final Intent intent = new Intent(this, TeleopActivity.class);
         intent.putExtra(AUTON_STRING_EXTRA, FormatStringUtils.addDelimiter(autonDataStringList, "|"));
         intent.putExtra(MATCH_STRING_EXTRA, getTextInputLayoutString(matchNumberInputLayout));
-       // intent.putExtra(TEAMNUMBER_STRING_EXTRA, TeamNumberInputLayout.getSelectedItem().toString());
+        intent.putExtra(TEAMNUMBER_STRING_EXTRA, TeamNumberInputLayout.getSelectedItem().toString());
 
         startActivityForResult(intent, REQUEST_CODE);
 
@@ -296,7 +296,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     /*This method will clear all of the text entry fields as well
      * as reset the checkboxes and reset the radio buttons to their default*/
     public void clearData() {
-      //  TeamNumberInputLayout.setSelection(0);
+        TeamNumberInputLayout.setSelection(0);
         matchNumberInput.setText("");
         startingLocation.setSelection(0);
 
@@ -334,7 +334,11 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     public void decreaseAutoHighAttemptInput(View view) {
         if (HighAttempt != 0) {
             HighAttempt = HighAttempt - 1;
+            if (HighAttempt < HighMade){
+                HighMade -= 1;
+            }
             displayAutoHighAttemptInput(HighAttempt);
+            displayAutoHighMadeInput(HighMade);
         }
     }
 
@@ -359,9 +363,13 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     }
 
     public void increaseAutoHightMadeInput(View view) {
-        if (HighMade <= 100) {
+        if (HighMade <= HighAttempt) {
             HighMade = HighMade + 1;
+            if(HighMade > HighAttempt){
+                HighAttempt += 1;
+            }
             displayAutoHighMadeInput(HighMade);
+            displayAutoHighAttemptInput(HighAttempt);
         }
 
     }
@@ -374,7 +382,11 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     public void decreaseAutoLowAttemptInput(View view) {
         if (LowAttempt != 0) {
             LowAttempt = LowAttempt - 1;
+            if(LowAttempt < LowMade){
+                LowMade -= 1;
+            }
             displayAutoLowAttemptInput(LowAttempt);
+            displayAutoLowMadeInput(LowMade);
         }
     }
 
@@ -401,7 +413,11 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     public void increaseAutoLowMadeInput(View view) {
         if (LowMade <= 100) {
             LowMade = LowMade + 1;
+            if(LowMade > LowAttempt){
+                LowAttempt += 1;
+            }
             displayAutoLowMadeInput(LowMade);
+            displayAutoLowAttemptInput(LowAttempt);
         }
 
     }
