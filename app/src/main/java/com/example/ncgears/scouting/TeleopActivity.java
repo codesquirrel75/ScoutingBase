@@ -182,6 +182,24 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     @BindView(R.id.type_of_bot_spinner)
     public Spinner typeOfBotSpinner;
 
+    @BindView(R.id.rolls_high_shooter)
+    public CheckBox rollsHighShooter;
+
+    @BindView(R.id.rolls_low_shooter)
+    public CheckBox rollsLowShooter;
+
+    @BindView(R.id.rolls_feeder)
+    public CheckBox rollsFeeder;
+
+    @BindView(R.id.rolls_control_panel)
+    public CheckBox rollsControlPanel;
+
+    @BindView(R.id.rolls_counter_defense)
+    public CheckBox rollsCounterDefense;
+
+    @BindView(R.id.rolls_defense)
+    public CheckBox rollsDefense;
+
     @BindView(R.id.summary_input)
     public EditText summaryInput;
 
@@ -315,6 +333,12 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observFellOffSwitch.setOnKeyListener(this);
         observHungUp.setOnKeyListener(this);
         typeOfBotSpinner.setOnKeyListener(this);
+        rollsControlPanel.setOnKeyListener(this);
+        rollsCounterDefense.setOnKeyListener(this);
+        rollsDefense.setOnKeyListener(this);
+        rollsFeeder.setOnKeyListener(this);
+        rollsHighShooter.setOnKeyListener(this);
+        rollsLowShooter.setOnKeyListener(this);
         summaryInput.setOnKeyListener(this);
         issuesInput.setOnKeyListener(this);
 
@@ -362,6 +386,12 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observFellOffSwitch.setOnKeyListener(null);
         observHungUp.setOnKeyListener(null);
         typeOfBotSpinner.setOnKeyListener(null);
+        rollsControlPanel.setOnKeyListener(null);
+        rollsCounterDefense.setOnKeyListener(null);
+        rollsDefense.setOnKeyListener(null);
+        rollsFeeder.setOnKeyListener(null);
+        rollsHighShooter.setOnKeyListener(null);
+        rollsLowShooter.setOnKeyListener(null);
         summaryInput.setOnKeyListener(null);
         issuesInput.setOnKeyListener(null);
 
