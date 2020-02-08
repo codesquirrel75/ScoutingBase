@@ -9,9 +9,12 @@
 package com.example.ncgears.scouting;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.inputmethodservice.Keyboard;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
@@ -107,6 +110,13 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
         return false;
     }
 
+    private boolean isNetworkAvailable(){
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return  activeNetworkInfo !=null && activeNetworkInfo.isConnected();
+    }
+
     public void showMatch(View view) {
         startActivity(new Intent(this, ScouterInitialsActivity.class));
     }
@@ -121,17 +131,20 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
 
     public void getTeams(View view){
 
-        TeamsDbHelper.dropTable(db);
+        if(isNetworkAvailable()){
 
-        TeamsDbHelper.createTable(db);
+            TeamsDbHelper.dropTable(db);
+            TeamsDbHelper.createTable(db);
+            GetJasonData process = new GetJasonData(this);
+            process.execute();
 
-        GetJasonData process = new GetJasonData(this);
+            Toast.makeText(this, "Import Complete", Toast.LENGTH_LONG).show();
+        }
+        else{
 
-        process.execute();
+            Toast.makeText(this, "Sorry! But your WiFi doesn't seem to be on at this time", Toast.LENGTH_LONG).show();
+        }
 
-
-
-        Toast.makeText(this, "Import Complete", Toast.LENGTH_LONG).show();
 
 
     }
