@@ -118,8 +118,7 @@
 
     <string name="defense_not_effective">Not Effective</string>
     <string name="defense_not_effected">Not Effected</string>
-    <string name="type_of_bot">Type of bot</string>
-    <string name="bot_rolls">What type of rolls did the robot play during teleop?</string>
+    <string name="type_of_bot">Type of Bot</string>
     <string name="climbingHeading">Climb</string>
 
 
@@ -301,12 +300,6 @@
     <string name="power_cell_pickup_either_text">Either</string>
     <string name="under_trench">Can the robot go under the trench?</string>
     <string name="low_port_dump">Did the Robot dump 5 balls into the Low Power Port at once?</string>
-    <string name="rolls_high_shooter_text">High shooter</string>
-    <string name="rols_low_shooter_text">Low shooter</string>
-    <string name="rolls_feeder_text">Feeder</string>
-    <string name="rolls_control_panel_text">Control panel</string>
-    <string name="rolls_counter_defense_text">Counter defense</string>
-    <string name="rolls_defense_text">Defense</string>
 
 
     <string-array name="startingLocation">
