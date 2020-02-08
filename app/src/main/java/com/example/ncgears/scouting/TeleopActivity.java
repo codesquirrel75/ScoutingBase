@@ -233,8 +233,10 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     public Button saveBtn;
 
     int teleopHighAttempt = 0;
+    int teleopHighMissed = 0;
     int teleopHighMade = 0;
     int teleopLowAttempt = 0;
+    int teleopLowMissed = 0;
     int teleopLowMade = 0;
 
 
@@ -470,20 +472,19 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
 
     //Teleop high shots
     public void decreaseHighAttempts(View view) {
-        if (teleopHighAttempt != 0) {
-            teleopHighAttempt = teleopHighAttempt - 1;
-            if (teleopHighAttempt < teleopHighMade){
-                teleopHighMade -= 1;
-            }
-            displayHighAttemptInput(teleopHighAttempt);
-            displayHighMade(teleopHighMade);
+        if (teleopHighMissed != 0) {
+            teleopHighMissed -= 1;
+            teleopHighAttempt -=1;
+
+            displayHighAttemptInput(teleopHighMissed);
         }
     }
 
     public void increaseHighAttempts(View view) {
-        if (teleopHighAttempt <= 100) {
-            teleopHighAttempt = teleopHighAttempt + 1;
-            displayHighAttemptInput(teleopHighAttempt);
+        if (teleopHighMissed <= 800) {
+            teleopHighMissed += 1;
+            teleopHighAttempt += 1;
+            displayHighAttemptInput(teleopHighMissed);
         }
     }
 
@@ -494,19 +495,18 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     //Teleop High Made
     public void decreaseHighMadeInput(View view) {
         if (teleopHighMade != 0) {
-            teleopHighMade = teleopHighMade - 1;
+            teleopHighMade -= 1;
+            teleopHighAttempt -= 1;
             displayHighMade(teleopHighMade);
         }
     }
 
     public void increaseHighMadeInput(View view) {
-        if (teleopHighMade <= teleopHighAttempt) {
-            teleopHighMade = teleopHighMade + 1;
-            if(teleopHighMade > teleopHighAttempt){
-                teleopHighAttempt += 1;
-            }
+        if (teleopHighMade <= 800) {
+            teleopHighMade += 1;
+            teleopHighAttempt += 1;
             displayHighMade(teleopHighMade);
-            displayHighAttemptInput(teleopHighAttempt);
+
         }
     }
 
@@ -514,23 +514,22 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopHighMadeInput.setText("" + number);
     }
 
-    //Teleop Rocket Ship Hatch Panels
+    //Teleop Low Missed
 
     public void decreaseLowAttempt(View view) {
-        if (teleopLowAttempt != 0) {
-            teleopLowAttempt = teleopLowAttempt - 1;
-            if(teleopLowAttempt < teleopLowMade){
-                teleopLowMade -= 1;
-            }
-            displayLowAttemptInput(teleopLowAttempt);
-            displayLowMadeInput(teleopLowMade);
+        if (teleopLowMissed != 0) {
+            teleopLowMissed -= 1;
+            teleopLowAttempt -= 1;
+
+            displayLowAttemptInput(teleopLowMissed);
         }
     }
 
     public void increaseLowAttempt(View view) {
-        if (teleopLowAttempt <= 100) {
-            teleopLowAttempt = teleopLowAttempt + 1;
-            displayLowAttemptInput(teleopLowAttempt);
+        if (teleopLowMissed <= 100) {
+            teleopLowMissed += 1;
+            teleopLowAttempt += 1;
+            displayLowAttemptInput(teleopLowMissed);
         }
     }
 
@@ -539,23 +538,23 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     }
 
 
-    //Teleop Rocket Ship Cargo
+    //Teleop Low Made
 
     public void decreaseLowMadeInput(View view) {
         if (teleopLowMade != 0) {
-            teleopLowMade = teleopLowMade - 1;
+            teleopLowMade -= 1;
+            teleopLowAttempt -=1;
             displayLowMadeInput(teleopLowMade);
         }
     }
 
     public void increaseLowMadeInput(View view) {
-        if (teleopLowMade <= teleopLowAttempt) {
-            teleopLowMade = teleopLowMade + 1;
-            if(teleopLowMade > teleopLowAttempt){
-                teleopLowAttempt += 1;
-            }
+        if (teleopLowMade <= 800) {
+            teleopLowMade += 1;
+            teleopLowAttempt +=1;
+
             displayLowMadeInput(teleopLowMade);
-            displayLowAttemptInput(teleopLowAttempt);
+
         }
     }
 
@@ -1210,9 +1209,9 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     /*The method will clear all the data in the text fields, checkboxes, and
     * set radio buttons to default*/
     public void clearData(View view) {
-        teleopHighAttemptsInput.setText("" + teleopHighAttempt);
+        teleopHighAttemptsInput.setText("" + teleopHighMissed);
         teleopHighMadeInput.setText("" + teleopHighMade);
-        teleopLowAttemptInput.setText("" + teleopLowAttempt);
+        teleopLowAttemptInput.setText("" + teleopLowMissed);
         teleopLowMadeInput.setText("" + teleopLowMade);
         OverAllEffectivenessRatingRadioGroup.clearCheck();
         controlPanelRadingRadioGroup.clearCheck();

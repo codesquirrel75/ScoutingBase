@@ -93,8 +93,10 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     public Button nextButton;
 
     int HighAttempt = 0;
+    int HighMissed =0;
     int HighMade = 0;
     int LowAttempt = 0;
+    int LowMissed = 0;
     int LowMade = 0;
 
     public ArrayList<String> team_numbers = new ArrayList<>();
@@ -332,20 +334,20 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     }
 
     public void decreaseAutoHighAttemptInput(View view) {
-        if (HighAttempt != 0) {
-            HighAttempt = HighAttempt - 1;
-            if (HighAttempt < HighMade){
-                HighMade -= 1;
-            }
-            displayAutoHighAttemptInput(HighAttempt);
-            displayAutoHighMadeInput(HighMade);
+        if (HighMissed != 0) {
+            HighMissed -= 1;
+            HighAttempt -=1;
+
+            displayAutoHighAttemptInput(HighMissed);
+
         }
     }
 
     public void increaseAutoHighAttemptInput(View view) {
-        if (HighAttempt <= 100) {
-            HighAttempt = HighAttempt + 1;
-            displayAutoHighAttemptInput(HighAttempt);
+        if (HighMissed <= 800) {
+            HighMissed += 1;
+            HighAttempt +=1;
+            displayAutoHighAttemptInput(HighMissed);
         }
 
     }
@@ -357,19 +359,17 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
 
     public void decreaseAutoHighMadeInput(View view) {
         if (HighMade != 0) {
-            HighMade = HighMade - 1;
+            HighMade -= 1;
+            HighAttempt -= 1;
             displayAutoHighMadeInput(HighMade);
         }
     }
 
     public void increaseAutoHightMadeInput(View view) {
-        if (HighMade <= HighAttempt) {
-            HighMade = HighMade + 1;
-            if(HighMade > HighAttempt){
-                HighAttempt += 1;
-            }
+        if (HighMade <= 800) {
+            HighMade +=1;
+            HighAttempt += 1;
             displayAutoHighMadeInput(HighMade);
-            displayAutoHighAttemptInput(HighAttempt);
         }
 
     }
@@ -380,20 +380,19 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     }
 
     public void decreaseAutoLowAttemptInput(View view) {
-        if (LowAttempt != 0) {
-            LowAttempt = LowAttempt - 1;
-            if(LowAttempt < LowMade){
-                LowMade -= 1;
-            }
-            displayAutoLowAttemptInput(LowAttempt);
-            displayAutoLowMadeInput(LowMade);
+        if (LowMissed != 0) {
+            LowMissed -= 1;
+            LowAttempt -=1;
+
+            displayAutoLowAttemptInput(LowMissed);
         }
     }
 
     public void increaseAutoLowAttemptInput(View view) {
-        if (LowAttempt <= 100) {
-            LowAttempt = LowAttempt + 1;
-            displayAutoLowAttemptInput(LowAttempt);
+        if (LowMissed <= 800) {
+            LowMissed += 1;
+            LowAttempt += 1;
+            displayAutoLowAttemptInput(LowMissed);
         }
 
     }
@@ -405,19 +404,18 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
 
     public void decreaseAutoLowMadeInput(View view) {
         if (LowMade != 0) {
-            LowMade = LowMade - 1;
+            LowMade -= 1;
+            LowAttempt -=1;
             displayAutoLowMadeInput(LowMade);
         }
     }
 
     public void increaseAutoLowMadeInput(View view) {
-        if (LowMade <= 100) {
-            LowMade = LowMade + 1;
-            if(LowMade > LowAttempt){
-                LowAttempt += 1;
-            }
+        if (LowMade <= 800) {
+            LowMade += 1;
+            LowAttempt +=1;
             displayAutoLowMadeInput(LowMade);
-            displayAutoLowAttemptInput(LowAttempt);
+
         }
 
     }

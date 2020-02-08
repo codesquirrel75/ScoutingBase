@@ -278,9 +278,9 @@
     <string name="pitControlPanelPosition">Position the correct color</string>
     <string name="pitControlPanelNothing">Nothing</string>
     <string name="pitGamePlan">What is your basic game plan during teleop?</string>
-    <string name="HighAttemptHint">Attempt</string>
-    <string name="AutoPowerPortCounterHeading">Attempts                                                                       Made</string>
-    <string name="AutoHighAttemptHeading">Attempts</string>
+    <string name="HighAttemptHint">Missed</string>
+    <string name="AutoPowerPortCounterHeading">Missed                                                                       Made</string>
+    <string name="AutoHighAttemptHeading">Missed</string>
     <string name="AutoHighMadeHeading">Made</string>
     <string name="AutoHighHeading">High Power Port</string>
     <string name="AutoLowHeading">Low Power Port</string>

@@ -26,6 +26,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ncgears.scouting.customToast.CustomToast;
 import com.example.ncgears.scouting.data.GetJasonData;
 import com.example.ncgears.scouting.data.TeamsContract.TeamEntry;
 import com.example.ncgears.scouting.data.TeamsDbHelper;
@@ -142,7 +143,9 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
         }
         else{
 
-            Toast.makeText(this, "Sorry! But your WiFi doesn't seem to be on at this time", Toast.LENGTH_LONG).show();
+                CustomToast.showLong(this, "Sorry! But your WiFi doesn't seem to be on at this time");
+
+
         }
 
 
