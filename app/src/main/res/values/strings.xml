@@ -5,7 +5,7 @@
     <string name="sendData">Send Data</string>
     <string name="submitInitials">Submit</string>
 
-    <string name="mainAuthor">Authors Ken and Kenny</string>
+    <string name="mainAuthor">Authors Ken, Kenny, and Alicia</string>
 
     <string name="revisionDate">Revised 1/7/20</string>
 
@@ -300,6 +300,20 @@
     <string name="power_cell_pickup_either_text">Either</string>
     <string name="under_trench">Can the robot go under the trench?</string>
     <string name="low_port_dump">Did the Robot dump 5 balls into the Low Power Port at once?</string>
+    <string name="TypeOfRobot">Type of Bot</string>
+    <string name="high_shooter">High shooter</string>
+    <string name="low_shooter">Low shooter</string>
+    <string name="feeder_bot">Feeder bot</string>
+    <string name="control_panel">Control panel bot</string>
+    <string name="defense_bot">Defense bot</string>
+    <string name="counter_defense_bot">Counter defense bot</string>
+    <string name="WhereShotFrom">Where did the robot shoot from?</string>
+    <string name="tele_shoot_target_zone">Target zone</string>
+    <string name="tele_shoot_field_front">In front of the power port</string>
+    <string name="tele_shoot_field_diagonal">Diaginal from power port</string>
+    <string name="tele_shoot_trench_near">Trench nearest the power port</string>
+    <string name="tele_shoot_trench_far">Trench farthest from power port</string>
+    <string name="tele_shoot_other">other</string>
 
 
     <string-array name="startingLocation">

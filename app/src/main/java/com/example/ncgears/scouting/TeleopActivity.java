@@ -179,8 +179,45 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     @BindView(R.id.observ_hung_up)
     public  CheckBox observHungUp;
 
-    @BindView(R.id.type_of_bot_spinner)
-    public Spinner typeOfBotSpinner;
+    @BindView(R.id.type_high_shooter)
+    public  CheckBox typeHighShooter;
+
+    @BindView(R.id.type_low_shooter)
+    public  CheckBox typeLowShooter;
+
+    @BindView(R.id.type_feeder_bot)
+    public  CheckBox typeFeederBot;
+
+    @BindView(R.id.type_control_panel)
+    public  CheckBox typeControlPanel;
+
+    @BindView(R.id.type_defense_bot)
+    public  CheckBox typeDefenseBot;
+
+    @BindView(R.id.type_counter_defense_bot)
+    public  CheckBox typeCounterDefenseBot;
+
+    @BindView(R.id.tele_shoot_target_zone)
+    public  CheckBox teleShootTargetZone;
+
+    @BindView(R.id.tele_shoot_field_front)
+    public  CheckBox teleShootFieldFront;
+
+    @BindView(R.id.tele_shoot_field_diagonal)
+    public  CheckBox teleShootFieldDiagonal;
+
+    @BindView(R.id.tele_shoot_trench_near)
+    public  CheckBox teleShootTrenchNear;
+
+    @BindView(R.id.tele_shoot_trench_far)
+    public  CheckBox teleShootTrenchFar;
+
+    @BindView(R.id.tele_shoot_other)
+    public  CheckBox teleShootOther;
+
+
+   // @BindView(R.id.type_of_bot_spinner)
+   // public Spinner typeOfBotSpinner;
 
     @BindView(R.id.summary_input)
     public EditText summaryInput;
@@ -189,6 +226,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     public EditText issuesInput;
 
     public String observations = "";
+    public String typeOfBot = "";
+    public String shotFrom = "";
 
     @BindView(R.id.save_btn)
     public Button saveBtn;
@@ -259,7 +298,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
 */
         //    ---  Type of Bot Spinner  ---
 
-        Spinner typeofbotspinner = (Spinner) findViewById(R.id.type_of_bot_spinner);
+/*        Spinner typeofbotspinner = (Spinner) findViewById(R.id.type_of_bot_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> typeofbotadapter = ArrayAdapter.createFromResource(this,
                 R.array.bot_type_array, android.R.layout.simple_spinner_item);
@@ -267,7 +306,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         typeofbotadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         typeofbotspinner.setAdapter(typeofbotadapter);
-
+*/
     }
 
 
@@ -314,7 +353,19 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observHungUpPowerCell.setOnKeyListener(this);
         observFellOffSwitch.setOnKeyListener(this);
         observHungUp.setOnKeyListener(this);
-        typeOfBotSpinner.setOnKeyListener(this);
+        typeHighShooter.setOnKeyListener(this);
+        typeLowShooter.setOnKeyListener(this);
+        typeFeederBot.setOnKeyListener(this);
+        typeControlPanel.setOnKeyListener(this);
+        typeCounterDefenseBot.setOnKeyListener(this);
+        typeDefenseBot.setOnKeyListener(this);
+        teleShootTargetZone.setOnKeyListener(this);
+        teleShootFieldFront.setOnKeyListener(this);
+        teleShootFieldDiagonal.setOnKeyListener(this);
+        teleShootTrenchNear.setOnKeyListener(this);
+        teleShootTrenchFar.setOnKeyListener(this);
+        teleShootOther.setOnKeyListener(this);
+       // typeOfBotSpinner.setOnKeyListener(this);
         summaryInput.setOnKeyListener(this);
         issuesInput.setOnKeyListener(this);
 
@@ -361,7 +412,19 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observHungUpPowerCell.setOnKeyListener(null);
         observFellOffSwitch.setOnKeyListener(null);
         observHungUp.setOnKeyListener(null);
-        typeOfBotSpinner.setOnKeyListener(null);
+        typeHighShooter.setOnKeyListener(null);
+        typeLowShooter.setOnKeyListener(null);
+        typeFeederBot.setOnKeyListener(null);
+        typeControlPanel.setOnKeyListener(null);
+        typeCounterDefenseBot.setOnKeyListener(null);
+        typeDefenseBot.setOnKeyListener(null);
+        teleShootTargetZone.setOnKeyListener(null);
+        teleShootFieldFront.setOnKeyListener(null);
+        teleShootFieldDiagonal.setOnKeyListener(null);
+        teleShootTrenchNear.setOnKeyListener(null);
+        teleShootTrenchFar.setOnKeyListener(null);
+        teleShootOther.setOnKeyListener(null);
+        //typeOfBotSpinner.setOnKeyListener(null);
         summaryInput.setOnKeyListener(null);
         issuesInput.setOnKeyListener(null);
 
@@ -796,6 +859,202 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         }
     }
 
+    public void setTypeOfBotString(View view) {
+        Boolean checked = ((CheckBox) view).isChecked();
+        String s1;
+
+        switch (view.getId()) {
+            case R.id.type_high_shooter:
+                s1 = typeHighShooter.getText().toString() + " |";
+                if (checked) {
+                    if (typeOfBot.isEmpty()) {
+                        typeOfBot = s1;
+                    } else {
+                        typeOfBot = typeOfBot + s1;
+                    }
+                } else {
+                    if (typeOfBot.contains(s1)) {
+                        int start = typeOfBot.indexOf(s1);
+                        typeOfBot = typeOfBot.substring(0, start) + typeOfBot.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.type_low_shooter:
+                s1 = typeLowShooter.getText().toString() + " |";
+                if (checked) {
+                    if (typeOfBot.isEmpty()) {
+                        typeOfBot = s1;
+                    } else {
+                        typeOfBot = typeOfBot + s1;
+                    }
+                } else {
+                    if (typeOfBot.contains(s1)) {
+                        int start = typeOfBot.indexOf(s1);
+                        typeOfBot = typeOfBot.substring(0, start) + typeOfBot.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.type_feeder_bot:
+                s1 = typeFeederBot.getText().toString() + " |";
+                if (checked) {
+                    if (typeOfBot.isEmpty()) {
+                        typeOfBot = s1;
+                    } else {
+                        typeOfBot = typeOfBot + s1;
+                    }
+                } else {
+                    if (typeOfBot.contains(s1)) {
+                        int start = typeOfBot.indexOf(s1);
+                        typeOfBot = typeOfBot.substring(0, start) + typeOfBot.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.type_control_panel:
+                s1 = typeControlPanel.getText().toString() + " |";
+                if (checked) {
+                    if (typeOfBot.isEmpty()) {
+                        typeOfBot = s1;
+                    } else {
+                        typeOfBot = typeOfBot + s1;
+                    }
+                } else {
+                    if (typeOfBot.contains(s1)) {
+                        int start = typeOfBot.indexOf(s1);
+                        typeOfBot = typeOfBot.substring(0, start) + typeOfBot.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.type_counter_defense_bot:
+                s1 = typeCounterDefenseBot.getText().toString() + " |";
+                if (checked) {
+                    if (typeOfBot.isEmpty()) {
+                        typeOfBot = s1;
+                    } else {
+                        typeOfBot = typeOfBot + s1;
+                    }
+                } else {
+                    if (typeOfBot.contains(s1)) {
+                        int start = typeOfBot.indexOf(s1);
+                        typeOfBot = typeOfBot.substring(0, start) + typeOfBot.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.type_defense_bot:
+                s1 = typeDefenseBot.getText().toString() + " |";
+                if (checked) {
+                    if (typeOfBot.isEmpty()) {
+                        typeOfBot = s1;
+                    } else {
+                        typeOfBot = typeOfBot + s1;
+                    }
+                } else {
+                    if (typeOfBot.contains(s1)) {
+                        int start = typeOfBot.indexOf(s1);
+                        typeOfBot = typeOfBot.substring(0, start) + typeOfBot.substring(start + s1.length());
+                    }
+                }
+                break;
+        }
+    }
+
+    public void setShotFromString(View view) {
+        Boolean checked = ((CheckBox) view).isChecked();
+        String s1;
+
+        switch (view.getId()) {
+            case R.id.tele_shoot_target_zone:
+                s1 = teleShootTargetZone.getText().toString() + " |";
+                if (checked) {
+                    if (shotFrom.isEmpty()) {
+                        shotFrom = s1;
+                    } else {
+                        shotFrom = shotFrom + s1;
+                    }
+                } else {
+                    if (shotFrom.contains(s1)) {
+                        int start = shotFrom.indexOf(s1);
+                        shotFrom = shotFrom.substring(0, start) + shotFrom.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.tele_shoot_field_front:
+                s1 = teleShootFieldFront.getText().toString() + " |";
+                if (checked) {
+                    if (shotFrom.isEmpty()) {
+                        shotFrom = s1;
+                    } else {
+                        shotFrom = shotFrom + s1;
+                    }
+                } else {
+                    if (shotFrom.contains(s1)) {
+                        int start = shotFrom.indexOf(s1);
+                        shotFrom = shotFrom.substring(0, start) + shotFrom.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.tele_shoot_field_diagonal:
+                s1 = teleShootFieldDiagonal.getText().toString() + " |";
+                if (checked) {
+                    if (shotFrom.isEmpty()) {
+                        shotFrom = s1;
+                    } else {
+                        shotFrom = shotFrom + s1;
+                    }
+                } else {
+                    if (shotFrom.contains(s1)) {
+                        int start = shotFrom.indexOf(s1);
+                        shotFrom = shotFrom.substring(0, start) + shotFrom.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.tele_shoot_trench_near:
+                s1 = teleShootTrenchNear.getText().toString() + " |";
+                if (checked) {
+                    if (shotFrom.isEmpty()) {
+                        shotFrom = s1;
+                    } else {
+                        shotFrom = shotFrom + s1;
+                    }
+                } else {
+                    if (shotFrom.contains(s1)) {
+                        int start = shotFrom.indexOf(s1);
+                        shotFrom = shotFrom.substring(0, start) + shotFrom.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.tele_shoot_trench_far:
+                s1 = teleShootTrenchFar.getText().toString() + " |";
+                if (checked) {
+                    if (shotFrom.isEmpty()) {
+                        shotFrom = s1;
+                    } else {
+                        shotFrom = shotFrom + s1;
+                    }
+                } else {
+                    if (shotFrom.contains(s1)) {
+                        int start = shotFrom.indexOf(s1);
+                        shotFrom = shotFrom.substring(0, start) + shotFrom.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.tele_shoot_other:
+                s1 = teleShootOther.getText().toString() + " |";
+                if (checked) {
+                    if (shotFrom.isEmpty()) {
+                        shotFrom = s1;
+                    } else {
+                        shotFrom = shotFrom + s1;
+                    }
+                } else {
+                    if (shotFrom.contains(s1)) {
+                        int start = shotFrom.indexOf(s1);
+                        shotFrom = shotFrom.substring(0, start) + shotFrom.substring(start + s1.length());
+                    }
+                }
+                break;
+        }
+    }
+
 
     /*This method will look at all of the text/number input fields and set error
     *for validation of data entry
@@ -857,12 +1116,12 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         } else if (StringUtils.isEmptyOrNull(getTextInputLayoutString(teleopLowMadeInputLayout))) {
             teleopLowMadeInputLayout.setError(getText(R.string.cargoTopError));
             ViewUtils.requestFocus(teleopLowMadeInputLayout, this);
-        } else if(typeOfBotSpinner.getSelectedItem().toString( ).equals("")){
+        }/* else if(typeOfBotSpinner.getSelectedItem().toString( ).equals("")){
 
             setSpinnerError(typeOfBotSpinner,"Select bot type");
             ViewUtils.requestFocus(typeOfBotSpinner, this);
 
-        } else {
+        }*/ else {
             allInputsPassed = true;
         }
         if (!allInputsPassed) {
@@ -909,7 +1168,9 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 teleopDataStringList.add(lowPortDumpRadioBtn.getText().toString());
                 teleopDataStringList.add(underTrenchRadioBtn.getText().toString());
                 teleopDataStringList.add(observations);
-                teleopDataStringList.add(typeOfBotSpinner.getSelectedItem().toString());
+                teleopDataStringList.add(typeOfBot);
+                teleopDataStringList.add(shotFrom);
+                //teleopDataStringList.add(typeOfBotSpinner.getSelectedItem().toString());
                 teleopDataStringList.add(summaryInput.getText().toString());
                 teleopDataStringList.add(issuesInput.getText().toString());
 
@@ -986,7 +1247,18 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observHungUpPowerCell.setChecked(false);
         observFellOffSwitch.setChecked(false);
         observHungUp.setChecked(false);
-        typeOfBotSpinner.setSelection(0);
+        typeLowShooter.setChecked(false);
+        typeFeederBot.setChecked(false);
+        typeControlPanel.setChecked(false);
+        typeCounterDefenseBot.setChecked(false);
+        typeDefenseBot.setChecked(false);
+        teleShootTargetZone.setChecked(false);
+        teleShootFieldFront.setChecked(false);
+        teleShootFieldDiagonal.setChecked(false);
+        teleShootTrenchNear.setChecked(false);
+        teleShootTrenchFar.setChecked(false);
+        teleShootOther.setChecked(false);
+       // typeOfBotSpinner.setSelection(0);
         summaryInput.setText(null);
         issuesInput.setText(null);
 

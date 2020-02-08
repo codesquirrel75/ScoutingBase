@@ -8,9 +8,12 @@
     android:fillViewport="true"
     android:scrollbars="vertical">
 
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1076,13 +1079,12 @@
         android:textSize="10pt"
         android:layout_margin="10dp"/>
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <CheckBox
                 android:id="@+id/type_high_shooter"
                 android:layout_width="match_parent"
@@ -1140,141 +1142,141 @@
         -->
 
 
-    <!-- this is Alicia's new code for WHERE BOT SHOT FROM
-           2/4/2020-->
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/WhereShotFrom"
-        android:textSize="10pt"
-        android:layout_margin="10dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <CheckBox
-                android:id="@+id/tele_shoot_target_zone"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:onClick="setString"
-                android:text="@string/tele_shoot_target_zone"/>
-
-            <CheckBox
-                android:id="@+id/tele_shoot_field_front"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="setString"
-                android:text="@string/tele_shoot_field_front"/>
-
-            <CheckBox
-                android:id="@+id/tele_shoot_field_diagonal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="setString"
-                android:text="@string/tele_shoot_field_diagonal"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <CheckBox
-                android:id="@+id/tele_shoot_trench_near"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:onClick="setString"
-                android:text="@string/tele_shoot_trench_near"/>
-
-            <CheckBox
-                android:id="@+id/tele_shoot_trench_far"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="setString"
-                android:text="@string/tele_shoot_trench_far"/>
-
-            <CheckBox
-                android:id="@+id/tele_shoot_other"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="setString"
-                android:text="@string/tele_shoot_other"/>
-        </LinearLayout>
-
-        <!--end of Alicia's code for WHERE BOT SHOT FROM 2/4/2020
-        -->
-
-
-
-
-
-        <!--<TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="@string/type_of_bot"/>
-
-        <Spinner
-            android:id="@+id/type_of_bot_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="30dp">
-        </Spinner>-->
-
+        <!-- this is Alicia's new code for WHERE BOT SHOT FROM
+               2/4/2020-->
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:text="@string/WhereShotFrom"
             android:textSize="10pt"
-            android:text="@string/summaryHeading"/>
+            android:layout_margin="10dp"/>
 
-
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/summary_input"
-            android:hint="@string/summary"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:textSize="16sp" />
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/tele_shoot_target_zone"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/tele_shoot_target_zone"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:textSize="10pt"
-            android:text="@string/issuesHeading"/>
+                <CheckBox
+                    android:id="@+id/tele_shoot_field_front"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/tele_shoot_field_front"/>
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/issues_input"
-            android:hint="@string/issues"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:textSize="16sp" />
+                <CheckBox
+                    android:id="@+id/tele_shoot_field_diagonal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/tele_shoot_field_diagonal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/tele_shoot_trench_near"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/tele_shoot_trench_near"/>
 
-        <Button
-            android:id="@+id/save_btn"
-            android:layout_width="match_parent"
-            android:layout_height="30pt"
-            android:onClick="saveData"
-            android:textSize="12pt"
-            android:text="@string/saveButton"
-            android:layout_margin="60dp"/>
+                <CheckBox
+                    android:id="@+id/tele_shoot_trench_far"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/tele_shoot_trench_far"/>
+
+                <CheckBox
+                    android:id="@+id/tele_shoot_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/tele_shoot_other"/>
+            </LinearLayout>
+
+            <!--end of Alicia's code for WHERE BOT SHOT FROM 2/4/2020
+            -->
+
+
+
+
+
+            <!--<TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/type_of_bot"/>
+
+            <Spinner
+                android:id="@+id/type_of_bot_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+            </Spinner>-->
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="10pt"
+                android:text="@string/summaryHeading"/>
+
+
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/summary_input"
+                android:hint="@string/summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="10pt"
+                android:text="@string/issuesHeading"/>
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/issues_input"
+                android:hint="@string/issues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/save_btn"
+                android:layout_width="match_parent"
+                android:layout_height="30pt"
+                android:onClick="saveData"
+                android:textSize="12pt"
+                android:text="@string/saveButton"
+                android:layout_margin="60dp"/>
+
+        </LinearLayout>
 
     </LinearLayout>
-
-
 
 </ScrollView>
 
