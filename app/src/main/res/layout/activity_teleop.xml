@@ -8,7 +8,6 @@
     android:fillViewport="true"
     android:scrollbars="vertical">
 
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -858,225 +857,378 @@
                 android:layout_weight="1"
                 android:text="@string/no"/>
 
-        </RadioGroup>
+    </RadioGroup>
+        <!-- start robot observation section*/-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/robotObservations"
+        android:textSize="10pt"
+        android:layout_margin="10dp"/>
 
-        <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/robotObservations"
-            android:textSize="10pt"
-            android:layout_margin="10dp"/>
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/observ_fast"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_fast"/>
+
+            <CheckBox
+                android:id="@+id/observ_played_defense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_played_defense"/>
+
+            <CheckBox
+                android:id="@+id/observ_died_mid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_died_mid"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/observ_slow"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_slow"/>
+
+            <CheckBox
+                android:id="@+id/observe_Power_Cell_Pickup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_power_cell_pickup"/>
+
+            <CheckBox
+                android:id="@+id/observ_died_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_died_back"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/observ_jerky"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_jerky"/>
+
+            <CheckBox
+                android:id="@+id/control_panel_issues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/controlPanelIssue"/>
+
+            <CheckBox
+                android:id="@+id/observ_fell_apart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_fell_apart"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/observ_smooth"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_smooth"/>
+
+            <CheckBox
+                android:id="@+id/observ_slowed_by_robot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_slowed_by_robot"/>
+
+            <CheckBox
+                android:id="@+id/observ_not_much"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_not_much"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/observ_fell_over"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_fell_over"/>
+
+            <CheckBox
+                android:id="@+id/observ_penalties"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_penalties"/>
+
+            <CheckBox
+                android:id="@+id/observ_dns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_dns"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/observ_average_speed"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_average_speed"/>
+
+            <CheckBox
+                android:id="@+id/observ_hung_up_power_cell"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <CheckBox
-                    android:id="@+id/observ_fast"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_fast"/>
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/hungUpPowerCell"/>
+        </LinearLayout>
 
-                <CheckBox
-                    android:id="@+id/observ_played_defense"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_played_defense"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-                <CheckBox
-                    android:id="@+id/observ_died_mid"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_died_mid"/>
-            </LinearLayout>
-            <LinearLayout
+            <CheckBox
+                android:id="@+id/observ_fell_off_switch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <CheckBox
-                    android:id="@+id/observ_slow"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_slow"/>
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/fellGenSwitch" />
 
-                <CheckBox
-                    android:id="@+id/observe_Power_Cell_Pickup"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_power_cell_pickup"/>
-
-                <CheckBox
-                    android:id="@+id/observ_died_back"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_died_back"/>
-            </LinearLayout>
-            <LinearLayout
+            <CheckBox
+                android:id="@+id/observ_hung_up"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <CheckBox
-                    android:id="@+id/observ_jerky"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_jerky"/>
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/hungUpfloor"/>
 
-                <CheckBox
-                    android:id="@+id/control_panel_issues"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/controlPanelIssue"/>
-
-                <CheckBox
-                    android:id="@+id/observ_fell_apart"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_fell_apart"/>
-            </LinearLayout>
-            <LinearLayout
+           <!-- <CheckBox
+                android:id="@+id/observ_dns"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <CheckBox
-                    android:id="@+id/observ_smooth"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_smooth"/>
-
-                <CheckBox
-                    android:id="@+id/observ_slowed_by_robot"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_slowed_by_robot"/>
-
-                <CheckBox
-                    android:id="@+id/observ_not_much"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_not_much"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <CheckBox
-                    android:id="@+id/observ_fell_over"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_fell_over"/>
-
-                <CheckBox
-                    android:id="@+id/observ_penalties"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_penalties"/>
-
-                <CheckBox
-                    android:id="@+id/observ_dns"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_dns"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <CheckBox
-                    android:id="@+id/observ_average_speed"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_average_speed"/>
-
-                <CheckBox
-                    android:id="@+id/observ_hung_up_power_cell"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/hungUpPowerCell"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/observ_fell_off_switch"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/fellGenSwitch" />
-
-                <CheckBox
-                    android:id="@+id/observ_hung_up"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/hungUpfloor"/>
-
-               <!-- <CheckBox
-                    android:id="@+id/observ_dns"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/observ_dns"/>-->
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_dns"/>-->
             </LinearLayout>
 
         </LinearLayout>
 
-        <TextView
+
+    <!-- this is Alicia's new code for the Type of Bot
+               2/4/2020-->
+    <!-- start robot observation section*/-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/TypeOfRobot"
+        android:textSize="10pt"
+        android:layout_margin="10dp"/>
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/type_high_shooter"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/high_shooter"/>
+
+            <CheckBox
+                android:id="@+id/type_low_shooter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/low_shooter"/>
+
+            <CheckBox
+                android:id="@+id/type_feeder_bot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/feeder_bot"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/type_control_panel"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/control_panel"/>
+
+            <CheckBox
+                android:id="@+id/type_defense_bot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/defense_bot"/>
+
+            <CheckBox
+                android:id="@+id/type_counter_defense_bot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/counter_defense_bot"/>
+        </LinearLayout>
+
+        <!--end of Alicia's code 2/4/2020
+        -->
+
+
+    <!-- this is Alicia's new code for WHERE BOT SHOT FROM
+           2/4/2020-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/WhereShotFrom"
+        android:textSize="10pt"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/tele_shoot_target_zone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/tele_shoot_target_zone"/>
+
+            <CheckBox
+                android:id="@+id/tele_shoot_field_front"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/tele_shoot_field_front"/>
+
+            <CheckBox
+                android:id="@+id/tele_shoot_field_diagonal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/tele_shoot_field_diagonal"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/tele_shoot_trench_near"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/tele_shoot_trench_near"/>
+
+            <CheckBox
+                android:id="@+id/tele_shoot_trench_far"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/tele_shoot_trench_far"/>
+
+            <CheckBox
+                android:id="@+id/tele_shoot_other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/tele_shoot_other"/>
+        </LinearLayout>
+
+        <!--end of Alicia's code for WHERE BOT SHOT FROM 2/4/2020
+        -->
+
+
+
+
+
+        <!--<TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textSize="10pt"
             android:text="@string/type_of_bot"/>
 
         <Spinner
             android:id="@+id/type_of_bot_spinner"
             android:layout_width="match_parent"
             android:layout_height="30dp">
-        </Spinner>
+        </Spinner>-->
 
         <TextView
             android:layout_width="match_parent"
