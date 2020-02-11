@@ -95,9 +95,6 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     @BindView(R.id.power_cell_placement_rating_radio_group)
     public RadioGroup powerCellPlacementRatingRadioGroup;
 
-    @BindView(R.id.over_all_effectiveness_rating_radio_group)
-    public RadioGroup OverAllEffectivenessRatingRadioGroup;
-
     @BindView(R.id.control_panel_rating_radio_group)
     public RadioGroup controlPanelRadingRadioGroup;
 
@@ -323,7 +320,6 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopHighMadeInput.setOnKeyListener(this);
         teleopLowAttemptInput.setOnKeyListener(this);
         teleopLowMadeInput.setOnKeyListener(this);
-        OverAllEffectivenessRatingRadioGroup.setOnKeyListener(this);
         controlPanelRadingRadioGroup.setOnKeyListener(this);
         counterDefenseEffectiveness.setOnKeyListener(this);
         endGameLocationSpinner.setOnKeyListener(this);
@@ -382,7 +378,6 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopHighMadeInput.setOnKeyListener(null);
         teleopLowAttemptInput.setOnKeyListener(null);
         teleopLowMadeInput.setOnKeyListener(null);
-        OverAllEffectivenessRatingRadioGroup.setOnKeyListener(null);
         controlPanelRadingRadioGroup.setOnKeyListener(null);
         counterDefenseEffectiveness.setOnKeyListener(null);
         endGameLocationSpinner.setOnKeyListener(null);
@@ -1138,7 +1133,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         final RadioButton powerCellPlacementRatingRadioBtn = findViewById(powerCellPlacementRatingRadioGroup.getCheckedRadioButtonId());
         final RadioButton climbTimeRadiobtn = findViewById(climbTimeRadioGroup.getCheckedRadioButtonId());
         final RadioButton cycleTimeRadiobtn = findViewById(cycleTimeRadioGroup.getCheckedRadioButtonId());
-        final RadioButton OverAllEffectivenessRatingRadioBtn = findViewById(OverAllEffectivenessRatingRadioGroup.getCheckedRadioButtonId());
+
 
 
         if(PermissionUtils.getPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
@@ -1154,7 +1149,6 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 teleopDataStringList.add(getTextInputLayoutString(teleopLowMadeInputLayout));
                 teleopDataStringList.add(defenseRatingRadioBtn.getText().toString());
                 teleopDataStringList.add(powerCellPlacementRatingRadioBtn.getText().toString());
-                teleopDataStringList.add(OverAllEffectivenessRatingRadioBtn.getText().toString());
                 teleopDataStringList.add(controlPanelRadingRadioBtn.getText().toString());
                 teleopDataStringList.add(counterDefenseEffectivenessRadiobtn.getText().toString());
                 teleopDataStringList.add(endGameLocationSpinner.getSelectedItem().toString());
@@ -1213,7 +1207,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopHighMadeInput.setText("" + teleopHighMade);
         teleopLowAttemptInput.setText("" + teleopLowMissed);
         teleopLowMadeInput.setText("" + teleopLowMade);
-        OverAllEffectivenessRatingRadioGroup.clearCheck();
+
         controlPanelRadingRadioGroup.clearCheck();
         counterDefenseEffectiveness.clearCheck();
         endGameLocationSpinner.setSelection(0);

@@ -238,11 +238,382 @@
             </LinearLayout>
         </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cycle_time_heading"
+            android:textSize="10pt"
+            android:layout_margin="10dp"/>
+
+        <!-- <Spinner
+             android:id="@+id/cycle_time_spinner"
+             android:layout_width="match_parent"
+             android:layout_height="30dp">
+
+         </Spinner> -->
+
+        <RadioGroup
+            android:id="@+id/cycle_time_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:checkedButton="@id/cycle_na">
+
+            <RadioButton
+                android:id="@+id/cycle_super_fast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cycleSuperFast"/>
+            <RadioButton
+                android:id="@+id/cycle_fast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cycleFast"/>
+            <RadioButton
+                android:id="@+id/cycle_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cycleMedium"/>
+            <RadioButton
+                android:id="@+id/cycle_slow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cycleSlow"/>
+            <RadioButton
+                android:id="@+id/cycle_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cycleNa"/>
 
 
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/climbTimeHeading"
+            android:textSize="10pt"
+            android:layout_margin="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/climb_time_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/climb_na">
+
+            <RadioButton
+                android:id="@+id/climb_fast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/climb_fast"/>
+            <RadioButton
+                android:id="@+id/climb_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/climb_medium"/>
+            <RadioButton
+                android:id="@+id/climb_slow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/climb_slow"/>
+            <RadioButton
+                android:id="@+id/climb_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/climb_na"/>
 
 
+        </RadioGroup>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/endgameHeading"
+            android:textSize="10pt" />
+
+        <Spinner
+            android:id="@+id/end_game_location_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+        </Spinner>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- this is Alicia's new code for the Type of Bot
+              2/4/2020-->
+        <!-- start robot observation section*/-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/TypeOfRobot"
+            android:textSize="10pt"
+            android:layout_margin="10dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/type_high_shooter"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/high_shooter"/>
+
+            <CheckBox
+                android:id="@+id/type_low_shooter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/low_shooter"/>
+
+            <CheckBox
+                android:id="@+id/type_feeder_bot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/feeder_bot"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/type_control_panel"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/control_panel"/>
+
+            <CheckBox
+                android:id="@+id/type_defense_bot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/defense_bot"/>
+
+            <CheckBox
+                android:id="@+id/type_counter_defense_bot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/counter_defense_bot"/>
+        </LinearLayout>
+
+        <!--end of Alicia's code 2/4/2020
+        -->
+
+
+        <!-- this is Alicia's new code for WHERE BOT SHOT FROM
+               2/4/2020-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/WhereShotFrom"
+            android:textSize="10pt"
+            android:layout_margin="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/tele_shoot_target_zone"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/tele_shoot_target_zone"/>
+
+                <CheckBox
+                    android:id="@+id/tele_shoot_field_front"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/tele_shoot_field_front"/>
+
+                <CheckBox
+                    android:id="@+id/tele_shoot_field_diagonal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/tele_shoot_field_diagonal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/tele_shoot_trench_near"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/tele_shoot_trench_near"/>
+
+                <CheckBox
+                    android:id="@+id/tele_shoot_trench_far"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/tele_shoot_trench_far"/>
+
+                <CheckBox
+                    android:id="@+id/tele_shoot_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/tele_shoot_other"/>
+            </LinearLayout>
+
+            <!--end of Alicia's code for WHERE BOT SHOT FROM 2/4/2020
+            -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/power_cell_pickup"
+            android:textSize="10pt"
+            android:layout_margin="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/power_cell_pickup_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/power_cell_pickup_na">
+
+            <RadioButton
+                android:id="@+id/power_cell_pickup_floor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/power_cell_pickup_floor_string"/>
+
+            <RadioButton
+                android:id="@+id/power_cell_pickup_feed_station"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/power_cell_pickup_feed_station_text"/>
+
+            <RadioButton
+                android:id="@+id/power_cell_pickup_either"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/power_cell_pickup_either_text"/>
+
+            <RadioButton
+                android:id="@+id/power_cell_pickup_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_na"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/low_port_dump"
+            android:textSize="10pt"
+            android:layout_margin="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/low_port_dump_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/low_port_dump_no">
+
+            <RadioButton
+                android:id="@+id/low_port_dump_yes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:id="@+id/low_port_dump_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no"/>
+
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/under_trench"
+            android:textSize="10pt"
+            android:layout_margin="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/under_trench_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/under_trench_no">
+
+            <RadioButton
+                android:id="@+id/under_trench_yes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:id="@+id/under_trench_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no"/>
+
+        </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -262,36 +633,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/rating_1"/>
+                android:text="@string/defense_shut_down"/>
 
             <RadioButton
                 android:id="@+id/defense_rating_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/rating_2"/>
+                android:text="@string/defense_slow_down"/>
 
             <RadioButton
                 android:id="@+id/defense_rating_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/rating_3"/>
-
-            <RadioButton
-                android:id="@+id/defense_rating_4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_4"/>
-
-            <RadioButton
-                android:id="@+id/defense_rating_5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_5"/>
-
+                android:text="@string/defense_not_effective"/>
 
             <RadioButton
                 android:id="@+id/defense_rating_na"
@@ -302,61 +658,48 @@
 
         </RadioGroup>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="10pt"
-            android:text="@string/over_all_effectiveness_rating"/>
-
-        <RadioGroup
-            android:id="@+id/over_all_effectiveness_rating_radio_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:checkedButton="@id/over_all_effectiveness_rating_na">
-
-            <RadioButton
-                android:id="@+id/over_all_effectiveness_rating_1"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_1"/>
+                android:textSize="10pt"
+                android:text="@string/counterDefenseQuestion"/>
 
-            <RadioButton
-                android:id="@+id/over_all_effectiveness_rating_2"
+            <RadioGroup
+                android:id="@+id/counter_defense_effectiveness"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_2"/>
-            <RadioButton
-                android:id="@+id/over_all_effectiveness_rating_3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_3"/>
+                android:orientation="horizontal"
+                android:checkedButton="@id/counter_defense_na">
 
-            <RadioButton
-                android:id="@+id/over_all_effectiveness_rating_4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_4"/>
+                <RadioButton
+                    android:id="@+id/counter_defense_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/defense_shut_down"/>
 
-            <RadioButton
-                android:id="@+id/over_all_effectiveness_rating_5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_5"/>
+                <RadioButton
+                    android:id="@+id/counter_defense_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/defense_slow_down"/>
 
-            <RadioButton
-                android:id="@+id/over_all_effectiveness_rating_na"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_na"/>
+                <RadioButton
+                    android:id="@+id/counter_defense_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/defense_not_effective"/>
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/counter_defense_na"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rating_na"/>
+
+            </RadioGroup>
 
         <TextView
             android:layout_width="match_parent"
@@ -469,167 +812,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/rating_na"/>
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="10pt"
-            android:text="@string/counterDefenseQuestion"/>
-
-        <RadioGroup
-            android:id="@+id/counter_defense_effectiveness"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:checkedButton="@id/counter_defense_na">
-
-            <RadioButton
-                android:id="@+id/counter_defense_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/defense_shut_down"/>
-
-            <RadioButton
-                android:id="@+id/counter_defense_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/defense_slow_down"/>
-
-            <RadioButton
-                android:id="@+id/counter_defense_3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/defense_not_effective"/>
-
-            <RadioButton
-                android:id="@+id/counter_defense_na"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_na"/>
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/endgameHeading"
-            android:textSize="10pt"
-            android:layout_margin="10dp"/>
-
-        <Spinner
-            android:id="@+id/end_game_location_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="30dp">
-        </Spinner>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/generalInfoHeading"
-            android:textSize="10pt"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/climbTimeHeading"
-            android:textSize="10pt"
-            android:layout_margin="10dp"/>
-
-        <RadioGroup
-            android:id="@+id/climb_time_radio_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:checkedButton="@id/climb_na">
-
-            <RadioButton
-                android:id="@+id/climb_fast"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/climb_fast"/>
-            <RadioButton
-                android:id="@+id/climb_medium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/climb_medium"/>
-            <RadioButton
-                android:id="@+id/climb_slow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/climb_slow"/>
-            <RadioButton
-                android:id="@+id/climb_na"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/climb_na"/>
-
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/cycle_time_heading"
-            android:textSize="10pt"
-            android:layout_margin="10dp"/>
-
-       <!-- <Spinner
-            android:id="@+id/cycle_time_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="30dp">
-
-        </Spinner> -->
-
-        <RadioGroup
-            android:id="@+id/cycle_time_radio_group"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:checkedButton="@id/cycle_na">
-
-            <RadioButton
-                android:id="@+id/cycle_super_fast"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/cycleSuperFast"/>
-            <RadioButton
-                android:id="@+id/cycle_fast"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/cycleFast"/>
-            <RadioButton
-                android:id="@+id/cycle_medium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/cycleMedium"/>
-            <RadioButton
-                android:id="@+id/cycle_slow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/cycleSlow"/>
-            <RadioButton
-                android:id="@+id/cycle_na"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/cycleNa"/>
-
 
         </RadioGroup>
 
@@ -751,116 +933,7 @@
 
         </RadioGroup>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/power_cell_pickup"
-            android:textSize="10pt"
-            android:layout_margin="10dp"/>
 
-        <RadioGroup
-            android:id="@+id/power_cell_pickup_radio_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:checkedButton="@id/power_cell_pickup_na">
-
-            <RadioButton
-                android:id="@+id/power_cell_pickup_floor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/power_cell_pickup_floor_string"/>
-
-            <RadioButton
-                android:id="@+id/power_cell_pickup_feed_station"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/power_cell_pickup_feed_station_text"/>
-
-            <RadioButton
-                android:id="@+id/power_cell_pickup_either"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/power_cell_pickup_either_text"/>
-
-            <RadioButton
-                android:id="@+id/power_cell_pickup_na"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_na"/>
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/low_port_dump"
-            android:textSize="10pt"
-            android:layout_margin="10dp"/>
-
-        <RadioGroup
-            android:id="@+id/low_port_dump_radio_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:checkedButton="@id/under_trench_no">
-
-            <RadioButton
-                android:id="@+id/low_port_dump_yes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/yes"/>
-
-            <RadioButton
-                android:id="@+id/low_port_dump_no"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/no"/>
-
-            <RadioButton
-                android:id="@+id/low_port_dump_na"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/na"/>
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/under_trench"
-            android:textSize="10pt"
-            android:layout_margin="10dp"/>
-
-        <RadioGroup
-            android:id="@+id/under_trench_radio_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:checkedButton="@id/under_trench_no">
-
-            <RadioButton
-                android:id="@+id/under_trench_yes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/yes"/>
-
-            <RadioButton
-                android:id="@+id/under_trench_no"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/no"/>
-
-    </RadioGroup>
         <!-- start robot observation section*/-->
     <TextView
         android:layout_width="match_parent"
@@ -1072,149 +1145,7 @@
                2/4/2020-->
     <!-- start robot observation section*/-->
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/TypeOfRobot"
-        android:textSize="10pt"
-        android:layout_margin="10dp"/>
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/type_high_shooter"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:onClick="setString"
-                android:text="@string/high_shooter"/>
-
-            <CheckBox
-                android:id="@+id/type_low_shooter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="setString"
-                android:text="@string/low_shooter"/>
-
-            <CheckBox
-                android:id="@+id/type_feeder_bot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="setString"
-                android:text="@string/feeder_bot"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <CheckBox
-                android:id="@+id/type_control_panel"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:onClick="setString"
-                android:text="@string/control_panel"/>
-
-            <CheckBox
-                android:id="@+id/type_defense_bot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="setString"
-                android:text="@string/defense_bot"/>
-
-            <CheckBox
-                android:id="@+id/type_counter_defense_bot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="setString"
-                android:text="@string/counter_defense_bot"/>
-        </LinearLayout>
-
-        <!--end of Alicia's code 2/4/2020
-        -->
-
-
-        <!-- this is Alicia's new code for WHERE BOT SHOT FROM
-               2/4/2020-->
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/WhereShotFrom"
-            android:textSize="10pt"
-            android:layout_margin="10dp"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <CheckBox
-                    android:id="@+id/tele_shoot_target_zone"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/tele_shoot_target_zone"/>
-
-                <CheckBox
-                    android:id="@+id/tele_shoot_field_front"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/tele_shoot_field_front"/>
-
-                <CheckBox
-                    android:id="@+id/tele_shoot_field_diagonal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/tele_shoot_field_diagonal"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <CheckBox
-                    android:id="@+id/tele_shoot_trench_near"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/tele_shoot_trench_near"/>
-
-                <CheckBox
-                    android:id="@+id/tele_shoot_trench_far"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/tele_shoot_trench_far"/>
-
-                <CheckBox
-                    android:id="@+id/tele_shoot_other"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setString"
-                    android:text="@string/tele_shoot_other"/>
-            </LinearLayout>
-
-            <!--end of Alicia's code for WHERE BOT SHOT FROM 2/4/2020
-            -->
 
 
 

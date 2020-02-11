@@ -68,8 +68,8 @@
     <string name="generalInfoHeading">General Info</string>
 
     <string name="cycle_time_heading">What was the robot\'s average cycle time?</string>
-    <string name="over_all_Effectiveness_heading">Rate the overall effectiveness of the robot during the match.</string>
-    <string name="trained_drive_team_heading">How trained did the drive team look?</string>
+    <string name="over_all_Effectiveness_heading">Rate the overall effectiveness of the robot during the match (1 = BAD, 5 = Excellent).</string>
+    <string name="trained_drive_team_heading">How trained did the drive team look (1 = BAD, 5 = Excellent)?</string>
     <string name="over_all_placement">Rate the overall placement of cargo and hatch panels</string>
     <string name="observ_average_speed">Average Speed</string>
 
@@ -108,7 +108,7 @@
     <string name="observ_slowed_by_robot">Had defense played against them</string>
     <string name="observ_dns">Didn\'t show up</string>
     <string name="defenseQuestion">How effective was the robot\'s defense?</string>
-    <string name="counterDefenseQuestion">How effective was the robot\'s counter defense?</string>
+    <string name="counterDefenseQuestion">If the robot played counter defense, rate the level of counter defense.</string>
 
 
     <!--    Defense / Counter Defense strings -->
@@ -285,20 +285,20 @@
     <string name="AutoHighHeading">High Power Port</string>
     <string name="AutoLowHeading">Low Power Port</string>
     <string name="AutoMoveOffInitiationLineQuestion">Did the robot move off the Initiation Line?</string>
-    <string name="defense_rating">If the robot played defense rate the level of defense.</string>
+    <string name="defense_rating">If the robot played defense, rate the level of defense.</string>
     <string name="over_all_effectiveness_rating">Rate the overall effectiveness of the robot during the match.</string>
-    <string name="power_cell_placement_rating">Rate the overall  power cell placemnet.</string>
-    <string name="controlPanelRating">How good was the team with the control panel?</string>
+    <string name="power_cell_placement_rating">Rate the overall  power cell placement (1 = BAD, 5 = Excellent).</string>
+    <string name="controlPanelRating">How good was the team with the control panel (1 = BAD, 5 = Excellent)?</string>
     <string name="observ_power_cell_pickup">had a hard time picking up power cells</string>
     <string name="controlPanelIssue">had a hard time with the control panel</string>
     <string name="hungUpPowerCell">got hung up on a power cell</string>
     <string name="fellGenSwitch">Fell off generator switch</string>
     <string name="hungUpfloor">Got hung up on the floor</string>
-    <string name="power_cell_pickup">where does the robot get power cells?</string>
+    <string name="power_cell_pickup">Where did the robot get power cells?</string>
     <string name="power_cell_pickup_floor_string">Floor pickup</string>
     <string name="power_cell_pickup_feed_station_text">Feed station</string>
     <string name="power_cell_pickup_either_text">Either</string>
-    <string name="under_trench">Can the robot go under the trench?</string>
+    <string name="under_trench">Did the robot go under the trench?</string>
     <string name="low_port_dump">Did the Robot dump 5 balls into the Low Power Port at once?</string>
     <string name="TypeOfRobot">Type of Bot</string>
     <string name="high_shooter">High shooter</string>
