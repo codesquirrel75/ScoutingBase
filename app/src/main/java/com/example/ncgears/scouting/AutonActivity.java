@@ -125,12 +125,11 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
 
         checkForPermissions();
 
+        AutoHighAttemptInput.setText("" + HighMissed);
+        AutoHighMadeInput.setText("" + HighMade);
+        AutoLowAttemptInput.setText("" + LowMissed);
+        AutoLowMadeInput.setText("" + LowMade);
 
-
-        displayAutoHighAttemptInput(HighMissed);
-        displayAutoHighMadeInput(HighMade);
-        displayAutoLowAttemptInput(LowMissed);
-        displayAutoLowMadeInput(LowMade);
 
         //  --- Team Numbers spinner ---
 
@@ -284,7 +283,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         matchNumberInputLayout.setError(null);
 
         matchNumberInput.requestFocus();
-        clearData();
+
     }
 
 
@@ -320,7 +319,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         LowAttempt = 0;
         LowMissed = 0;
         LowMade = 0;
-        autoInitiationLine.check(0);
+        autoInitiationLine.check(R.id.AutoInitiationLine_no);
         displayAutoHighAttemptInput(HighMissed);
         displayAutoHighMadeInput(HighMade);
         displayAutoLowAttemptInput(LowMissed);
