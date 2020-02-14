@@ -345,7 +345,7 @@
                 android:text="@string/AutoMoveOffInitiationLineQuestion"/>
 
             <RadioGroup
-                android:id="@+id/AutoInitiationLine"
+                android:id="@+id/auto_initiation_line"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"

@@ -640,10 +640,17 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitDriveTrainInputLayout.setSelection(0);
         pitProgrammingLanguages.setSelection(0);
         scouterInitialsInput.setText(null);
+        pitPowerCellPreload.clearCheck();
+        pitControlPanelNothing.setChecked(false);
+        pitControlPanelPosition.setChecked(false);
+        pitControlPanelRotate3to5.setChecked(false);
         powerPortOuter.setChecked(false);
         powerPortInner.setChecked(false);
         powerPortShotBottom.setChecked(false);
         powerPortShotNa.setChecked(false);
+        pitEndgameHang.clearCheck();
+        pitInitLineAuton.clearCheck();
+        pitDriveThruTrench.clearCheck();
         pitShotLocationOuter.setChecked(false);
         pitShotLocationInner.setChecked(false);
         pitShotLocationBottom.setChecked(false);

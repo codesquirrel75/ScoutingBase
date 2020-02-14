@@ -297,7 +297,7 @@
     <string name="power_cell_pickup">Where did the robot get power cells?</string>
     <string name="power_cell_pickup_floor_string">Floor pickup</string>
     <string name="power_cell_pickup_feed_station_text">Feed station</string>
-    <string name="power_cell_pickup_either_text">Either</string>
+    <string name="power_cell_pickup_either_text">Both</string>
     <string name="under_trench">Did the robot go under the trench?</string>
     <string name="low_port_dump">Did the Robot dump 5 balls into the Low Power Port at once?</string>
     <string name="TypeOfRobot">Type of Bot</string>
@@ -309,7 +309,7 @@
     <string name="counter_defense_bot">Counter defense bot</string>
     <string name="WhereShotFrom">Where did the robot shoot from?</string>
     <string name="tele_shoot_target_zone">Target zone</string>
-    <string name="tele_shoot_field_front">In front of the power port</string>
+    <string name="tele_shoot_field_front">In front of the power port, not in Target Zone</string>
     <string name="tele_shoot_field_diagonal">Diaginal from power port</string>
     <string name="tele_shoot_trench_near">Trench nearest the power port</string>
     <string name="tele_shoot_trench_far">Trench farthest from power port</string>
@@ -372,6 +372,12 @@
         <item>Hanging</item>
         <item>Hanging balanced</item>
         <item>Hanging while carring another robot</item>
+        <item>Solo hang - not balanced</item>
+        <item>Solo hang - balanced</item>
+        <item>Hanging with other robot - not balanced</item>
+        <item>Hanging with another robot - balanced</item>
+        <item>Hanging while carrying another robot - not balanced</item>
+        <item>Hanging while carrying another robot - balanced</item>
         <item>Parked in the center</item>
         <item>Still on Field</item>
     </string-array>

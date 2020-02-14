@@ -566,7 +566,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
 
         switch (view.getId()) {
             case R.id.observe_Power_Cell_Pickup:
-                s1 = observPowerCellPickup.getText().toString() + " |";
+                s1 = observPowerCellPickup.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -581,7 +581,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_died_back:
-                s1 = observDiedBack.getText().toString() + " |";
+                s1 = observDiedBack.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -596,7 +596,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_died_mid:
-                s1 = observDiedMid.getText().toString() + " |";
+                s1 = observDiedMid.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -611,7 +611,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_dns:
-                s1 = observDns.getText().toString() + " |";
+                s1 = observDns.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -626,7 +626,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_fast:
-                s1 = observFast.getText().toString() + " |";
+                s1 = observFast.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -641,7 +641,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_fell_apart:
-                s1 = observFellApart.getText().toString() + " |";
+                s1 = observFellApart.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -656,7 +656,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_fell_over:
-                s1 = observFellOver.getText().toString() + " |";
+                s1 = observFellOver.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -671,7 +671,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.control_panel_issues:
-                s1 = observPanelIssues.getText().toString() + " |";
+                s1 = observPanelIssues.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -686,7 +686,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_jerky:
-                s1 = observJerky.getText().toString() + " |";
+                s1 = observJerky.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -701,7 +701,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_not_much:
-                s1 = observNotMuch.getText().toString() + " |";
+                s1 = observNotMuch.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -716,7 +716,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_penalties:
-                s1 = observPenalties.getText().toString() + " |";
+                s1 = observPenalties.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -731,7 +731,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_played_defense:
-                s1 = observPlayedDefense.getText().toString() + " |";
+                s1 = observPlayedDefense.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -746,7 +746,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_slow:
-                s1 = observSlow.getText().toString() + " |";
+                s1 = observSlow.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -761,7 +761,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_slowed_by_robot:
-                s1 = observSlowedByRobot.getText().toString() + " |";
+                s1 = observSlowedByRobot.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -776,7 +776,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_smooth:
-                s1 = observsmooth.getText().toString() + " |";
+                s1 = observsmooth.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -791,7 +791,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_average_speed:
-                s1 = observAverageSpeed.getText().toString() + " |";
+                s1 = observAverageSpeed.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -806,7 +806,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_hung_up_power_cell:
-                s1 = observHungUpPowerCell.getText().toString() + " |";
+                s1 = observHungUpPowerCell.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -821,7 +821,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_fell_off_switch:
-                s1 = observFellOffSwitch.getText().toString() + " |";
+                s1 = observFellOffSwitch.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -836,7 +836,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.observ_hung_up:
-                s1 = observHungUp.getText().toString() + " |";
+                s1 = observHungUp.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -859,7 +859,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
 
         switch (view.getId()) {
             case R.id.type_high_shooter:
-                s1 = typeHighShooter.getText().toString() + " |";
+                s1 = typeHighShooter.getText().toString() + " ,";
                 if (checked) {
                     if (typeOfBot.isEmpty()) {
                         typeOfBot = s1;
@@ -874,7 +874,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.type_low_shooter:
-                s1 = typeLowShooter.getText().toString() + " |";
+                s1 = typeLowShooter.getText().toString() + " ,";
                 if (checked) {
                     if (typeOfBot.isEmpty()) {
                         typeOfBot = s1;
@@ -889,7 +889,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.type_feeder_bot:
-                s1 = typeFeederBot.getText().toString() + " |";
+                s1 = typeFeederBot.getText().toString() + " ,";
                 if (checked) {
                     if (typeOfBot.isEmpty()) {
                         typeOfBot = s1;
@@ -904,7 +904,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.type_control_panel:
-                s1 = typeControlPanel.getText().toString() + " |";
+                s1 = typeControlPanel.getText().toString() + " ,";
                 if (checked) {
                     if (typeOfBot.isEmpty()) {
                         typeOfBot = s1;
@@ -919,7 +919,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.type_counter_defense_bot:
-                s1 = typeCounterDefenseBot.getText().toString() + " |";
+                s1 = typeCounterDefenseBot.getText().toString() + " ,";
                 if (checked) {
                     if (typeOfBot.isEmpty()) {
                         typeOfBot = s1;
@@ -934,7 +934,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.type_defense_bot:
-                s1 = typeDefenseBot.getText().toString() + " |";
+                s1 = typeDefenseBot.getText().toString() + " ,";
                 if (checked) {
                     if (typeOfBot.isEmpty()) {
                         typeOfBot = s1;
@@ -957,7 +957,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
 
         switch (view.getId()) {
             case R.id.tele_shoot_target_zone:
-                s1 = teleShootTargetZone.getText().toString() + " |";
+                s1 = teleShootTargetZone.getText().toString() + " ,";
                 if (checked) {
                     if (shotFrom.isEmpty()) {
                         shotFrom = s1;
@@ -972,7 +972,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.tele_shoot_field_front:
-                s1 = teleShootFieldFront.getText().toString() + " |";
+                s1 = teleShootFieldFront.getText().toString() + " ,";
                 if (checked) {
                     if (shotFrom.isEmpty()) {
                         shotFrom = s1;
@@ -987,7 +987,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.tele_shoot_field_diagonal:
-                s1 = teleShootFieldDiagonal.getText().toString() + " |";
+                s1 = teleShootFieldDiagonal.getText().toString() + " ,";
                 if (checked) {
                     if (shotFrom.isEmpty()) {
                         shotFrom = s1;
@@ -1002,7 +1002,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.tele_shoot_trench_near:
-                s1 = teleShootTrenchNear.getText().toString() + " |";
+                s1 = teleShootTrenchNear.getText().toString() + " ,";
                 if (checked) {
                     if (shotFrom.isEmpty()) {
                         shotFrom = s1;
@@ -1017,7 +1017,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.tele_shoot_trench_far:
-                s1 = teleShootTrenchFar.getText().toString() + " |";
+                s1 = teleShootTrenchFar.getText().toString() + " ,";
                 if (checked) {
                     if (shotFrom.isEmpty()) {
                         shotFrom = s1;
@@ -1032,7 +1032,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 }
                 break;
             case R.id.tele_shoot_other:
-                s1 = teleShootOther.getText().toString() + " |";
+                s1 = teleShootOther.getText().toString() + " ,";
                 if (checked) {
                     if (shotFrom.isEmpty()) {
                         shotFrom = s1;
@@ -1254,6 +1254,12 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
        // typeOfBotSpinner.setSelection(0);
         summaryInput.setText(null);
         issuesInput.setText(null);
+        teleopHighAttempt = 0;
+        teleopHighMissed =0;
+        teleopHighMade = 0;
+        teleopLowAttempt = 0;
+        teleopLowMissed = 0;
+        teleopLowMade = 0;
 
     }
 

@@ -94,8 +94,8 @@
                 android:id="@+id/pit_power_cell_preload"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:checkedButton="@id/power_cell_preload_0">
+                android:orientation="horizontal">
+
                 <RadioButton
                     android:id="@+id/power_cell_preload_0"
                     android:layout_width="wrap_content"
@@ -183,8 +183,7 @@
                 android:id="@+id/pit_init_line_auton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:checkedButton="@id/pit_init_line_auton_no">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/pit_init_line_auton_yes"
@@ -216,8 +215,7 @@
                 android:id="@+id/pit_drive_thru_trench"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:checkedButton="@id/pit_init_line_auton_no">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/pit_drive_thru_trench_yes"
@@ -335,8 +333,7 @@
                 android:id="@+id/pit_endgame_hang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:checkedButton="@id/pit_endgame_hang_no">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/pit_endgame_hang_yes"
@@ -361,8 +358,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:textSize="10pt"
-                android:text="@string/pitGamePlan"/>
+                android:text="@string/pitGamePlan"
+                android:textSize="10pt" />
+
             <EditText
                 android:id="@+id/pit_basic_plan"
                 android:autofillHints="Other"

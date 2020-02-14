@@ -89,6 +89,9 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     @BindView(R.id.starting_location)
     public Spinner startingLocation;
 
+    @BindView(R.id.auto_initiation_line)
+    RadioGroup autoInitiationLine;
+
     @BindView(R.id.next_button)
     public Button nextButton;
 
@@ -122,9 +125,11 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
 
         checkForPermissions();
 
-        displayAutoHighAttemptInput(HighAttempt);
+
+
+        displayAutoHighAttemptInput(HighMissed);
         displayAutoHighMadeInput(HighMade);
-        displayAutoLowAttemptInput(LowAttempt);
+        displayAutoLowAttemptInput(LowMissed);
         displayAutoLowMadeInput(LowMade);
 
         //  --- Team Numbers spinner ---
@@ -239,6 +244,8 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     public void onShowTeleop(View view) {
         boolean allInputsPassed = true;
 
+        final RadioButton autoInitiationLineRadioBtn = findViewById(autoInitiationLine.getCheckedRadioButtonId());
+
         if (TeamNumberInputLayout.getSelectedItem().toString().equals("Select Team Number")) {
             setSpinnerError(TeamNumberInputLayout, "Select a Team Number.");
             ViewUtils.requestFocus(TeamNumberInputLayout, this);
@@ -258,6 +265,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         autonDataStringList.add(getTextInputLayoutString(AutoHighMadeLayout));
         autonDataStringList.add(getTextInputLayoutString(AutoLowAttemptInputLayout));
         autonDataStringList.add(getTextInputLayoutString(AutoLowMadeLayout));
+        autonDataStringList.add(autoInitiationLineRadioBtn.getText().toString());
         autonDataStringList.add(TeamNumberInputLayout.getSelectedItem().toString());
         autonDataStringList.add(getTextInputLayoutString(matchNumberInputLayout));
         autonDataStringList.add(startingLocation.getSelectedItem().toString());
@@ -276,6 +284,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         matchNumberInputLayout.setError(null);
 
         matchNumberInput.requestFocus();
+        clearData();
     }
 
 
@@ -301,6 +310,21 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         TeamNumberInputLayout.setSelection(0);
         matchNumberInput.setText("");
         startingLocation.setSelection(0);
+        AutoHighAttemptInput.setText("" + HighMissed);
+        AutoHighMadeInput.setText("" + HighMade);
+        AutoLowAttemptInput.setText("" + LowMissed);
+        AutoLowMadeInput.setText("" + LowMade);
+        HighAttempt = 0;
+        HighMissed =0;
+        HighMade = 0;
+        LowAttempt = 0;
+        LowMissed = 0;
+        LowMade = 0;
+        autoInitiationLine.check(0);
+        displayAutoHighAttemptInput(HighMissed);
+        displayAutoHighMadeInput(HighMade);
+        displayAutoLowAttemptInput(LowMissed);
+        displayAutoLowMadeInput(LowMade);
 
 
     }
