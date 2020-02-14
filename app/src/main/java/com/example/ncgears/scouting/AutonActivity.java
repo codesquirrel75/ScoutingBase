@@ -260,14 +260,16 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
             return;
         }
 
+        autonDataStringList.add(TeamNumberInputLayout.getSelectedItem().toString());
+        autonDataStringList.add(getTextInputLayoutString(matchNumberInputLayout));
+        autonDataStringList.add(startingLocation.getSelectedItem().toString());
         autonDataStringList.add(getTextInputLayoutString(AutoHighAttemptInputLayout));
         autonDataStringList.add(getTextInputLayoutString(AutoHighMadeLayout));
         autonDataStringList.add(getTextInputLayoutString(AutoLowAttemptInputLayout));
         autonDataStringList.add(getTextInputLayoutString(AutoLowMadeLayout));
         autonDataStringList.add(autoInitiationLineRadioBtn.getText().toString());
-        autonDataStringList.add(TeamNumberInputLayout.getSelectedItem().toString());
-        autonDataStringList.add(getTextInputLayoutString(matchNumberInputLayout));
-        autonDataStringList.add(startingLocation.getSelectedItem().toString());
+
+
 
 
         //autonDataStringList.add(playStyle.getSelectedItem().toString());
