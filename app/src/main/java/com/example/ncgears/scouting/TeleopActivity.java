@@ -853,7 +853,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         }
     }
 
-    public void setTypeOfBotString(View view) {
+    /*public void setTypeOfBotString(View view) {   this is the original line of code before I copied and modified the following on 2/15/2020  ATB*/
+    public void setStringTypeBot(View view) {
         Boolean checked = ((CheckBox) view).isChecked();
         String s1;
 
@@ -951,7 +952,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         }
     }
 
-    public void setShotFromString(View view) {
+    public void setStringShot(View view) {
         Boolean checked = ((CheckBox) view).isChecked();
         String s1;
 
@@ -1147,29 +1148,32 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 teleopDataStringList.add(getTextInputLayoutString(teleopHighMadeInputLayout));
                 teleopDataStringList.add(getTextInputLayoutString(teleopLowAttemptInputLayout));
                 teleopDataStringList.add(getTextInputLayoutString(teleopLowMadeInputLayout));
-                teleopDataStringList.add(defenseRatingRadioBtn.getText().toString());
-                teleopDataStringList.add(powerCellPlacementRatingRadioBtn.getText().toString());
-                teleopDataStringList.add(controlPanelRadingRadioBtn.getText().toString());
-                teleopDataStringList.add(counterDefenseEffectivenessRadiobtn.getText().toString());
+                teleopDataStringList.add(cycleTimeRadiobtn.getText().toString());
                 teleopDataStringList.add(endGameLocationSpinner.getSelectedItem().toString());
                 teleopDataStringList.add(climbTimeRadiobtn.getText().toString());
-               // teleopDataStringList.add(cycleTimeSpinner.getSelectedItem().toString());
-                teleopDataStringList.add(cycleTimeRadiobtn.getText().toString());
-                teleopDataStringList.add(overallEffectivenessRadiobtn.getText().toString());
-                teleopDataStringList.add(trainedDriveTeamRadiobtn.getText().toString());
+                teleopDataStringList.add(typeOfBot);
+                teleopDataStringList.add(shotFrom);
                 teleopDataStringList.add(powerCellPickUpRadioBtn.getText().toString());
                 teleopDataStringList.add(lowPortDumpRadioBtn.getText().toString());
                 teleopDataStringList.add(underTrenchRadioBtn.getText().toString());
+                teleopDataStringList.add(defenseRatingRadioBtn.getText().toString());
+                teleopDataStringList.add(counterDefenseEffectivenessRadiobtn.getText().toString());
+                teleopDataStringList.add(powerCellPlacementRatingRadioBtn.getText().toString());
+                teleopDataStringList.add(controlPanelRadingRadioBtn.getText().toString());
+
+               // teleopDataStringList.add(cycleTimeSpinner.getSelectedItem().toString());
+                teleopDataStringList.add(overallEffectivenessRadiobtn.getText().toString());
+                teleopDataStringList.add(trainedDriveTeamRadiobtn.getText().toString());
+
                 teleopDataStringList.add(observations);
-                teleopDataStringList.add(typeOfBot);
-                teleopDataStringList.add(shotFrom);
+
                 //teleopDataStringList.add(typeOfBotSpinner.getSelectedItem().toString());
                 teleopDataStringList.add(summaryInput.getText().toString());
                 teleopDataStringList.add(issuesInput.getText().toString());
 
                 teleopDataStringList.add(ScouterInitialsActivity.getInitials());
 
-                String message = auton + "," + FormatStringUtils.addDelimiter(teleopDataStringList, "|") + "\n";
+                String message = auton + "|" + FormatStringUtils.addDelimiter(teleopDataStringList, "|") + "\n";
 
                 try {
                     FileOutputStream fileOutputStream = new FileOutputStream(file, true);
