@@ -348,6 +348,8 @@
                 android:id="@+id/auto_initiation_line"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:orientation="horizontal"
                 android:checkedButton="@id/AutoInitiationLine_no">
 
@@ -374,6 +376,7 @@
             <Button
                 android:id="@+id/next_button"
                 android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
                 android:layout_height="60pt"
                 android:onClick="onShowTeleop"
                 android:textSize="12pt"

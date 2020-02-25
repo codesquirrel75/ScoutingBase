@@ -487,6 +487,14 @@
                     android:text="@string/tele_shoot_trench_near"/>
 
                 <CheckBox
+                    android:id="@+id/tele_shoot_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setStringShot"
+                    android:text="@string/tele_shoot_other"/>
+
+                <CheckBox
                     android:id="@+id/tele_shoot_trench_far"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -494,14 +502,9 @@
                     android:onClick="setStringShot"
                     android:text="@string/tele_shoot_trench_far"/>
 
-                <CheckBox
-                    android:id="@+id/tele_shoot_other"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="setStringShot"
-                    android:text="@string/tele_shoot_other"/>
             </LinearLayout>
+
+
 
             <!--end of Alicia's code for WHERE BOT SHOT FROM 2/4/2020
             -->
@@ -1101,6 +1104,14 @@
                 android:layout_weight="1"
                 android:onClick="setString"
                 android:text="@string/observ_average_speed"/>
+
+            <CheckBox
+                android:id="@+id/observ_power_cell_stuck_intake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setString"
+                android:text="@string/observ_stuck_in_intake"/>
 
             <CheckBox
                 android:id="@+id/observ_hung_up_power_cell"

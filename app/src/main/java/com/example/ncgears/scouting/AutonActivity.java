@@ -241,7 +241,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
      * after the teleop activity closes
      */
     public void onShowTeleop(View view) {
-        boolean allInputsPassed = true;
+        boolean allInputsPassed = false;
 
         final RadioButton autoInitiationLineRadioBtn = findViewById(autoInitiationLine.getCheckedRadioButtonId());
 

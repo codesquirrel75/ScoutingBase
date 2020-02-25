@@ -107,7 +107,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     @BindView(R.id.climb_time_radio_group)
     public RadioGroup climbTimeRadioGroup;
 
-  //  @BindView(R.id.cycle_time_spinner)
+    //@BindView(R.id.cycle_time_spinner)
   //  public Spinner cycleTimeSpinner;
 
     @BindView(R.id.cycle_time_radio_group)
@@ -166,6 +166,9 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
 
     @BindView(R.id.observ_average_speed)
     public CheckBox observAverageSpeed;
+
+    @BindView(R.id.observ_power_cell_stuck_intake)
+    public CheckBox observPowerCellStuckIntake;
 
     @BindView(R.id.observ_hung_up_power_cell)
     public CheckBox observHungUpPowerCell;
@@ -348,6 +351,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observDiedBack.setOnKeyListener(this);
         observPowerCellPickup.setOnKeyListener(this);
         observAverageSpeed.setOnKeyListener(this);
+        observPowerCellStuckIntake.setOnKeyListener(this);
         observHungUpPowerCell.setOnKeyListener(this);
         observFellOffSwitch.setOnKeyListener(this);
         observHungUp.setOnKeyListener(this);
@@ -406,6 +410,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observDiedBack.setOnKeyListener(null);
         observPowerCellPickup.setOnKeyListener(null);
         observAverageSpeed.setOnKeyListener(null);
+        observPowerCellStuckIntake.setOnKeyListener(null);
         observHungUpPowerCell.setOnKeyListener(null);
         observFellOffSwitch.setOnKeyListener(null);
         observHungUp.setOnKeyListener(null);
@@ -792,6 +797,21 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 break;
             case R.id.observ_average_speed:
                 s1 = observAverageSpeed.getText().toString() + " ,";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_power_cell_stuck_intake:
+                s1 = observPowerCellStuckIntake.getText().toString() + " ,";
                 if (checked) {
                     if (observations.isEmpty()) {
                         observations = s1;
@@ -1241,6 +1261,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observDiedBack.setChecked(false);
         observPowerCellPickup.setChecked(false);
         observAverageSpeed.setChecked(false);
+        observPowerCellStuckIntake.setChecked(false);
         observHungUpPowerCell.setChecked(false);
         observFellOffSwitch.setChecked(false);
         observHungUp.setChecked(false);
