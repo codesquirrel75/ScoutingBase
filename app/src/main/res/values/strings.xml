@@ -67,7 +67,7 @@
     <string name="endgameHeading">Where was the robot at end game?</string>
     <string name="generalInfoHeading">General Info</string>
 
-    <string name="cycle_time_heading">What was the robot\'s average cycle time?</string>
+    <string name="cycle_time_heading">How did the robot interact with the Control Panel?</string>
     <string name="over_all_Effectiveness_heading">Rate the overall effectiveness of the robot during the match (1 = BAD, 5 = Excellent).</string>
     <string name="trained_drive_team_heading">How trained did the drive team look (1 = BAD, 5 = Excellent)?</string>
     <string name="over_all_placement">Rate the overall placement of cargo and hatch panels</string>
@@ -214,13 +214,13 @@
     <string name="powerCellPreLoad">How many power cells do you preload your robot with for Auto?</string>
     <string name="defenseInPerimeterYes">Yes</string>
     <string name="defenseInPerimeterNo">No</string>
-    <string name="cycleSuperFast">Under 5 seconds</string>
-    <string name="cycleFast">5 to 10 Seconds</string>
-    <string name="cycleMedium">10 to 15 Seconds</string>
+    <string name="cycleSuperFast">Spun 3-5 times</string>
+    <string name="cycleFast">Set to color</string>
+    <string name="cycleMedium">Both</string>
 
 
     <!-- Team Numbers drop down array -->
-    <string name="cycleSlow">20 + Seconds</string>
+    <string name="cycleSlow">Attempted but failed</string>
 
 
     <!-- Programming drop down array -->
@@ -299,7 +299,7 @@
     <string name="power_cell_pickup_feed_station_text">Feed station</string>
     <string name="power_cell_pickup_either_text">Both</string>
     <string name="under_trench">Did the robot go under the trench?</string>
-    <string name="low_port_dump">Did the Robot dump 5 balls into the Low Power Port at once?</string>
+    <string name="low_port_dump">Did the Robot dump all balls into the Low Power Port at once?</string>
     <string name="TypeOfRobot">Type of Bot</string>
     <string name="high_shooter">High shooter</string>
     <string name="low_shooter">Low shooter</string>
@@ -310,17 +310,16 @@
     <string name="WhereShotFrom">Where did the robot shoot from?</string>
     <string name="tele_shoot_target_zone">Target zone</string>
     <string name="tele_shoot_field_front">In front of the power port, not in Target Zone</string>
-    <string name="tele_shoot_field_diagonal">Diaginal from power port</string>
-    <string name="tele_shoot_trench_near">Trench nearest the power port</string>
-    <string name="tele_shoot_trench_far">Trench farthest from power port</string>
-    <string name="tele_shoot_other">other</string>
-
+    <string name="tele_shoot_field_diagonal">Diagonal from power port</string>
+    <string name="tele_shoot_trench_near">From the front of the Trench</string>
+    <string name="tele_shoot_trench_far">In the Trench in front of the Control Panel</string>
+    <string name="tele_shoot_other">In the Trench from behind the Control Panel</string>
 
     <string-array name="startingLocation">
         <item> </item>
         <item>In Front</item>
-        <item>Closer to Home Trench</item>
-        <item>Farther From Home Trench</item>
+        <item>Diagonal on Home Trench side</item>
+        <item>Diagonal away from Home Trench side</item>
 
     </string-array>
     <string-array name="playStyle">
@@ -370,7 +369,7 @@
     <string-array name="endgame_location">
         <item> </item>
         <item>Hanging</item>
-        <item>Hanging balanced</item>
+        <item>Hanging - balanced</item>
         <item>Hanging while carring another robot</item>
         <item>Solo hang - not balanced</item>
         <item>Solo hang - balanced</item>
