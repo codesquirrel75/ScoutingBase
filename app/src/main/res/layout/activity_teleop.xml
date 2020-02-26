@@ -19,6 +19,8 @@
             android:layout_height="wrap_content"
             android:textSize="20pt"
             android:text="@string/AutoHighHeading"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:gravity="center_horizontal"/>
 
         <LinearLayout
@@ -38,6 +40,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="14pt"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
                     android:textAlignment="center"
                     android:text="@string/HighAttemptHint"/>
                 <TextView
@@ -45,6 +49,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="14pt"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
                     android:textAlignment="center"
                     android:text="@string/AutoHighMadeHeading"/>
 
@@ -129,6 +135,8 @@
             android:layout_height="wrap_content"
             android:textSize="20pt"
             android:text="@string/AutoLowHeading"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:gravity="center_horizontal"/>
 
         <LinearLayout
@@ -148,6 +156,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="14pt"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
                     android:textAlignment="center"
                     android:text="@string/AutoHighAttemptHeading"/>
                 <TextView
@@ -155,6 +165,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="14pt"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
                     android:textAlignment="center"
                     android:text="@string/AutoHighMadeHeading"/>
 
@@ -243,6 +255,8 @@
             android:layout_height="wrap_content"
             android:text="@string/cycle_time_heading"
             android:textSize="10pt"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:layout_margin="10dp"/>
 
         <!-- <Spinner
@@ -298,11 +312,14 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="@string/endgameHeading"
-            android:textSize="10pt" />
+            android:textColor="#FF0000"
+            android:textStyle="bold"
+            android:textSize="12pt" />
 
         <Spinner
             android:id="@+id/end_game_location_spinner"
             android:layout_width="match_parent"
+            android:scrollbarSize="30dp"
             android:layout_height="30dp">
         </Spinner>
 
@@ -310,7 +327,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/climbTimeHeading"
-            android:textSize="10pt"
+            android:textSize="12pt"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:layout_margin="10dp"/>
 
         <RadioGroup
@@ -367,6 +386,8 @@
             android:layout_height="wrap_content"
             android:text="@string/TypeOfRobot"
             android:textSize="10pt"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:layout_margin="10dp"/>
 
 
@@ -440,6 +461,8 @@
             android:layout_height="wrap_content"
             android:text="@string/WhereShotFrom"
             android:textSize="10pt"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:layout_margin="10dp"/>
 
         <LinearLayout
@@ -514,6 +537,8 @@
             android:layout_height="wrap_content"
             android:text="@string/power_cell_pickup"
             android:textSize="10pt"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:layout_margin="10dp"/>
 
         <RadioGroup
@@ -558,6 +583,8 @@
             android:layout_height="wrap_content"
             android:text="@string/low_port_dump"
             android:textSize="10pt"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:layout_margin="10dp"/>
 
         <RadioGroup
@@ -589,6 +616,8 @@
             android:layout_height="wrap_content"
             android:text="@string/under_trench"
             android:textSize="10pt"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:layout_margin="10dp"/>
 
         <RadioGroup
@@ -625,6 +654,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="10pt"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:text="@string/defense_rating"/>
 
         <RadioGroup
@@ -668,6 +699,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="10pt"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
                 android:text="@string/counterDefenseQuestion"/>
 
             <RadioGroup
@@ -711,6 +744,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/power_cell_placement_rating"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:textSize="10pt" />
 
         <RadioGroup
@@ -768,6 +803,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="10pt"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:text="@string/controlPanelRating"/>
 
         <RadioGroup
@@ -826,6 +863,8 @@
             android:layout_height="wrap_content"
             android:text="@string/over_all_Effectiveness_heading"
             android:textSize="10pt"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:layout_margin="10dp"/>
 
         <RadioGroup
@@ -886,6 +925,8 @@
             android:layout_height="wrap_content"
             android:text="@string/trained_drive_team_heading"
             android:textSize="10pt"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:layout_margin="10dp"/>
 
         <RadioGroup
@@ -946,6 +987,8 @@
         android:layout_height="wrap_content"
         android:text="@string/robotObservations"
         android:textSize="10pt"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
         android:layout_margin="10dp"/>
 
     <LinearLayout
@@ -1177,6 +1220,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:textSize="10pt"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
                 android:text="@string/summaryHeading"/>
 
 
@@ -1194,6 +1239,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:textSize="10pt"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
                 android:text="@string/issuesHeading"/>
 
             <android.support.design.widget.TextInputEditText
