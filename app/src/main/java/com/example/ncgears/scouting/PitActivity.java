@@ -20,9 +20,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.design.widget.TextInputEditText;
-import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
@@ -32,16 +29,12 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -70,13 +63,13 @@ import utils.ViewUtils;
 public class PitActivity extends AppCompatActivity implements View.OnKeyListener {
 
     @BindView(R.id.pit_team_number_spinner)
-    public Spinner pitTeamNumberInputLayout;
+    public Spinner pitTeamNumberSpinner;
 
     @BindView(R.id.pit_robot_weight)
     public EditText pitRobotWeight;
 
     @BindView(R.id.pit_drive_train_spinner)
-    public Spinner pitDriveTrainInputLayout;
+    public Spinner pitDriveTrainSpinner;
 
     @BindView(R.id.pit_programming_language_spinner)
     public Spinner pitProgrammingLanguages;
@@ -176,38 +169,38 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
 
         //  --- Drive Train spinner ---
 
-        Spinner drivetrainspinner = (Spinner) findViewById(R.id.pit_drive_train_spinner);
+       // Spinner drivetrainspinner = (Spinner) findViewById(R.id.pit_drive_train_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> drivetrainadapter = ArrayAdapter.createFromResource(this,
                 R.array.driveTrain, android.R.layout.simple_spinner_item);
 // Specify the layout to use when the list of choices appears
         drivetrainadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
-        drivetrainspinner.setAdapter(drivetrainadapter);
+        pitDriveTrainSpinner.setAdapter(drivetrainadapter);
 
 
         //  --- Team Numbers spinner ---
 
-        Spinner teamnumberspinner = (Spinner) findViewById(R.id.pit_team_number_spinner);
+      //  Spinner teamnumberspinner = (Spinner) findViewById(R.id.pit_team_number_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter teamnumberadapter = new ArrayAdapter<String>(PitActivity.this,
+        ArrayAdapter teamnumberadapter = new ArrayAdapter<>(PitActivity.this,
                 android.R.layout.simple_spinner_dropdown_item, team_numbers);
 // Specify the layout to use when the list of choices appears
         teamnumberadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
-        teamnumberspinner.setAdapter(teamnumberadapter);
+        pitTeamNumberSpinner.setAdapter(teamnumberadapter);
 
 
         //  --- Programming languages spinner  ---
 
-        Spinner languagespinner = (Spinner) findViewById(R.id.pit_programming_language_spinner);
+       // Spinner languagespinner = (Spinner) findViewById(R.id.pit_programming_language_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> languageadapter = ArrayAdapter.createFromResource(this,
                 R.array.programmingLanguages, android.R.layout.simple_spinner_item);
 // Specify the layout to use when the list of choices appears
         languageadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
-        languagespinner.setAdapter(languageadapter);
+        pitProgrammingLanguages.setAdapter(languageadapter);
     }
 
     @Override
@@ -231,7 +224,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
     }
 
     public void setPowerPortShotString(View view) {
-        Boolean checked = ((CheckBox) view).isChecked();
+        boolean checked = ((CheckBox) view).isChecked();
         String s1;
 
         switch (view.getId()) {
@@ -302,80 +295,8 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         }
     }
 
-    public void setPitShotLocationString(View view) {
-        Boolean checked = ((CheckBox) view).isChecked();
-        String s1;
-
-        switch (view.getId()) {
-
-            case R.id.pit_shot_location_inner:
-                s1 = pitShotLocationInner.getText().toString() + " ,";
-                if (checked) {
-                    if (pitShotLocationString.isEmpty()) {
-                        pitShotLocationString = s1;
-                    } else {
-                        pitShotLocationString = pitShotLocationString + s1;
-                    }
-                } else {
-                    if (pitShotLocationString.contains(s1)) {
-                        int start = pitShotLocationString.indexOf(s1);
-                        pitShotLocationString = pitShotLocationString.substring(0, start) + pitShotLocationString.substring(start + s1.length());
-                    }
-                }
-                break;
-
-            case R.id.pit_shot_location_outer:
-                s1 = pitShotLocationOuter.getText().toString() + " ,";
-                if (checked) {
-                    if (pitShotLocationString.isEmpty()) {
-                        pitShotLocationString = s1;
-                    } else {
-                        pitShotLocationString = pitShotLocationString + s1;
-                    }
-                } else {
-                    if (pitShotLocationString.contains(s1)) {
-                        int start = pitShotLocationString.indexOf(s1);
-                        pitShotLocationString = pitShotLocationString.substring(0, start) + pitShotLocationString.substring(start + s1.length());
-                    }
-                }
-                break;
-
-            case R.id.pit_shot_location_bottom:
-                s1 = pitShotLocationBottom.getText().toString() + " ,";
-                if (checked) {
-                    if (pitShotLocationString.isEmpty()) {
-                        pitShotLocationString = s1;
-                    } else {
-                        pitShotLocationString = pitShotLocationString + s1;
-                    }
-                } else {
-                    if (pitShotLocationString.contains(s1)) {
-                        int start = pitShotLocationString.indexOf(s1);
-                        pitShotLocationString = pitShotLocationString.substring(0, start) + pitShotLocationString.substring(start + s1.length());
-                    }
-                }
-                break;
-
-            case R.id.pit_shot_location_na:
-                s1 = pitShotLocationNa.getText().toString() + " ,";
-                if (checked) {
-                    if (pitShotLocationString.isEmpty()) {
-                        pitShotLocationString = s1;
-                    } else {
-                        pitShotLocationString = pitShotLocationString + s1;
-                    }
-                } else {
-                    if (pitShotLocationString.contains(s1)) {
-                        int start = pitShotLocationString.indexOf(s1);
-                        pitShotLocationString = pitShotLocationString.substring(0, start) + pitShotLocationString.substring(start + s1.length());
-                    }
-                }
-                break;
-        }
-    }
-
     public void setControlPanelString(View view) {
-        Boolean checked = ((CheckBox) view).isChecked();
+        boolean checked = ((CheckBox) view).isChecked();
         String s1;
 
         switch (view.getId()) {
@@ -435,8 +356,8 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
     protected void onResume() {
         super.onResume();
 
-        pitTeamNumberInputLayout.setOnKeyListener(this);
-        pitDriveTrainInputLayout.setOnKeyListener(this);
+        pitTeamNumberSpinner.setOnKeyListener(this);
+        pitDriveTrainSpinner.setOnKeyListener(this);
         pitRobotWeight.setOnKeyListener(this);
         pitProgrammingLanguages.setOnKeyListener(this);
         pitPowerCellPreload.setOnKeyListener(this);
@@ -451,8 +372,8 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
     protected void onPause() {
         super.onPause();
 
-        pitTeamNumberInputLayout.setOnKeyListener(null);
-        pitDriveTrainInputLayout.setOnKeyListener(null);
+        pitTeamNumberSpinner.setOnKeyListener(null);
+        pitDriveTrainSpinner.setOnKeyListener(null);
         pitRobotWeight.setOnKeyListener(null);
         pitProgrammingLanguages.setOnKeyListener(null);
         pitPowerCellPreload.setOnKeyListener(null);
@@ -473,18 +394,18 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         String state = Environment.getExternalStorageState();
         boolean allInputsPassed = false;
 
-        //  ******  Check Requiered fields set focus to field if it hasn't been filled out  ******
+        //  ******  Check Required fields set focus to field if it hasn't been filled out  ******
 
 
-        if (pitTeamNumberInputLayout.getSelectedItem().toString().equals("Select Team Number") ) {
-           setSpinnerError(pitTeamNumberInputLayout, "Select a Team Number.");
-           ViewUtils.requestFocus(pitTeamNumberInputLayout, this);
+        if (pitTeamNumberSpinner.getSelectedItem().toString().equals("Select Team Number") ) {
+           setSpinnerError(pitTeamNumberSpinner, "Select a Team Number.");
+           ViewUtils.requestFocus(pitTeamNumberSpinner, this);
         }else if (pitProgrammingLanguages.getSelectedItem().toString().equals("") ) {
             setSpinnerError(pitProgrammingLanguages, "Select a Programming Language.");
             ViewUtils.requestFocus(pitProgrammingLanguages, this);
-        }else if(pitDriveTrainInputLayout.getSelectedItem().toString().equals("")){
-            setSpinnerError(pitDriveTrainInputLayout, "Select a drive train.");
-            ViewUtils.requestFocus(pitDriveTrainInputLayout, this);
+        }else if(pitDriveTrainSpinner.getSelectedItem().toString().equals("")){
+            setSpinnerError(pitDriveTrainSpinner, "Select a drive train.");
+            ViewUtils.requestFocus(pitDriveTrainSpinner, this);
         } else if (StringUtils.isEmptyOrNull(pitRobotWeight.getText().toString())) {
             pitRobotWeight.setError(getText(R.string.pitRobotWeightError));
             ViewUtils.requestFocus(pitRobotWeight, this);
@@ -510,9 +431,9 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
                 //create csv file
                 File file = new File(dir, "Pit" + Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID) + ".csv");
 
-                pitDataStringList.add(pitTeamNumberInputLayout.getSelectedItem().toString());
+                pitDataStringList.add(pitTeamNumberSpinner.getSelectedItem().toString());
                 pitDataStringList.add(pitRobotWeight.getText().toString());
-                pitDataStringList.add(pitDriveTrainInputLayout.getSelectedItem().toString());
+                pitDataStringList.add(pitDriveTrainSpinner.getSelectedItem().toString());
                 pitDataStringList.add(pitProgrammingLanguages.getSelectedItem().toString());
                 pitDataStringList.add(pitPowerCellPreloadbtn.getText().toString());
                 pitDataStringList.add(powerPortShotString);
@@ -545,16 +466,16 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             }
 
             clearData();
-            pitTeamNumberInputLayout.requestFocus();
+            pitTeamNumberSpinner.requestFocus();
         }
 
-        pitDataStringList.clear();
+
 
 
     }
 
     public void takePhoto(View view) {
-        String name = pitTeamNumberInputLayout.getSelectedItem().toString();
+        String name = pitTeamNumberSpinner.getSelectedItem().toString();
 
         if(PermissionUtils.getPermissions(this, Manifest.permission.CAMERA) &&
                 PermissionUtils.getPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) &&
@@ -580,7 +501,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
                 }
             } else {
                 //setSpinnerError(pitTeamNumberInputLayout, "Select a Team Number.");
-                ViewUtils.requestFocus(pitTeamNumberInputLayout, this);
+                ViewUtils.requestFocus(pitTeamNumberSpinner, this);
             }
         } else {
             checkForPermissions();
@@ -598,7 +519,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
 
     private void compressPhoto() {
         try {
-            String name = pitTeamNumberInputLayout.getSelectedItem().toString();
+            String name = pitTeamNumberSpinner.getSelectedItem().toString();
 
             File dir = new File(Environment.getExternalStorageDirectory() + "/Scouting/Photos");
             File file = new File(dir, name + ".jpg");
@@ -635,9 +556,9 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
     }
 
     public void clearData() {
-        pitTeamNumberInputLayout.setSelection(0);
+        pitTeamNumberSpinner.setSelection(0);
         pitRobotWeight.setText(null);
-        pitDriveTrainInputLayout.setSelection(0);
+        pitDriveTrainSpinner.setSelection(0);
         pitProgrammingLanguages.setSelection(0);
         scouterInitialsInput.setText(null);
         pitPowerCellPreload.clearCheck();
@@ -655,6 +576,12 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitShotLocationInner.setChecked(false);
         pitShotLocationBottom.setChecked(false);
         pitShotLocationNa.setChecked(false);
+        pitBasicPlan.setText(null);
+        ControlPanelString = "";
+        powerPortShotString = "";
+        pitShotLocationString = "";
+
+        pitDataStringList.clear();
     }
 
     private void checkForPermissions() {
@@ -664,8 +591,4 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         }
     }
 
-    private String getTextInputLayoutString(@NonNull TextInputLayout textInputLayout) {
-        final EditText editText = textInputLayout.getEditText();
-        return editText != null && editText.getText() != null ? editText.getText().toString() : "";
-    }
 }

@@ -1122,6 +1122,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         if (StringUtils.isEmptyOrNull(getTextInputLayoutString(teleopHighAttemptInputLayout))) {
             teleopHighAttemptInputLayout.setError(getText(R.string.teleopCargoShipHatchPanelError));
             ViewUtils.requestFocus(teleopHighAttemptInputLayout, this);
+        } else if (endGameLocationSpinner.getSelectedItem().toString().isEmpty()){
+            setSpinnerError(endGameLocationSpinner, "Please select an end game location.");
         } else if (StringUtils.isEmptyOrNull(getTextInputLayoutString(teleopHighMadeInputLayout))) {
             teleopHighMadeInputLayout.setError(getText(R.string.teleopCargoInCargoShipError));
             ViewUtils.requestFocus(teleopHighMadeInputLayout, this);
@@ -1131,7 +1133,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         } else if (StringUtils.isEmptyOrNull(getTextInputLayoutString(teleopLowMadeInputLayout))) {
             teleopLowMadeInputLayout.setError(getText(R.string.cargoTopError));
             ViewUtils.requestFocus(teleopLowMadeInputLayout, this);
-        }/* else if(typeOfBotSpinner.getSelectedItem().toString( ).equals("")){
+        } /*else if(typeOfBotSpinner.getSelectedItem().toString( ).equals("")){
 
             setSpinnerError(typeOfBotSpinner,"Select bot type");
             ViewUtils.requestFocus(typeOfBotSpinner, this);
