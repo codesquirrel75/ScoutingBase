@@ -1224,6 +1224,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopLowAttemptInputLayout.setError(null);
         teleopLowMadeInputLayout.setError(null);
 
+
     }
 
     /*The method will clear all the data in the text fields, checkboxes, and

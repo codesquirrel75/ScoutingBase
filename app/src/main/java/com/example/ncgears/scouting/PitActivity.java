@@ -29,6 +29,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -71,8 +72,14 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
     @BindView(R.id.pit_drive_train_spinner)
     public Spinner pitDriveTrainSpinner;
 
+    @BindView(R.id.drive_train_other)
+    public EditText driveTrainOther;
+
     @BindView(R.id.pit_programming_language_spinner)
     public Spinner pitProgrammingLanguages;
+
+    @BindView(R.id.programming_language_other)
+    public EditText programmingLanguageOther;
 
     @BindView(R.id.pit_power_cell_preload)
     public RadioGroup pitPowerCellPreload;
@@ -165,6 +172,40 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         ButterKnife.bind(this);
 
         checkForPermissions();
+
+        pitDriveTrainSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(pitDriveTrainSpinner.getSelectedItem().toString().equals("Other")){
+                    driveTrainOther.setVisibility(view.VISIBLE);
+                }
+                else{
+                    driveTrainOther.setVisibility(view.INVISIBLE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        pitProgrammingLanguages.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(pitProgrammingLanguages.getSelectedItem().toString().equals("Other")){
+                    programmingLanguageOther.setVisibility(view.VISIBLE);
+                }
+                else{
+                    programmingLanguageOther.setVisibility(view.INVISIBLE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
 
         //  --- Drive Train spinner ---
@@ -358,8 +399,10 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
 
         pitTeamNumberSpinner.setOnKeyListener(this);
         pitDriveTrainSpinner.setOnKeyListener(this);
+        driveTrainOther.setOnKeyListener(this);
         pitRobotWeight.setOnKeyListener(this);
         pitProgrammingLanguages.setOnKeyListener(this);
+        programmingLanguageOther.setOnKeyListener(this);
         pitPowerCellPreload.setOnKeyListener(this);
         pitInitLineAuton.setOnKeyListener(this);
         pitDriveThruTrench.setOnKeyListener(this);
@@ -374,8 +417,10 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
 
         pitTeamNumberSpinner.setOnKeyListener(null);
         pitDriveTrainSpinner.setOnKeyListener(null);
+        driveTrainOther.setOnKeyListener(null);
         pitRobotWeight.setOnKeyListener(null);
         pitProgrammingLanguages.setOnKeyListener(null);
+        programmingLanguageOther.setOnKeyListener(null);
         pitPowerCellPreload.setOnKeyListener(null);
         pitInitLineAuton.setOnKeyListener(null);
         pitDriveThruTrench.setOnKeyListener(null);
@@ -434,7 +479,9 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
                 pitDataStringList.add(pitTeamNumberSpinner.getSelectedItem().toString());
                 pitDataStringList.add(pitRobotWeight.getText().toString());
                 pitDataStringList.add(pitDriveTrainSpinner.getSelectedItem().toString());
+                pitDataStringList.add(driveTrainOther.getText().toString());
                 pitDataStringList.add(pitProgrammingLanguages.getSelectedItem().toString());
+                pitDataStringList.add(programmingLanguageOther.getText().toString());
                 pitDataStringList.add(pitPowerCellPreloadbtn.getText().toString());
                 pitDataStringList.add(powerPortShotString);
                 pitDataStringList.add(pitInitLineAutonbtn.getText().toString());
@@ -559,7 +606,9 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitTeamNumberSpinner.setSelection(0);
         pitRobotWeight.setText(null);
         pitDriveTrainSpinner.setSelection(0);
+        driveTrainOther.setText(null);
         pitProgrammingLanguages.setSelection(0);
+        programmingLanguageOther.setText(null);
         scouterInitialsInput.setText(null);
         pitPowerCellPreload.clearCheck();
         pitControlPanelNothing.setChecked(false);
@@ -590,5 +639,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 1);
         }
     }
+
+
 
 }

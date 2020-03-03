@@ -61,9 +61,17 @@
                 <Spinner
                     android:id="@+id/pit_drive_train_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="30pt">
+                    android:layout_height="30pt"/>
 
-                </Spinner>
+            <EditText
+                android:id="@+id/drive_train_other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:visibility="invisible"
+                android:text="@string/pitOther"/>
+
+
 
                 <TextView
                     android:id="@+id/pit_programmingLanguage_input_layout"
@@ -76,9 +84,16 @@
                 <Spinner
                     android:id="@+id/pit_programming_language_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="30pt">
+                    android:layout_height="30pt"/>
 
-                </Spinner>
+            <EditText
+                android:id="@+id/programming_language_other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:visibility="invisible"
+                android:text="@string/pitOther"/>
+
 
 
 
