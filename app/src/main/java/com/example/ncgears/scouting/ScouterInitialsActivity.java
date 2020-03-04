@@ -30,6 +30,10 @@ public class ScouterInitialsActivity extends AppCompatActivity implements View.O
 
     @BindView(R.id.scouterInitials_input_layout)
     public TextInputLayout scouterInitialsInputLayout;
+
+    @BindView(R.id.scouterInitials_input)
+    public TextInputEditText scouterInitialsInput;
+
     private static String initials;
 
     @Override
@@ -38,13 +42,16 @@ public class ScouterInitialsActivity extends AppCompatActivity implements View.O
 
         setContentView(R.layout.activity_scouter_initials);
         ButterKnife.bind(this);
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -83,6 +90,7 @@ public class ScouterInitialsActivity extends AppCompatActivity implements View.O
 
     public void submitInitials(View view) {
         initials = getTextInputLayoutString(scouterInitialsInputLayout);
+        scouterInitialsInput.setText(null);
 
         if(!StringUtils.isEmptyOrNull(initials))
             startActivity(new Intent(this, AutonActivity.class));

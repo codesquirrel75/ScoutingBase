@@ -15,7 +15,6 @@ import android.os.Environment;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -566,7 +565,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     // this method sets up a string for a group of checkBoxes
 
     public void setString(View view) {
-        Boolean checked = ((CheckBox) view).isChecked();
+        boolean checked = ((CheckBox) view).isChecked();
         String s1;
 
         switch (view.getId()) {
@@ -875,7 +874,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
 
     /*public void setTypeOfBotString(View view) {   this is the original line of code before I copied and modified the following on 2/15/2020  ATB*/
     public void setStringTypeBot(View view) {
-        Boolean checked = ((CheckBox) view).isChecked();
+        boolean checked = ((CheckBox) view).isChecked();
         String s1;
 
         switch (view.getId()) {
@@ -973,7 +972,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     }
 
     public void setStringShot(View view) {
-        Boolean checked = ((CheckBox) view).isChecked();
+        boolean checked = ((CheckBox) view).isChecked();
         String s1;
 
         switch (view.getId()) {
@@ -1216,6 +1215,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
             setResult(RESULT_OK, intent);
 
             clearData(view);
+
             finish();
         }
 

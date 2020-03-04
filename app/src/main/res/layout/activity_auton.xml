@@ -351,7 +351,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="horizontal"
-                android:checkedButton="@id/AutoInitiationLine_no">
+                android:checkedButton="@id/AutoInitiationLine_yes">
 
                 <RadioButton
                     android:id="@+id/AutoInitiationLine_yes"

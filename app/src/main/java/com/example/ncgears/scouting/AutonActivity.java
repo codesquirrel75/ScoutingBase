@@ -299,6 +299,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
 
             if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
                 clearData();
+                finish();
             }
         } catch (Exception ex) {
             Toast.makeText(this, ex.toString(), Toast.LENGTH_SHORT).show();
@@ -321,7 +322,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         LowAttempt = 0;
         LowMissed = 0;
         LowMade = 0;
-        autoInitiationLine.check(R.id.AutoInitiationLine_no);
+        autoInitiationLine.check(R.id.AutoInitiationLine_yes);
         displayAutoHighAttemptInput(HighMissed);
         displayAutoHighMadeInput(HighMade);
         displayAutoLowAttemptInput(LowMissed);
