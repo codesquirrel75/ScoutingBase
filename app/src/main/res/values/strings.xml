@@ -195,7 +195,7 @@
     <string name="pitHatch">Hatch panel</string>
     <string name="pitCargo">Cargo</string>
     <string name="pitNothing">Nothing</string>
-    <string name="pitPowerPortShotQ">Where in the power port does your robot shoot during Auto?</string>
+    <string name="pitPowerPortShotQ">Where on the field can your robot shoot from?</string>
     <string name="pitPowerPortNa">NA</string>
     <string name="pitPowerPortShotInner">Inner Port</string>
     <string name="pitPowerPortShotOuter">Outer Port</string>
@@ -270,7 +270,7 @@
     <string name="pitInitLineAuton">Does your robot move from the Alliance initiation line during auton</string>
     <string name="pitDriveThroughTrench">Can your robot drive through the trench?</string>
     <string name="pitEndgameHang">Does your robot hang at end game?</string>
-    <string name="pitShotLocation">During teleop, where does your robot shoot power cells?</string>
+    <string name="pitShotLocation">Where does your robot shoot power cells?</string>
     <string name="pitShotLocationNa">NA</string>
     <string name="pitShotLocationInner">Inner Port</string>
     <string name="pitShotLocationOuter">Outer Port</string>
@@ -315,6 +315,8 @@
     <string name="tele_shoot_trench_near">From the front of the Trench</string>
     <string name="tele_shoot_trench_far">In the Trench in front of the Control Panel</string>
     <string name="tele_shoot_other">In the Trench from behind the Control Panel</string>
+    <string name="favoritShot">Where is your robot\'s favorite shot to take?</string>
+    <string name="pitAutoPrograms">What are your robot\'s autonomous programs?</string>
 
     <string-array name="startingLocation">
         <item> </item>

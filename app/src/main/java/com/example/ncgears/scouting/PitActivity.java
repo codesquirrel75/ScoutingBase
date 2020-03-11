@@ -81,25 +81,51 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
     @BindView(R.id.programming_language_other)
     public EditText programmingLanguageOther;
 
-    @BindView(R.id.pit_power_cell_preload)
-    public RadioGroup pitPowerCellPreload;
-
     @BindView(R.id.pit_basic_plan)
     public EditText pitBasicPlan;
 
-    @BindView(R.id.powerPortShotInner)
-    public CheckBox powerPortInner;
+    @BindView(R.id.pit_auto_programs)
+    public EditText pitAutoPrograms;
 
-    @BindView(R.id.powerPortShotOuter)
-    public CheckBox powerPortOuter;
+    @BindView(R.id.pit_shoot_target_zone)
+    public CheckBox pitShootTargetZone;
 
-    @BindView(R.id.powerPortShotBottom)
-    public CheckBox powerPortShotBottom;
+    @BindView(R.id.pit_shoot_field_front)
+    public CheckBox pitShootFieldFront;
 
-    @BindView(R.id.powerPortShotNa)
-    public CheckBox powerPortShotNa;
+    @BindView(R.id.pit_shoot_field_diagonal)
+    public CheckBox pitShootFieldDiagonal;
 
-    public String powerPortShotString = "";
+    @BindView(R.id.pit_shoot_trench_near)
+    public CheckBox pitShootTrenchNear;
+
+    @BindView(R.id.pit_shoot_trench_far)
+    public CheckBox pitShootTrenchFar;
+
+    @BindView(R.id.pit_shoot_other)
+    public CheckBox pitShootOther;
+
+    public String shotString = "";
+
+    @BindView(R.id.pit_fav_target_zone)
+    public CheckBox pitFavTargetZone;
+
+    @BindView(R.id.pit_fav_field_front)
+    public CheckBox pitFavFieldFront;
+
+    @BindView(R.id.pit_fav_field_diagonal)
+    public CheckBox pitFavFieldDiagonal;
+
+    @BindView(R.id.pit_fav_trench_near)
+    public CheckBox pitFavTrenchNear;
+
+    @BindView(R.id.pit_fav_trench_far)
+    public CheckBox pitFavTrenchFar;
+
+    @BindView(R.id.pit_fav_other)
+    public CheckBox pitFavOther;
+
+    public String favShotString = "";
 
     @BindView(R.id.pit_shot_location_inner)
     public CheckBox pitShotLocationInner;
@@ -114,9 +140,6 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
     public CheckBox pitShotLocationNa;
 
     public String pitShotLocationString = "";
-
-    @BindView(R.id.pit_init_line_auton)
-    public RadioGroup pitInitLineAuton;
 
     @BindView(R.id.pit_control_panel_rotate_3to5)
     public CheckBox pitControlPanelRotate3to5;
@@ -264,79 +287,287 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         }
     }
 
-    public void setPowerPortShotString(View view) {
+    public void setStringShot(View view) {
         boolean checked = ((CheckBox) view).isChecked();
         String s1;
 
         switch (view.getId()) {
 
-            case R.id.powerPortShotInner:
-                s1 = powerPortInner.getText().toString() + " ,";
+            case R.id.pit_shoot_trench_near:
+                s1 = pitShootTrenchNear.getText().toString() + " ,";
                 if (checked) {
-                    if (powerPortShotString.isEmpty()) {
-                        powerPortShotString = s1;
+                    if (shotString.isEmpty()) {
+                        shotString = s1;
                     } else {
-                        powerPortShotString = powerPortShotString + s1;
+                        shotString = shotString + s1;
                     }
                 } else {
-                    if (powerPortShotString.contains(s1)) {
-                        int start = powerPortShotString.indexOf(s1);
-                        powerPortShotString = powerPortShotString.substring(0, start) + powerPortShotString.substring(start + s1.length());
+                    if (shotString.contains(s1)) {
+                        int start = shotString.indexOf(s1);
+                        shotString = shotString.substring(0, start) + shotString.substring(start + s1.length());
                     }
                 }
                 break;
 
-            case R.id.powerPortShotOuter:
-                s1 = powerPortOuter.getText().toString() + " ,";
+            case R.id.pit_shoot_trench_far:
+                s1 = pitShootTrenchFar.getText().toString() + " ,";
                 if (checked) {
-                    if (powerPortShotString.isEmpty()) {
-                        powerPortShotString = s1;
+                    if (shotString.isEmpty()) {
+                        shotString = s1;
                     } else {
-                        powerPortShotString = powerPortShotString + s1;
+                        shotString = shotString + s1;
                     }
                 } else {
-                    if (powerPortShotString.contains(s1)) {
-                        int start = powerPortShotString.indexOf(s1);
-                        powerPortShotString = powerPortShotString.substring(0, start) + powerPortShotString.substring(start + s1.length());
+                    if (shotString.contains(s1)) {
+                        int start = shotString.indexOf(s1);
+                        shotString = shotString.substring(0, start) + shotString.substring(start + s1.length());
                     }
                 }
                 break;
 
-            case R.id.powerPortShotBottom:
-                s1 = powerPortShotBottom.getText().toString() + " ,";
+            case R.id.pit_shoot_other:
+                s1 = pitShootOther.getText().toString() + " ,";
                 if (checked) {
-                    if (powerPortShotString.isEmpty()) {
-                        powerPortShotString = s1;
+                    if (shotString.isEmpty()) {
+                        shotString = s1;
                     } else {
-                        powerPortShotString = powerPortShotString + s1;
+                        shotString = shotString + s1;
                     }
                 } else {
-                    if (powerPortShotString.contains(s1)) {
-                        int start = powerPortShotString.indexOf(s1);
-                        powerPortShotString = powerPortShotString.substring(0, start) + powerPortShotString.substring(start + s1.length());
+                    if (shotString.contains(s1)) {
+                        int start = shotString.indexOf(s1);
+                        shotString = shotString.substring(0, start) + shotString.substring(start + s1.length());
                     }
                 }
                 break;
 
-            case R.id.powerPortShotNa:
-                s1 = powerPortShotNa.getText().toString() + " ,";
+            case R.id.pit_shoot_target_zone:
+                s1 = pitShootTargetZone.getText().toString() + " ,";
                 if (checked) {
-                    if (powerPortShotString.isEmpty()) {
-                        powerPortShotString = s1;
+                    if (shotString.isEmpty()) {
+                        shotString = s1;
                     } else {
-                        powerPortShotString = powerPortShotString + s1;
+                        shotString = shotString + s1;
                     }
                 } else {
-                    if (powerPortShotString.contains(s1)) {
-                        int start = powerPortShotString.indexOf(s1);
-                        powerPortShotString = powerPortShotString.substring(0, start) + powerPortShotString.substring(start + s1.length());
+                    if (shotString.contains(s1)) {
+                        int start = shotString.indexOf(s1);
+                        shotString = shotString.substring(0, start) + shotString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_shoot_field_diagonal:
+                s1 = pitShootFieldDiagonal.getText().toString() + " ,";
+                if (checked) {
+                    if (shotString.isEmpty()) {
+                        shotString = s1;
+                    } else {
+                        shotString = shotString + s1;
+                    }
+                } else {
+                    if (shotString.contains(s1)) {
+                        int start = shotString.indexOf(s1);
+                        shotString = shotString.substring(0, start) + shotString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_shoot_field_front:
+                s1 = pitShootFieldFront.getText().toString() + " ,";
+                if (checked) {
+                    if (shotString.isEmpty()) {
+                        shotString = s1;
+                    } else {
+                        shotString = shotString + s1;
+                    }
+                } else {
+                    if (shotString.contains(s1)) {
+                        int start = shotString.indexOf(s1);
+                        shotString = shotString.substring(0, start) + shotString.substring(start + s1.length());
                     }
                 }
                 break;
         }
     }
 
-    public void setControlPanelString(View view) {
+    public void setStringFavShot(View view) {
+        boolean checked = ((CheckBox) view).isChecked();
+        String s1;
+
+        switch (view.getId()) {
+
+            case R.id.pit_fav_trench_near:
+                s1 = pitFavTrenchNear.getText().toString() + " ,";
+                if (checked) {
+                    if (favShotString.isEmpty()) {
+                        favShotString = s1;
+                    } else {
+                        favShotString = favShotString + s1;
+                    }
+                } else {
+                    if (favShotString.contains(s1)) {
+                        int start = favShotString.indexOf(s1);
+                        favShotString = favShotString.substring(0, start) + favShotString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_fav_trench_far:
+                s1 = pitFavTrenchFar.getText().toString() + " ,";
+                if (checked) {
+                    if (favShotString.isEmpty()) {
+                        favShotString = s1;
+                    } else {
+                        favShotString = favShotString + s1;
+                    }
+                } else {
+                    if (favShotString.contains(s1)) {
+                        int start = favShotString.indexOf(s1);
+                        favShotString = favShotString.substring(0, start) + favShotString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_fav_other:
+                s1 = pitFavOther.getText().toString() + " ,";
+                if (checked) {
+                    if (favShotString.isEmpty()) {
+                        favShotString = s1;
+                    } else {
+                        favShotString = favShotString + s1;
+                    }
+                } else {
+                    if (favShotString.contains(s1)) {
+                        int start = favShotString.indexOf(s1);
+                        favShotString = favShotString.substring(0, start) + favShotString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_fav_target_zone:
+                s1 = pitFavTargetZone.getText().toString() + " ,";
+                if (checked) {
+                    if (favShotString.isEmpty()) {
+                        favShotString = s1;
+                    } else {
+                        favShotString = favShotString + s1;
+                    }
+                } else {
+                    if (favShotString.contains(s1)) {
+                        int start = favShotString.indexOf(s1);
+                        favShotString = favShotString.substring(0, start) + favShotString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_fav_field_diagonal:
+                s1 = pitFavFieldDiagonal.getText().toString() + " ,";
+                if (checked) {
+                    if (favShotString.isEmpty()) {
+                        favShotString = s1;
+                    } else {
+                        favShotString = favShotString + s1;
+                    }
+                } else {
+                    if (favShotString.contains(s1)) {
+                        int start = favShotString.indexOf(s1);
+                        favShotString = favShotString.substring(0, start) + favShotString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_fav_field_front:
+                s1 = pitFavFieldFront.getText().toString() + " ,";
+                if (checked) {
+                    if (favShotString.isEmpty()) {
+                        favShotString = s1;
+                    } else {
+                        favShotString = favShotString + s1;
+                    }
+                } else {
+                    if (favShotString.contains(s1)) {
+                        int start = favShotString.indexOf(s1);
+                        favShotString = favShotString.substring(0, start) + favShotString.substring(start + s1.length());
+                    }
+                }
+                break;
+        }
+    }
+
+    public void setPowerPortShotString(View view) {
+        boolean checked = ((CheckBox) view).isChecked();
+        String s1;
+
+        switch (view.getId()) {
+
+            case R.id.pit_shoot_trench_near:
+                s1 = pitShootTrenchNear.getText().toString() + " ,";
+                if (checked) {
+                    if (shotString.isEmpty()) {
+                        shotString = s1;
+                    } else {
+                        shotString = shotString + s1;
+                    }
+                } else {
+                    if (shotString.contains(s1)) {
+                        int start = shotString.indexOf(s1);
+                        shotString = shotString.substring(0, start) + shotString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_shoot_trench_far:
+                s1 = pitShootTrenchFar.getText().toString() + " ,";
+                if (checked) {
+                    if (shotString.isEmpty()) {
+                        shotString = s1;
+                    } else {
+                        shotString = shotString + s1;
+                    }
+                } else {
+                    if (shotString.contains(s1)) {
+                        int start = shotString.indexOf(s1);
+                        shotString = shotString.substring(0, start) + shotString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_shoot_other:
+                s1 = pitShootOther.getText().toString() + " ,";
+                if (checked) {
+                    if (shotString.isEmpty()) {
+                        shotString = s1;
+                    } else {
+                        shotString = shotString + s1;
+                    }
+                } else {
+                    if (shotString.contains(s1)) {
+                        int start = shotString.indexOf(s1);
+                        shotString = shotString.substring(0, start) + shotString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_shoot_target_zone:
+                s1 = pitShootTargetZone.getText().toString() + " ,";
+                if (checked) {
+                    if (shotString.isEmpty()) {
+                        shotString = s1;
+                    } else {
+                        shotString = shotString + s1;
+                    }
+                } else {
+                    if (shotString.contains(s1)) {
+                        int start = shotString.indexOf(s1);
+                        shotString = shotString.substring(0, start) + shotString.substring(start + s1.length());
+                    }
+                }
+                break;
+        }
+    }
+
+            public void setControlPanelString(View view) {
         boolean checked = ((CheckBox) view).isChecked();
         String s1;
 
@@ -392,8 +623,81 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         }
     }
 
+    public void setPitShotLocationString(View view) {
+        boolean checked = ((CheckBox) view).isChecked();
+        String s1;
 
-            @Override
+        switch (view.getId()) {
+
+            case R.id.pit_shot_location_bottom:
+                s1 = pitShotLocationBottom.getText().toString() + " ,";
+                if (checked) {
+                    if (pitShotLocationString.isEmpty()) {
+                        pitShotLocationString = s1;
+                    } else {
+                        pitShotLocationString = pitShotLocationString + s1;
+                    }
+                } else {
+                    if (pitShotLocationString.contains(s1)) {
+                        int start = pitShotLocationString.indexOf(s1);
+                        pitShotLocationString = pitShotLocationString.substring(0, start) + pitShotLocationString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_shot_location_inner:
+                s1 = pitShotLocationInner.getText().toString() + " ,";
+                if (checked) {
+                    if (pitShotLocationString.isEmpty()) {
+                        pitShotLocationString = s1;
+                    } else {
+                        pitShotLocationString = pitShotLocationString + s1;
+                    }
+                } else {
+                    if (pitShotLocationString.contains(s1)) {
+                        int start = pitShotLocationString.indexOf(s1);
+                        pitShotLocationString = pitShotLocationString.substring(0, start) + pitShotLocationString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_shot_location_outer:
+                s1 = pitShotLocationOuter.getText().toString() + " ,";
+                if (checked) {
+                    if (pitShotLocationString.isEmpty()) {
+                        pitShotLocationString = s1;
+                    } else {
+                        pitShotLocationString = pitShotLocationString + s1;
+                    }
+                } else {
+                    if (pitShotLocationString.contains(s1)) {
+                        int start = pitShotLocationString.indexOf(s1);
+                        pitShotLocationString = pitShotLocationString.substring(0, start) + pitShotLocationString.substring(start + s1.length());
+                    }
+                }
+                break;
+
+            case R.id.pit_shot_location_na:
+                s1 = pitShotLocationNa.getText().toString() + " ,";
+                if (checked) {
+                    if (pitShotLocationString.isEmpty()) {
+                        pitShotLocationString = s1;
+                    } else {
+                        pitShotLocationString = pitShotLocationString + s1;
+                    }
+                } else {
+                    if (pitShotLocationString.contains(s1)) {
+                        int start = pitShotLocationString.indexOf(s1);
+                        pitShotLocationString = pitShotLocationString.substring(0, start) + pitShotLocationString.substring(start + s1.length());
+                    }
+                }
+                break;
+        }
+    }
+
+
+
+    @Override
     protected void onResume() {
         super.onResume();
 
@@ -403,8 +707,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitRobotWeight.setOnKeyListener(this);
         pitProgrammingLanguages.setOnKeyListener(this);
         programmingLanguageOther.setOnKeyListener(this);
-        pitPowerCellPreload.setOnKeyListener(this);
-        pitInitLineAuton.setOnKeyListener(this);
+        pitAutoPrograms.setOnKeyListener(this);
         pitDriveThruTrench.setOnKeyListener(this);
         pitEndgameHang.setOnKeyListener(this);
         pitBasicPlan.setOnKeyListener(this);
@@ -421,8 +724,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitRobotWeight.setOnKeyListener(null);
         pitProgrammingLanguages.setOnKeyListener(null);
         programmingLanguageOther.setOnKeyListener(null);
-        pitPowerCellPreload.setOnKeyListener(null);
-        pitInitLineAuton.setOnKeyListener(null);
+        pitAutoPrograms.setOnKeyListener(null);
         pitDriveThruTrench.setOnKeyListener(null);
         pitEndgameHang.setOnKeyListener(null);
         pitBasicPlan.setOnKeyListener(null);
@@ -465,8 +767,6 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         }
 
 
-      final RadioButton pitPowerCellPreloadbtn = findViewById(pitPowerCellPreload.getCheckedRadioButtonId());
-      final RadioButton pitInitLineAutonbtn = findViewById(pitInitLineAuton.getCheckedRadioButtonId());
       final RadioButton pitDriveThruTrenchbtn = findViewById(pitDriveThruTrench.getCheckedRadioButtonId());
       final RadioButton pitEndgameHangbtn = findViewById(pitEndgameHang.getCheckedRadioButtonId());
 
@@ -482,9 +782,9 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
                 pitDataStringList.add(driveTrainOther.getText().toString());
                 pitDataStringList.add(pitProgrammingLanguages.getSelectedItem().toString());
                 pitDataStringList.add(programmingLanguageOther.getText().toString());
-                pitDataStringList.add(pitPowerCellPreloadbtn.getText().toString());
-                pitDataStringList.add(powerPortShotString);
-                pitDataStringList.add(pitInitLineAutonbtn.getText().toString());
+                pitDataStringList.add(pitAutoPrograms.getText().toString());
+                pitDataStringList.add(shotString);
+                pitDataStringList.add(favShotString);
                 pitDataStringList.add(pitDriveThruTrenchbtn.getText().toString());
                 pitDataStringList.add(pitShotLocationString);
                 pitDataStringList.add(ControlPanelString);
@@ -609,17 +909,18 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         driveTrainOther.setText(null);
         pitProgrammingLanguages.setSelection(0);
         programmingLanguageOther.setText(null);
+        pitAutoPrograms.setText(null);
         scouterInitialsInput.setText(null);
-        pitPowerCellPreload.clearCheck();
         pitControlPanelNothing.setChecked(false);
         pitControlPanelPosition.setChecked(false);
         pitControlPanelRotate3to5.setChecked(false);
-        powerPortOuter.setChecked(false);
-        powerPortInner.setChecked(false);
-        powerPortShotBottom.setChecked(false);
-        powerPortShotNa.setChecked(false);
+        pitShootTrenchNear.setChecked(false);
+        pitShootTrenchFar.setChecked(false);
+        pitShootOther.setChecked(false);
+        pitShootFieldFront.setChecked(false);
+        pitShootFieldDiagonal.setChecked(false);
+        pitShootTargetZone.setChecked(false);
         pitEndgameHang.clearCheck();
-        pitInitLineAuton.clearCheck();
         pitDriveThruTrench.clearCheck();
         pitShotLocationOuter.setChecked(false);
         pitShotLocationInner.setChecked(false);
@@ -627,7 +928,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitShotLocationNa.setChecked(false);
         pitBasicPlan.setText(null);
         ControlPanelString = "";
-        powerPortShotString = "";
+        shotString = "";
         pitShotLocationString = "";
 
         pitDataStringList.clear();
