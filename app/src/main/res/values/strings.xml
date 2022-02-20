@@ -219,9 +219,6 @@
     <string name="cycleSuperFast">Spun 3-5 times</string>
     <string name="cycleFast">Set to color</string>
     <string name="cycleMedium">Both</string>
-
-
-    <!-- Team Numbers drop down array -->
     <string name="cycleSlow">Attempted but failed</string>
 
 
